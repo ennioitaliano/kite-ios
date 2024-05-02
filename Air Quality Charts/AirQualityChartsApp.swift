@@ -1,5 +1,5 @@
 //
-//  Air_Quality_ChartsApp.swift
+//  AirQualityChartsApp.swift
 //  Air Quality Charts
 //
 //  Created by Ennio Italiano on 02/05/24.

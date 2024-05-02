@@ -7,18 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		752960452BE3FB0400561880 /* Air_Quality_ChartsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752960442BE3FB0400561880 /* Air_Quality_ChartsApp.swift */; };
+		752960452BE3FB0400561880 /* AirQualityChartsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752960442BE3FB0400561880 /* AirQualityChartsApp.swift */; };
 		752960472BE3FB0400561880 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752960462BE3FB0400561880 /* ContentView.swift */; };
 		752960492BE3FB0400561880 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 752960482BE3FB0400561880 /* Assets.xcassets */; };
 		7529604C2BE3FB0400561880 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7529604B2BE3FB0400561880 /* Preview Assets.xcassets */; };
+		752960542BE3FBB300561880 /* CurrentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752960532BE3FBB200561880 /* CurrentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		752960412BE3FB0400561880 /* Air Quality Charts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Air Quality Charts.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		752960442BE3FB0400561880 /* Air_Quality_ChartsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Air_Quality_ChartsApp.swift; sourceTree = "<group>"; };
+		752960442BE3FB0400561880 /* AirQualityChartsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityChartsApp.swift; sourceTree = "<group>"; };
 		752960462BE3FB0400561880 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		752960482BE3FB0400561880 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7529604B2BE3FB0400561880 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		752960532BE3FBB200561880 /* CurrentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,7 +53,9 @@
 		752960432BE3FB0400561880 /* Air Quality Charts */ = {
 			isa = PBXGroup;
 			children = (
-				752960442BE3FB0400561880 /* Air_Quality_ChartsApp.swift */,
+				752960552BE408AB00561880 /* Repositories */,
+				752960522BE3FB9F00561880 /* Screens */,
+				752960442BE3FB0400561880 /* AirQualityChartsApp.swift */,
 				752960462BE3FB0400561880 /* ContentView.swift */,
 				752960482BE3FB0400561880 /* Assets.xcassets */,
 				7529604A2BE3FB0400561880 /* Preview Content */,
@@ -65,6 +69,21 @@
 				7529604B2BE3FB0400561880 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		752960522BE3FB9F00561880 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				752960532BE3FBB200561880 /* CurrentView.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		752960552BE408AB00561880 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +156,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				752960542BE3FBB300561880 /* CurrentView.swift in Sources */,
 				752960472BE3FB0400561880 /* ContentView.swift in Sources */,
-				752960452BE3FB0400561880 /* Air_Quality_ChartsApp.swift in Sources */,
+				752960452BE3FB0400561880 /* AirQualityChartsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
