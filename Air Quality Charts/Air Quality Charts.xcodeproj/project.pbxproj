@@ -7,24 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		752960452BE3FB0400561880 /* AirQualityChartsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752960442BE3FB0400561880 /* AirQualityChartsApp.swift */; };
-		752960472BE3FB0400561880 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752960462BE3FB0400561880 /* ContentView.swift */; };
-		752960492BE3FB0400561880 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 752960482BE3FB0400561880 /* Assets.xcassets */; };
-		7529604C2BE3FB0400561880 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7529604B2BE3FB0400561880 /* Preview Assets.xcassets */; };
-		752960542BE3FBB300561880 /* CurrentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752960532BE3FBB200561880 /* CurrentView.swift */; };
+		759F883E2BED256800DEC3FB /* Air_Quality_ChartsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759F883D2BED256800DEC3FB /* Air_Quality_ChartsApp.swift */; };
+		759F88402BED256800DEC3FB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759F883F2BED256800DEC3FB /* ContentView.swift */; };
+		759F88422BED256900DEC3FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 759F88412BED256900DEC3FB /* Assets.xcassets */; };
+		759F88452BED256900DEC3FB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 759F88442BED256900DEC3FB /* Preview Assets.xcassets */; };
+		759F884D2BED266E00DEC3FB /* AirPollutionDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759F884C2BED266E00DEC3FB /* AirPollutionDataModel.swift */; };
+		759F88502BED292E00DEC3FB /* AirPollutionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759F884F2BED292E00DEC3FB /* AirPollutionModel.swift */; };
+		759F88522BED2E5B00DEC3FB /* GeocodingDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759F88512BED2E5B00DEC3FB /* GeocodingDataModel.swift */; };
+		759F88542BED30BB00DEC3FB /* GeocodingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759F88532BED30BB00DEC3FB /* GeocodingModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		752960412BE3FB0400561880 /* Air Quality Charts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Air Quality Charts.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		752960442BE3FB0400561880 /* AirQualityChartsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityChartsApp.swift; sourceTree = "<group>"; };
-		752960462BE3FB0400561880 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		752960482BE3FB0400561880 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		7529604B2BE3FB0400561880 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		752960532BE3FBB200561880 /* CurrentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentView.swift; sourceTree = "<group>"; };
+		759F883A2BED256800DEC3FB /* Air Quality Charts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Air Quality Charts.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		759F883D2BED256800DEC3FB /* Air_Quality_ChartsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Air_Quality_ChartsApp.swift; sourceTree = "<group>"; };
+		759F883F2BED256800DEC3FB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		759F88412BED256900DEC3FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		759F88442BED256900DEC3FB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		759F884C2BED266E00DEC3FB /* AirPollutionDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPollutionDataModel.swift; sourceTree = "<group>"; };
+		759F884F2BED292E00DEC3FB /* AirPollutionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPollutionModel.swift; sourceTree = "<group>"; };
+		759F88512BED2E5B00DEC3FB /* GeocodingDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodingDataModel.swift; sourceTree = "<group>"; };
+		759F88532BED30BB00DEC3FB /* GeocodingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodingModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		7529603E2BE3FB0400561880 /* Frameworks */ = {
+		759F88372BED256800DEC3FB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -34,68 +40,71 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		752960382BE3FB0400561880 = {
+		759F88312BED256800DEC3FB = {
 			isa = PBXGroup;
 			children = (
-				752960432BE3FB0400561880 /* Air Quality Charts */,
-				752960422BE3FB0400561880 /* Products */,
+				759F883C2BED256800DEC3FB /* Air Quality Charts */,
+				759F883B2BED256800DEC3FB /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		752960422BE3FB0400561880 /* Products */ = {
+		759F883B2BED256800DEC3FB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				752960412BE3FB0400561880 /* Air Quality Charts.app */,
+				759F883A2BED256800DEC3FB /* Air Quality Charts.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		752960432BE3FB0400561880 /* Air Quality Charts */ = {
+		759F883C2BED256800DEC3FB /* Air Quality Charts */ = {
 			isa = PBXGroup;
 			children = (
-				752960552BE408AB00561880 /* Repositories */,
-				752960522BE3FB9F00561880 /* Screens */,
-				752960442BE3FB0400561880 /* AirQualityChartsApp.swift */,
-				752960462BE3FB0400561880 /* ContentView.swift */,
-				752960482BE3FB0400561880 /* Assets.xcassets */,
-				7529604A2BE3FB0400561880 /* Preview Content */,
+				759F884E2BED291D00DEC3FB /* Models */,
+				759F884B2BED264B00DEC3FB /* DataModels */,
+				759F883D2BED256800DEC3FB /* Air_Quality_ChartsApp.swift */,
+				759F883F2BED256800DEC3FB /* ContentView.swift */,
+				759F88412BED256900DEC3FB /* Assets.xcassets */,
+				759F88432BED256900DEC3FB /* Preview Content */,
 			);
 			path = "Air Quality Charts";
 			sourceTree = "<group>";
 		};
-		7529604A2BE3FB0400561880 /* Preview Content */ = {
+		759F88432BED256900DEC3FB /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				7529604B2BE3FB0400561880 /* Preview Assets.xcassets */,
+				759F88442BED256900DEC3FB /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		752960522BE3FB9F00561880 /* Screens */ = {
+		759F884B2BED264B00DEC3FB /* DataModels */ = {
 			isa = PBXGroup;
 			children = (
-				752960532BE3FBB200561880 /* CurrentView.swift */,
+				759F884C2BED266E00DEC3FB /* AirPollutionDataModel.swift */,
+				759F88512BED2E5B00DEC3FB /* GeocodingDataModel.swift */,
 			);
-			path = Screens;
+			path = DataModels;
 			sourceTree = "<group>";
 		};
-		752960552BE408AB00561880 /* Repositories */ = {
+		759F884E2BED291D00DEC3FB /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				759F884F2BED292E00DEC3FB /* AirPollutionModel.swift */,
+				759F88532BED30BB00DEC3FB /* GeocodingModel.swift */,
 			);
-			path = Repositories;
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		752960402BE3FB0400561880 /* Air Quality Charts */ = {
+		759F88392BED256800DEC3FB /* Air Quality Charts */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7529604F2BE3FB0400561880 /* Build configuration list for PBXNativeTarget "Air Quality Charts" */;
+			buildConfigurationList = 759F88482BED256900DEC3FB /* Build configuration list for PBXNativeTarget "Air Quality Charts" */;
 			buildPhases = (
-				7529603D2BE3FB0400561880 /* Sources */,
-				7529603E2BE3FB0400561880 /* Frameworks */,
-				7529603F2BE3FB0400561880 /* Resources */,
+				759F88362BED256800DEC3FB /* Sources */,
+				759F88372BED256800DEC3FB /* Frameworks */,
+				759F88382BED256800DEC3FB /* Resources */,
 			);
 			buildRules = (
 			);
@@ -103,25 +112,25 @@
 			);
 			name = "Air Quality Charts";
 			productName = "Air Quality Charts";
-			productReference = 752960412BE3FB0400561880 /* Air Quality Charts.app */;
+			productReference = 759F883A2BED256800DEC3FB /* Air Quality Charts.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		752960392BE3FB0400561880 /* Project object */ = {
+		759F88322BED256800DEC3FB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1530;
 				LastUpgradeCheck = 1530;
 				TargetAttributes = {
-					752960402BE3FB0400561880 = {
+					759F88392BED256800DEC3FB = {
 						CreatedOnToolsVersion = 15.3;
 					};
 				};
 			};
-			buildConfigurationList = 7529603C2BE3FB0400561880 /* Build configuration list for PBXProject "Air Quality Charts" */;
+			buildConfigurationList = 759F88352BED256800DEC3FB /* Build configuration list for PBXProject "Air Quality Charts" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -129,43 +138,46 @@
 				en,
 				Base,
 			);
-			mainGroup = 752960382BE3FB0400561880;
-			productRefGroup = 752960422BE3FB0400561880 /* Products */;
+			mainGroup = 759F88312BED256800DEC3FB;
+			productRefGroup = 759F883B2BED256800DEC3FB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				752960402BE3FB0400561880 /* Air Quality Charts */,
+				759F88392BED256800DEC3FB /* Air Quality Charts */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		7529603F2BE3FB0400561880 /* Resources */ = {
+		759F88382BED256800DEC3FB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7529604C2BE3FB0400561880 /* Preview Assets.xcassets in Resources */,
-				752960492BE3FB0400561880 /* Assets.xcassets in Resources */,
+				759F88452BED256900DEC3FB /* Preview Assets.xcassets in Resources */,
+				759F88422BED256900DEC3FB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		7529603D2BE3FB0400561880 /* Sources */ = {
+		759F88362BED256800DEC3FB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				752960542BE3FBB300561880 /* CurrentView.swift in Sources */,
-				752960472BE3FB0400561880 /* ContentView.swift in Sources */,
-				752960452BE3FB0400561880 /* AirQualityChartsApp.swift in Sources */,
+				759F88402BED256800DEC3FB /* ContentView.swift in Sources */,
+				759F88502BED292E00DEC3FB /* AirPollutionModel.swift in Sources */,
+				759F88522BED2E5B00DEC3FB /* GeocodingDataModel.swift in Sources */,
+				759F884D2BED266E00DEC3FB /* AirPollutionDataModel.swift in Sources */,
+				759F883E2BED256800DEC3FB /* Air_Quality_ChartsApp.swift in Sources */,
+				759F88542BED30BB00DEC3FB /* GeocodingModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		7529604D2BE3FB0400561880 /* Debug */ = {
+		759F88462BED256900DEC3FB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -228,7 +240,7 @@
 			};
 			name = Debug;
 		};
-		7529604E2BE3FB0400561880 /* Release */ = {
+		759F88472BED256900DEC3FB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -284,7 +296,7 @@
 			};
 			name = Release;
 		};
-		752960502BE3FB0400561880 /* Debug */ = {
+		759F88492BED256900DEC3FB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -312,7 +324,7 @@
 			};
 			name = Debug;
 		};
-		752960512BE3FB0400561880 /* Release */ = {
+		759F884A2BED256900DEC3FB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -343,25 +355,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7529603C2BE3FB0400561880 /* Build configuration list for PBXProject "Air Quality Charts" */ = {
+		759F88352BED256800DEC3FB /* Build configuration list for PBXProject "Air Quality Charts" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7529604D2BE3FB0400561880 /* Debug */,
-				7529604E2BE3FB0400561880 /* Release */,
+				759F88462BED256900DEC3FB /* Debug */,
+				759F88472BED256900DEC3FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7529604F2BE3FB0400561880 /* Build configuration list for PBXNativeTarget "Air Quality Charts" */ = {
+		759F88482BED256900DEC3FB /* Build configuration list for PBXNativeTarget "Air Quality Charts" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				752960502BE3FB0400561880 /* Debug */,
-				752960512BE3FB0400561880 /* Release */,
+				759F88492BED256900DEC3FB /* Debug */,
+				759F884A2BED256900DEC3FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 752960392BE3FB0400561880 /* Project object */;
+	rootObject = 759F88322BED256800DEC3FB /* Project object */;
 }
