@@ -8,8 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		755685622BF10E6D00F5218F /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 755685612BF10E6D00F5218F /* RealmSwift */; };
+		755CE2072BF10AA9007B47BC /* AirPollutionRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755CE2062BF10AA9007B47BC /* AirPollutionRemoteRepository.swift */; };
 		755CE20A2BF10B2C007B47BC /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 755CE2092BF10B2C007B47BC /* ComposableArchitecture */; };
+		755CE2132BF10BA5007B47BC /* LogsCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755CE2122BF10BA5007B47BC /* LogsCategories.swift */; };
+		755CE2152BF10BF2007B47BC /* LogsDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755CE2142BF10BF2007B47BC /* LogsDependency.swift */; };
 		755CE2182BF10C97007B47BC /* Dependencies in Frameworks */ = {isa = PBXBuildFile; productRef = 755CE2172BF10C97007B47BC /* Dependencies */; };
+		755CE21A2BF10C97007B47BC /* DependenciesMacros in Frameworks */ = {isa = PBXBuildFile; productRef = 755CE2192BF10C97007B47BC /* DependenciesMacros */; };
 		759F883E2BED256800DEC3FB /* Air_Quality_ChartsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759F883D2BED256800DEC3FB /* Air_Quality_ChartsApp.swift */; };
 		759F88402BED256800DEC3FB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759F883F2BED256800DEC3FB /* ContentView.swift */; };
 		759F88422BED256900DEC3FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 759F88412BED256900DEC3FB /* Assets.xcassets */; };
@@ -18,11 +22,18 @@
 		759F88502BED292E00DEC3FB /* AirPollutionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759F884F2BED292E00DEC3FB /* AirPollutionModel.swift */; };
 		759F88522BED2E5B00DEC3FB /* GeocodingDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759F88512BED2E5B00DEC3FB /* GeocodingDataModel.swift */; };
 		759F88542BED30BB00DEC3FB /* GeocodingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759F88532BED30BB00DEC3FB /* GeocodingModel.swift */; };
+		75C686072BF10EFC00092C6C /* RemoteRepositoriesDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C686062BF10EFC00092C6C /* RemoteRepositoriesDependencies.swift */; };
+		75C6860A2BF1109100092C6C /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C686092BF1109100092C6C /* Environment.swift */; };
+		75C6860C2BF1119200092C6C /* EnvironmentDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C6860B2BF1119200092C6C /* EnvironmentDependency.swift */; };
+		75C6860E2BF1127000092C6C /* NetworkErrorDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C6860D2BF1127000092C6C /* NetworkErrorDataModel.swift */; };
 		75D70CCE2BF1072900640621 /* CommonNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = 75D70CCD2BF1072900640621 /* CommonNetworking */; };
 		75D70CD12BF107A900640621 /* CommonLogging in Frameworks */ = {isa = PBXBuildFile; productRef = 75D70CD02BF107A900640621 /* CommonLogging */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		755CE2062BF10AA9007B47BC /* AirPollutionRemoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPollutionRemoteRepository.swift; sourceTree = "<group>"; };
+		755CE2122BF10BA5007B47BC /* LogsCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsCategories.swift; sourceTree = "<group>"; };
+		755CE2142BF10BF2007B47BC /* LogsDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsDependency.swift; sourceTree = "<group>"; };
 		759F883A2BED256800DEC3FB /* Air Quality Charts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Air Quality Charts.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		759F883D2BED256800DEC3FB /* Air_Quality_ChartsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Air_Quality_ChartsApp.swift; sourceTree = "<group>"; };
 		759F883F2BED256800DEC3FB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -32,6 +43,10 @@
 		759F884F2BED292E00DEC3FB /* AirPollutionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPollutionModel.swift; sourceTree = "<group>"; };
 		759F88512BED2E5B00DEC3FB /* GeocodingDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodingDataModel.swift; sourceTree = "<group>"; };
 		759F88532BED30BB00DEC3FB /* GeocodingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodingModel.swift; sourceTree = "<group>"; };
+		75C686062BF10EFC00092C6C /* RemoteRepositoriesDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteRepositoriesDependencies.swift; sourceTree = "<group>"; };
+		75C686092BF1109100092C6C /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		75C6860B2BF1119200092C6C /* EnvironmentDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentDependency.swift; sourceTree = "<group>"; };
+		75C6860D2BF1127000092C6C /* NetworkErrorDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorDataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +66,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		755CE2042BF10A8D007B47BC /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				755CE2052BF10A98007B47BC /* Remote */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		755CE2052BF10A98007B47BC /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				755CE2062BF10AA9007B47BC /* AirPollutionRemoteRepository.swift */,
+				75C686062BF10EFC00092C6C /* RemoteRepositoriesDependencies.swift */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		755CE2102BF10B90007B47BC /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				755CE2112BF10B9B007B47BC /* Logs */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		755CE2112BF10B9B007B47BC /* Logs */ = {
+			isa = PBXGroup;
+			children = (
+				755CE2122BF10BA5007B47BC /* LogsCategories.swift */,
+				755CE2142BF10BF2007B47BC /* LogsDependency.swift */,
+			);
+			path = Logs;
+			sourceTree = "<group>";
+		};
 		759F88312BED256800DEC3FB = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +119,9 @@
 		759F883C2BED256800DEC3FB /* Air Quality Charts */ = {
 			isa = PBXGroup;
 			children = (
+				75C686082BF1108400092C6C /* Environment */,
+				755CE2102BF10B90007B47BC /* Utils */,
+				755CE2042BF10A8D007B47BC /* Repositories */,
 				759F884E2BED291D00DEC3FB /* Models */,
 				759F884B2BED264B00DEC3FB /* DataModels */,
 				759F883D2BED256800DEC3FB /* Air_Quality_ChartsApp.swift */,
@@ -93,6 +145,7 @@
 			children = (
 				759F884C2BED266E00DEC3FB /* AirPollutionDataModel.swift */,
 				759F88512BED2E5B00DEC3FB /* GeocodingDataModel.swift */,
+				75C6860D2BF1127000092C6C /* NetworkErrorDataModel.swift */,
 			);
 			path = DataModels;
 			sourceTree = "<group>";
@@ -104,6 +157,15 @@
 				759F88532BED30BB00DEC3FB /* GeocodingModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		75C686082BF1108400092C6C /* Environment */ = {
+			isa = PBXGroup;
+			children = (
+				75C686092BF1109100092C6C /* Environment.swift */,
+				75C6860B2BF1119200092C6C /* EnvironmentDependency.swift */,
+			);
+			path = Environment;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,9 +277,16 @@
 			files = (
 				759F88402BED256800DEC3FB /* ContentView.swift in Sources */,
 				759F88502BED292E00DEC3FB /* AirPollutionModel.swift in Sources */,
+				755CE2152BF10BF2007B47BC /* LogsDependency.swift in Sources */,
+				755CE2132BF10BA5007B47BC /* LogsCategories.swift in Sources */,
 				759F88522BED2E5B00DEC3FB /* GeocodingDataModel.swift in Sources */,
+				755CE2072BF10AA9007B47BC /* AirPollutionRemoteRepository.swift in Sources */,
+				75C6860C2BF1119200092C6C /* EnvironmentDependency.swift in Sources */,
 				759F884D2BED266E00DEC3FB /* AirPollutionDataModel.swift in Sources */,
+				75C6860A2BF1109100092C6C /* Environment.swift in Sources */,
+				75C6860E2BF1127000092C6C /* NetworkErrorDataModel.swift in Sources */,
 				759F883E2BED256800DEC3FB /* Air_Quality_ChartsApp.swift in Sources */,
+				75C686072BF10EFC00092C6C /* RemoteRepositoriesDependencies.swift in Sources */,
 				759F88542BED30BB00DEC3FB /* GeocodingModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
