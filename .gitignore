@@ -1,0 +1,36 @@
+## User settings
+xcuserdata/
+
+## Xcode
+.DS_Store
+*.xcuserstate
+*.xcuserdatad
+
+## Carthage
+Carthage
+Cartfile.resolved
+
+## Cocoapods
+/Pods
+xcdebugger/
+Podfile.lock
+/*.xcworkspace
+build/
+.build/
+
+## App packaging
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+## Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+# Swift Package Manager
+Packages/
+Package.pins
+Package.resolved
+Air Quality Charts/Air Quality Charts.xcodeproj/xcuserdata
+Air Quality Charts/Air Quality Charts.xcodeproj/project.xcworkspace/xcuserdata
+.DS_Store
