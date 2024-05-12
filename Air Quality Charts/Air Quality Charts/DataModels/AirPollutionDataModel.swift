@@ -5,27 +5,47 @@
 //  Created by Ennio Italiano on 09/05/24.
 //
 
+import CoreLocation
 import Foundation
 
 struct AirPollutionDataModel: Codable {
-    let coordinates: [Double]
+    let coordinates: CoordinatesDataModel
     let list: [TimePollutionDataModel]
 
     enum CodingKeys: String, CodingKey {
-        case coordinates = "coords"
+        case coordinates = "coord"
         case list
     }
 
     func toModel() -> AirPollutionModel {
         .init(
-            coordinates: coordinates,
+            location: CLLocationCoordinate2D(coordinates: coordinates),
             list: list.map { $0.toModel() }
         )
     }
 }
 
+struct CoordinatesDataModel: Codable {
+    let longitude: Double
+    let latitude: Double
+
+    enum CodingKeys: String, CodingKey {
+        case longitude = "lon"
+        case latitude = "lat"
+    }
+}
+
+extension CLLocationCoordinate2D {
+    init(coordinates: CoordinatesDataModel) {
+        self = CLLocationCoordinate2D(
+            latitude: coordinates.latitude,
+            longitude: coordinates.longitude
+        )
+    }
+}
+
 struct TimePollutionDataModel: Codable {
-    let dateTime: Date
+    let dateTime: Double
     let AQI: AQIDataModel
     let components: PollutantsDataModel
 
@@ -37,7 +57,7 @@ struct TimePollutionDataModel: Codable {
 
     func toModel() -> TimePollutionModel {
         .init(
-            dateTime: dateTime,
+            dateTime: Date(timeIntervalSince1970: dateTime),
             AQI: AQI.AQI,
             components: components.toModel()
         )
@@ -52,6 +72,7 @@ struct AQIDataModel: Codable {
     }
 }
 
+// swiftlint: disable identifier_name
 struct PollutantsDataModel: Codable {
     let co: Double
     let no: Double
@@ -86,3 +107,4 @@ struct PollutantsDataModel: Codable {
         )
     }
 }
+// swiftlint: enable identifier_name

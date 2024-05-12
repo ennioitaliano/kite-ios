@@ -5,13 +5,13 @@
 //  Created by Ennio Italiano on 09/05/24.
 //
 
+import CoreLocation
 import Foundation
 
 struct GeocodingModel {
     let name: String
     let localNames: LocalNamesModel
-    let latitude: Double
-    let longitude: Double
+    let coordinates: CLLocationCoordinate2D
     let country: String
     let state: String?
 }

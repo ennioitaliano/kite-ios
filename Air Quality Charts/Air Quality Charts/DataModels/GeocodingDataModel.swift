@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 struct GeocodingDataModel: Codable {
     let name: String
@@ -28,8 +29,10 @@ struct GeocodingDataModel: Codable {
         .init(
             name: name,
             localNames: localNames.toModel(),
-            latitude: latitude,
-            longitude: longitude,
+            coordinates: CLLocationCoordinate2D(
+                latitude: latitude,
+                longitude: longitude
+            ),
             country: country,
             state: state
         )
