@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct Air_Quality_ChartsApp: App {
+struct AirQualityChartsApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
