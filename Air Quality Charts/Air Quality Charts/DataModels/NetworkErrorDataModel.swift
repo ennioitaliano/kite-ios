@@ -12,5 +12,5 @@ struct NetworkErrorDataModel: Error, Decodable, Equatable {
 
     enum CodingKeys: String, CodingKey {
         case detail
-     }
+    }
 }

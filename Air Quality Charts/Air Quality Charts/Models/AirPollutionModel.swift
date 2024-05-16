@@ -1,5 +1,5 @@
 //
-//  CurrentModel.swift
+//  AirPollutionModel.swift
 //  Air Quality Charts
 //
 //  Created by Ennio Italiano on 09/05/24.
@@ -30,4 +30,5 @@ struct PollutantsModel {
     let pm10: Double
     let nh3: Double
 }
+
 // swiftlint: enable identifier_name

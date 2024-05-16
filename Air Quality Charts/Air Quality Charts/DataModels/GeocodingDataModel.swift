@@ -5,8 +5,8 @@
 //  Created by Ennio Italiano on 09/05/24.
 //
 
-import Foundation
 import CoreLocation
+import Foundation
 
 struct GeocodingDataModel: Codable {
     let name: String

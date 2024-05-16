@@ -8,8 +8,7 @@
 import Dependencies
 import Foundation
 
-
-enum AirPollutionRemoteRepositoryDependencyKey: DependencyKey {
+enum APRemoteRepositoryDependencyKey: DependencyKey {
     static var liveValue: AirPollutionRemoteRepository {
         return AirPollutionLiveRemoteRepository()
     }
@@ -17,7 +16,7 @@ enum AirPollutionRemoteRepositoryDependencyKey: DependencyKey {
 
 extension DependencyValues {
     var airPollutionRemoteRepository: AirPollutionRemoteRepository {
-        get { self[AirPollutionRemoteRepositoryDependencyKey.self] }
-        set { self[AirPollutionRemoteRepositoryDependencyKey.self] = newValue }
+        get { self[APRemoteRepositoryDependencyKey.self] }
+        set { self[APRemoteRepositoryDependencyKey.self] = newValue }
     }
 }
