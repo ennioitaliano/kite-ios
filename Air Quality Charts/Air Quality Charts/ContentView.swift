@@ -11,10 +11,11 @@ import SwiftUI
 
 struct ContentView: View {
     @Dependency(\.airPollutionRemoteRepository) private var APRemoteRepository
+    @Dependency(\.geocodingRemoteRepository) private var GCRemoteRepository
 
     var body: some View {
         VStack {
-            Button("Current") {
+            Button("AP Current") {
                 Task {
                     try print(
                         await APRemoteRepository.getCurrent(
@@ -26,7 +27,7 @@ struct ContentView: View {
                     )
                 }
             }
-            Button("Forecast") {
+            Button("AP Forecast") {
                 Task {
                     try print(
                         await APRemoteRepository.getForecast(
@@ -38,7 +39,7 @@ struct ContentView: View {
                     )
                 }
             }
-            Button("Historical") {
+            Button("AP Historical") {
                 Task {
                     try print(
                         await APRemoteRepository.getHistorical(
@@ -48,6 +49,38 @@ struct ContentView: View {
                             ),
                             start: .now,
                             end: .now
+                        )
+                    )
+                }
+            }
+            Button("GC Coords Location") {
+                Task {
+                    try print(
+                        await GCRemoteRepository.getCoordinates(
+                            location: "Padua,IT",
+                            limit: 1
+                        )
+                    )
+                }
+            }
+            Button("GC Coords Zip") {
+                Task {
+                    try print(
+                        await GCRemoteRepository.getCoordinates(
+                            zipCode: "35037,IT"
+                        )
+                    )
+                }
+            }
+            Button("GC Reverse") {
+                Task {
+                    try print(
+                        await GCRemoteRepository.getLocation(
+                            for: .init(
+                                latitude: 50,
+                                longitude: 50
+                            ),
+                            limit: 5
                         )
                     )
                 }

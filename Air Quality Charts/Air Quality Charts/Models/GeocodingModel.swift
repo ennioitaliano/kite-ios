@@ -10,14 +10,15 @@ import Foundation
 
 struct GeocodingModel {
     let name: String
-    let localNames: LocalNamesModel
+    let localNames: LocalNamesModel?
     let coordinates: CLLocationCoordinate2D
     let country: String
     let state: String?
+    let zip: String?
 }
 
 struct LocalNamesModel {
-    let featureName: String
-    let ASCIIName: String
+    let featureName: String?
+    let ASCIIName: String?
     let italianName: String?
 }

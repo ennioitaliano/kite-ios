@@ -10,38 +10,41 @@ import Foundation
 
 struct GeocodingDataModel: Codable {
     let name: String
-    let localNames: LocalNamesDataModel
+    let localNames: LocalNamesDataModel?
     let latitude: Double
     let longitude: Double
     let country: String
     let state: String?
+    let zip: String?
 
     enum CodingKeys: String, CodingKey {
         case name
         case localNames = "local_names"
         case latitude = "lat"
-        case longitude = "long"
+        case longitude = "lon"
         case country
         case state
+        case zip
     }
 
     func toModel() -> GeocodingModel {
         .init(
             name: name,
-            localNames: localNames.toModel(),
+            localNames: localNames?.toModel(),
             coordinates: CLLocationCoordinate2D(
                 latitude: latitude,
                 longitude: longitude
             ),
             country: country,
-            state: state
+            state: state, 
+            zip: zip
         )
     }
 }
 
 struct LocalNamesDataModel: Codable {
-    let featureName: String
-    let ASCIIName: String
+    let featureName: String?
+    let ASCIIName: String?
     let italianName: String?
 
     enum CodingKeys: String, CodingKey {
