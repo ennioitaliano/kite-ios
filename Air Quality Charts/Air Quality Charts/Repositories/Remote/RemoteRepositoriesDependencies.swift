@@ -14,9 +14,20 @@ enum APRemoteRepositoryDependencyKey: DependencyKey {
     }
 }
 
+enum GCRemoteRepositoryDependencyKey: DependencyKey {
+    static var liveValue: GeocodingRemoteRepository {
+        return GeocodingLiveRemoteRepository()
+    }
+}
+
 extension DependencyValues {
     var airPollutionRemoteRepository: AirPollutionRemoteRepository {
         get { self[APRemoteRepositoryDependencyKey.self] }
         set { self[APRemoteRepositoryDependencyKey.self] = newValue }
+    }
+
+    var geocodingRemoteRepository: GeocodingRemoteRepository {
+        get { self[GCRemoteRepositoryDependencyKey.self] }
+        set { self[GCRemoteRepositoryDependencyKey.self] = newValue }
     }
 }

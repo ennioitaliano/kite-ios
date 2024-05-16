@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		75036FE92BF66DFE007D6A68 /* GeocodingRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75036FE82BF66DFE007D6A68 /* GeocodingRemoteRepository.swift */; };
+		75036FEB2BF67142007D6A68 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75036FEA2BF67142007D6A68 /* Extensions.swift */; };
 		755685622BF10E6D00F5218F /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 755685612BF10E6D00F5218F /* RealmSwift */; };
 		755CE2072BF10AA9007B47BC /* AirPollutionRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755CE2062BF10AA9007B47BC /* AirPollutionRemoteRepository.swift */; };
 		755CE20A2BF10B2C007B47BC /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 755CE2092BF10B2C007B47BC /* ComposableArchitecture */; };
@@ -31,6 +33,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		75036FE82BF66DFE007D6A68 /* GeocodingRemoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodingRemoteRepository.swift; sourceTree = "<group>"; };
+		75036FEA2BF67142007D6A68 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		755CE2062BF10AA9007B47BC /* AirPollutionRemoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPollutionRemoteRepository.swift; sourceTree = "<group>"; };
 		755CE2122BF10BA5007B47BC /* LogsCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsCategories.swift; sourceTree = "<group>"; };
 		755CE2142BF10BF2007B47BC /* LogsDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsDependency.swift; sourceTree = "<group>"; };
@@ -79,6 +83,7 @@
 			children = (
 				755CE2062BF10AA9007B47BC /* AirPollutionRemoteRepository.swift */,
 				75C686062BF10EFC00092C6C /* RemoteRepositoriesDependencies.swift */,
+				75036FE82BF66DFE007D6A68 /* GeocodingRemoteRepository.swift */,
 			);
 			path = Remote;
 			sourceTree = "<group>";
@@ -87,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				755CE2112BF10B9B007B47BC /* Logs */,
+				75036FEA2BF67142007D6A68 /* Extensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -278,12 +284,14 @@
 				759F88402BED256800DEC3FB /* ContentView.swift in Sources */,
 				759F88502BED292E00DEC3FB /* AirPollutionModel.swift in Sources */,
 				755CE2152BF10BF2007B47BC /* LogsDependency.swift in Sources */,
+				75036FE92BF66DFE007D6A68 /* GeocodingRemoteRepository.swift in Sources */,
 				755CE2132BF10BA5007B47BC /* LogsCategories.swift in Sources */,
 				759F88522BED2E5B00DEC3FB /* GeocodingDataModel.swift in Sources */,
 				755CE2072BF10AA9007B47BC /* AirPollutionRemoteRepository.swift in Sources */,
 				75C6860C2BF1119200092C6C /* EnvironmentDependency.swift in Sources */,
 				759F884D2BED266E00DEC3FB /* AirPollutionDataModel.swift in Sources */,
 				75C6860A2BF1109100092C6C /* Environment.swift in Sources */,
+				75036FEB2BF67142007D6A68 /* Extensions.swift in Sources */,
 				75C6860E2BF1127000092C6C /* NetworkErrorDataModel.swift in Sources */,
 				759F883E2BED256800DEC3FB /* Air_Quality_ChartsApp.swift in Sources */,
 				75C686072BF10EFC00092C6C /* RemoteRepositoriesDependencies.swift in Sources */,
