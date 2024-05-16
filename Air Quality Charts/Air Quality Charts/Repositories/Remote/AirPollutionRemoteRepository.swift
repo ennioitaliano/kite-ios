@@ -17,7 +17,6 @@ protocol AirPollutionRemoteRepository {
 }
 
 struct AirPollutionLiveRemoteRepository: AirPollutionRemoteRepository {
-
     @Dependency(\.environment) private var environment
     @Dependency(\.logger) private var logger
 
@@ -33,13 +32,13 @@ struct AirPollutionLiveRemoteRepository: AirPollutionRemoteRepository {
                 url: environment.baseURL,
                 urlPathComponent: "/data/2.5/air_pollution",
                 urlQueryParameters: [
-                    "lat" : "\(location.latitude)",
-                    "lon" : "\(location.longitude)",
-                    "appid" : "\(environment.APIKey)"
+                    "lat": "\(location.latitude)",
+                    "lon": "\(location.longitude)",
+                    "appid": "\(environment.APIKey)"
                 ],
                 httpMethod: .get,
                 httpHeaderFields: [
-                    Headers.contentType.rawValue : "application/json"
+                    Headers.contentType.rawValue: "application/json"
                 ]
             )
         )
@@ -52,20 +51,20 @@ struct AirPollutionLiveRemoteRepository: AirPollutionRemoteRepository {
             throw networkError
         }
     }
-    
+
     func getForecast(for location: CLLocationCoordinate2D) async throws -> AirPollutionModel {
         let request = client.buildRequest(
             APIRequestSettings(
                 url: environment.baseURL,
                 urlPathComponent: "/data/2.5/air_pollution/forecast",
                 urlQueryParameters: [
-                    "lat" : "\(location.latitude)",
-                    "lon" : "\(location.longitude)",
-                    "appid" : "\(environment.APIKey)"
+                    "lat": "\(location.latitude)",
+                    "lon": "\(location.longitude)",
+                    "appid": "\(environment.APIKey)"
                 ],
                 httpMethod: .get,
                 httpHeaderFields: [
-                    Headers.contentType.rawValue : "application/json"
+                    Headers.contentType.rawValue: "application/json"
                 ]
             )
         )
@@ -78,7 +77,7 @@ struct AirPollutionLiveRemoteRepository: AirPollutionRemoteRepository {
             throw networkError
         }
     }
-    
+
     func getHistorical(for location: CLLocationCoordinate2D, start: Date, end: Date) async throws -> AirPollutionModel {
         let request = client.buildRequest(
             APIRequestSettings(
@@ -93,7 +92,7 @@ struct AirPollutionLiveRemoteRepository: AirPollutionRemoteRepository {
                 ],
                 httpMethod: .get,
                 httpHeaderFields: [
-                    Headers.contentType.rawValue : "application/json"
+                    Headers.contentType.rawValue: "application/json"
                 ]
             )
         )

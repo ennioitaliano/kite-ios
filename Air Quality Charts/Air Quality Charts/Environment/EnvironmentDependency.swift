@@ -13,6 +13,7 @@ enum EnvironmentDependencyKeys: DependencyKey {
         Environment()
     }
 }
+
 extension DependencyValues {
     var environment: EnvironmentAPI {
         get { self[EnvironmentDependencyKeys.self] }

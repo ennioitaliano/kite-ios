@@ -17,6 +17,7 @@ struct Environment: EnvironmentAPI {
     var baseURL: URL {
         URL(string: baseURLPath)!
     }
+
     var APIKey: String {
         "d01572226d0256cb3b47169739fff002"
     }

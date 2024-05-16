@@ -107,4 +107,5 @@ struct PollutantsDataModel: Codable {
         )
     }
 }
+
 // swiftlint: enable identifier_name
