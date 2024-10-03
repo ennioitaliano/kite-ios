@@ -10,7 +10,7 @@ import Foundation
 
 enum EnvironmentDependencyKeys: DependencyKey {
     static var liveValue: EnvironmentAPI {
-        Environment()
+        AQCEnvironment()
     }
 }
 

@@ -27,7 +27,7 @@
 		759F88522BED2E5B00DEC3FB /* GeocodingDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759F88512BED2E5B00DEC3FB /* GeocodingDataModel.swift */; };
 		759F88542BED30BB00DEC3FB /* GeocodingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759F88532BED30BB00DEC3FB /* GeocodingModel.swift */; };
 		75C686072BF10EFC00092C6C /* RemoteRepositoriesDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C686062BF10EFC00092C6C /* RemoteRepositoriesDependencies.swift */; };
-		75C6860A2BF1109100092C6C /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C686092BF1109100092C6C /* Environment.swift */; };
+		75C6860A2BF1109100092C6C /* AQCEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C686092BF1109100092C6C /* AQCEnvironment.swift */; };
 		75C6860C2BF1119200092C6C /* EnvironmentDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C6860B2BF1119200092C6C /* EnvironmentDependency.swift */; };
 		75C6860E2BF1127000092C6C /* NetworkErrorDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C6860D2BF1127000092C6C /* NetworkErrorDataModel.swift */; };
 /* End PBXBuildFile section */
@@ -48,7 +48,7 @@
 		759F88512BED2E5B00DEC3FB /* GeocodingDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodingDataModel.swift; sourceTree = "<group>"; };
 		759F88532BED30BB00DEC3FB /* GeocodingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodingModel.swift; sourceTree = "<group>"; };
 		75C686062BF10EFC00092C6C /* RemoteRepositoriesDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteRepositoriesDependencies.swift; sourceTree = "<group>"; };
-		75C686092BF1109100092C6C /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		75C686092BF1109100092C6C /* AQCEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AQCEnvironment.swift; sourceTree = "<group>"; };
 		75C6860B2BF1119200092C6C /* EnvironmentDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentDependency.swift; sourceTree = "<group>"; };
 		75C6860D2BF1127000092C6C /* NetworkErrorDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorDataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -168,7 +168,7 @@
 		75C686082BF1108400092C6C /* Environment */ = {
 			isa = PBXGroup;
 			children = (
-				75C686092BF1109100092C6C /* Environment.swift */,
+				75C686092BF1109100092C6C /* AQCEnvironment.swift */,
 				75C6860B2BF1119200092C6C /* EnvironmentDependency.swift */,
 			);
 			path = Environment;
@@ -290,7 +290,7 @@
 				755CE2072BF10AA9007B47BC /* AirPollutionRemoteRepository.swift in Sources */,
 				75C6860C2BF1119200092C6C /* EnvironmentDependency.swift in Sources */,
 				759F884D2BED266E00DEC3FB /* AirPollutionDataModel.swift in Sources */,
-				75C6860A2BF1109100092C6C /* Environment.swift in Sources */,
+				75C6860A2BF1109100092C6C /* AQCEnvironment.swift in Sources */,
 				75036FEB2BF67142007D6A68 /* Extensions.swift in Sources */,
 				75C6860E2BF1127000092C6C /* NetworkErrorDataModel.swift in Sources */,
 				759F883E2BED256800DEC3FB /* Air_Quality_ChartsApp.swift in Sources */,

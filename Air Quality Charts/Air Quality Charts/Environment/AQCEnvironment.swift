@@ -12,7 +12,7 @@ protocol EnvironmentAPI {
     var APIKey: String { get }
 }
 
-struct Environment: EnvironmentAPI {
+struct AQCEnvironment: EnvironmentAPI {
     let baseURLPath: String = "https://api.openweathermap.org"
     var baseURL: URL {
         URL(string: baseURLPath)!
