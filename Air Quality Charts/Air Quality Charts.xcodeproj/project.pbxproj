@@ -16,8 +16,12 @@
 		755CE2152BF10BF2007B47BC /* LogsDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755CE2142BF10BF2007B47BC /* LogsDependency.swift */; };
 		755CE2182BF10C97007B47BC /* Dependencies in Frameworks */ = {isa = PBXBuildFile; productRef = 755CE2172BF10C97007B47BC /* Dependencies */; };
 		755CE21A2BF10C97007B47BC /* DependenciesMacros in Frameworks */ = {isa = PBXBuildFile; productRef = 755CE2192BF10C97007B47BC /* DependenciesMacros */; };
+		757C8E372C382AE1005C5121 /* HubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C8E362C382AE1005C5121 /* HubView.swift */; };
 		75847F102CAECEF200770BCE /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 75847F0F2CAECEF200770BCE /* Alamofire */; };
 		75847F152CAED45C00770BCE /* CommonLogging in Frameworks */ = {isa = PBXBuildFile; productRef = 75847F142CAED45C00770BCE /* CommonLogging */; };
+		75847F1B2CAED6F800770BCE /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75847F1A2CAED6F800770BCE /* HomeView.swift */; };
+		75847F1D2CAED6FF00770BCE /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75847F1C2CAED6FF00770BCE /* TestView.swift */; };
+		75847F1F2CAED77000770BCE /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75847F1E2CAED76C00770BCE /* HomeViewModel.swift */; };
 		759F883E2BED256800DEC3FB /* Air_Quality_ChartsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759F883D2BED256800DEC3FB /* Air_Quality_ChartsApp.swift */; };
 		759F88402BED256800DEC3FB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759F883F2BED256800DEC3FB /* ContentView.swift */; };
 		759F88422BED256900DEC3FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 759F88412BED256900DEC3FB /* Assets.xcassets */; };
@@ -38,6 +42,10 @@
 		755CE2062BF10AA9007B47BC /* AirPollutionRemoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPollutionRemoteRepository.swift; sourceTree = "<group>"; };
 		755CE2122BF10BA5007B47BC /* LogsCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsCategories.swift; sourceTree = "<group>"; };
 		755CE2142BF10BF2007B47BC /* LogsDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsDependency.swift; sourceTree = "<group>"; };
+		757C8E362C382AE1005C5121 /* HubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HubView.swift; sourceTree = "<group>"; };
+		75847F1A2CAED6F800770BCE /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		75847F1C2CAED6FF00770BCE /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		75847F1E2CAED76C00770BCE /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		759F883A2BED256800DEC3FB /* Air Quality Charts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Air Quality Charts.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		759F883D2BED256800DEC3FB /* Air_Quality_ChartsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Air_Quality_ChartsApp.swift; sourceTree = "<group>"; };
 		759F883F2BED256800DEC3FB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -106,6 +114,26 @@
 			path = Logs;
 			sourceTree = "<group>";
 		};
+		757C8E352C382AD4005C5121 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				75847F1C2CAED6FF00770BCE /* TestView.swift */,
+				757C8E382C382C90005C5121 /* Home */,
+				759F883F2BED256800DEC3FB /* ContentView.swift */,
+				757C8E362C382AE1005C5121 /* HubView.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		757C8E382C382C90005C5121 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				75847F1E2CAED76C00770BCE /* HomeViewModel.swift */,
+				75847F1A2CAED6F800770BCE /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		759F88312BED256800DEC3FB = {
 			isa = PBXGroup;
 			children = (
@@ -125,13 +153,13 @@
 		759F883C2BED256800DEC3FB /* Air Quality Charts */ = {
 			isa = PBXGroup;
 			children = (
+				757C8E352C382AD4005C5121 /* Screens */,
 				75C686082BF1108400092C6C /* Environment */,
 				755CE2102BF10B90007B47BC /* Utils */,
 				755CE2042BF10A8D007B47BC /* Repositories */,
 				759F884E2BED291D00DEC3FB /* Models */,
 				759F884B2BED264B00DEC3FB /* DataModels */,
 				759F883D2BED256800DEC3FB /* Air_Quality_ChartsApp.swift */,
-				759F883F2BED256800DEC3FB /* ContentView.swift */,
 				759F88412BED256900DEC3FB /* Assets.xcassets */,
 				759F88432BED256900DEC3FB /* Preview Content */,
 			);
@@ -281,8 +309,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75847F1F2CAED77000770BCE /* HomeViewModel.swift in Sources */,
 				759F88402BED256800DEC3FB /* ContentView.swift in Sources */,
 				759F88502BED292E00DEC3FB /* AirPollutionModel.swift in Sources */,
+				757C8E372C382AE1005C5121 /* HubView.swift in Sources */,
 				755CE2152BF10BF2007B47BC /* LogsDependency.swift in Sources */,
 				75036FE92BF66DFE007D6A68 /* GeocodingRemoteRepository.swift in Sources */,
 				755CE2132BF10BA5007B47BC /* LogsCategories.swift in Sources */,
@@ -291,11 +321,13 @@
 				75C6860C2BF1119200092C6C /* EnvironmentDependency.swift in Sources */,
 				759F884D2BED266E00DEC3FB /* AirPollutionDataModel.swift in Sources */,
 				75C6860A2BF1109100092C6C /* AQCEnvironment.swift in Sources */,
+				75847F1D2CAED6FF00770BCE /* TestView.swift in Sources */,
 				75036FEB2BF67142007D6A68 /* Extensions.swift in Sources */,
 				75C6860E2BF1127000092C6C /* NetworkErrorDataModel.swift in Sources */,
 				759F883E2BED256800DEC3FB /* Air_Quality_ChartsApp.swift in Sources */,
 				75C686072BF10EFC00092C6C /* RemoteRepositoriesDependencies.swift in Sources */,
 				759F88542BED30BB00DEC3FB /* GeocodingModel.swift in Sources */,
+				75847F1B2CAED6F800770BCE /* HomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,15 +1,15 @@
 //
-//  ContentView.swift
+//  TestView.swift
 //  Air Quality Charts
 //
-//  Created by Ennio Italiano on 09/05/24.
+//  Created by Ennio Italiano on 03/10/24.
 //
 
 import CoreLocation
 import Dependencies
 import SwiftUI
 
-struct ContentView: View {
+struct TestView: View {
     @Dependency(\.airPollutionRemoteRepository) private var APRemoteRepository
     @Dependency(\.geocodingRemoteRepository) private var GCRemoteRepository
 
@@ -91,5 +91,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    TestView()
 }
