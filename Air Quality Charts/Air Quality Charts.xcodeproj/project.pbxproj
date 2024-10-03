@@ -16,6 +16,8 @@
 		755CE2152BF10BF2007B47BC /* LogsDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755CE2142BF10BF2007B47BC /* LogsDependency.swift */; };
 		755CE2182BF10C97007B47BC /* Dependencies in Frameworks */ = {isa = PBXBuildFile; productRef = 755CE2172BF10C97007B47BC /* Dependencies */; };
 		755CE21A2BF10C97007B47BC /* DependenciesMacros in Frameworks */ = {isa = PBXBuildFile; productRef = 755CE2192BF10C97007B47BC /* DependenciesMacros */; };
+		75847F102CAECEF200770BCE /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 75847F0F2CAECEF200770BCE /* Alamofire */; };
+		75847F152CAED45C00770BCE /* CommonLogging in Frameworks */ = {isa = PBXBuildFile; productRef = 75847F142CAED45C00770BCE /* CommonLogging */; };
 		759F883E2BED256800DEC3FB /* Air_Quality_ChartsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759F883D2BED256800DEC3FB /* Air_Quality_ChartsApp.swift */; };
 		759F88402BED256800DEC3FB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759F883F2BED256800DEC3FB /* ContentView.swift */; };
 		759F88422BED256900DEC3FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 759F88412BED256900DEC3FB /* Assets.xcassets */; };
@@ -28,8 +30,6 @@
 		75C6860A2BF1109100092C6C /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C686092BF1109100092C6C /* Environment.swift */; };
 		75C6860C2BF1119200092C6C /* EnvironmentDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C6860B2BF1119200092C6C /* EnvironmentDependency.swift */; };
 		75C6860E2BF1127000092C6C /* NetworkErrorDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C6860D2BF1127000092C6C /* NetworkErrorDataModel.swift */; };
-		75D70CCE2BF1072900640621 /* CommonNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = 75D70CCD2BF1072900640621 /* CommonNetworking */; };
-		75D70CD12BF107A900640621 /* CommonLogging in Frameworks */ = {isa = PBXBuildFile; productRef = 75D70CD02BF107A900640621 /* CommonLogging */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,8 +59,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				755685622BF10E6D00F5218F /* RealmSwift in Frameworks */,
-				75D70CCE2BF1072900640621 /* CommonNetworking in Frameworks */,
-				75D70CD12BF107A900640621 /* CommonLogging in Frameworks */,
+				75847F152CAED45C00770BCE /* CommonLogging in Frameworks */,
+				75847F102CAECEF200770BCE /* Alamofire in Frameworks */,
 				755CE2182BF10C97007B47BC /* Dependencies in Frameworks */,
 				755CE21A2BF10C97007B47BC /* DependenciesMacros in Frameworks */,
 				755CE20A2BF10B2C007B47BC /* ComposableArchitecture in Frameworks */,
@@ -192,12 +192,12 @@
 			);
 			name = "Air Quality Charts";
 			packageProductDependencies = (
-				75D70CCD2BF1072900640621 /* CommonNetworking */,
-				75D70CD02BF107A900640621 /* CommonLogging */,
 				755CE2092BF10B2C007B47BC /* ComposableArchitecture */,
 				755CE2172BF10C97007B47BC /* Dependencies */,
 				755CE2192BF10C97007B47BC /* DependenciesMacros */,
 				755685612BF10E6D00F5218F /* RealmSwift */,
+				75847F0F2CAECEF200770BCE /* Alamofire */,
+				75847F142CAED45C00770BCE /* CommonLogging */,
 			);
 			productName = "Air Quality Charts";
 			productReference = 759F883A2BED256800DEC3FB /* Air Quality Charts.app */;
@@ -228,11 +228,11 @@
 			);
 			mainGroup = 759F88312BED256800DEC3FB;
 			packageReferences = (
-				75D70CCC2BF1072900640621 /* XCRemoteSwiftPackageReference "common-networking-swift" */,
-				75D70CCF2BF107A900640621 /* XCRemoteSwiftPackageReference "common-logging-swift" */,
 				755CE2082BF10B2C007B47BC /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 				755CE20B2BF10B49007B47BC /* XCRemoteSwiftPackageReference "realm-swift" */,
 				755CE2162BF10C97007B47BC /* XCRemoteSwiftPackageReference "swift-dependencies" */,
+				75847F0E2CAECEF200770BCE /* XCRemoteSwiftPackageReference "Alamofire" */,
+				75847F132CAED45C00770BCE /* XCRemoteSwiftPackageReference "common-logging-swift" */,
 			);
 			productRefGroup = 759F883B2BED256800DEC3FB /* Products */;
 			projectDirPath = "";
@@ -527,17 +527,17 @@
 				minimumVersion = 1.3.0;
 			};
 		};
-		75D70CCC2BF1072900640621 /* XCRemoteSwiftPackageReference "common-networking-swift" */ = {
+		75847F0E2CAECEF200770BCE /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Digital-Cloud-Labs/common-networking-swift.git";
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.2.2;
+				minimumVersion = 5.9.1;
 			};
 		};
-		75D70CCF2BF107A900640621 /* XCRemoteSwiftPackageReference "common-logging-swift" */ = {
+		75847F132CAED45C00770BCE /* XCRemoteSwiftPackageReference "common-logging-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Digital-Cloud-Labs/common-logging-swift.git";
+			repositoryURL = "https://github.com/7Circle/common-logging-swift";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 1.0.4;
@@ -566,14 +566,14 @@
 			package = 755CE2162BF10C97007B47BC /* XCRemoteSwiftPackageReference "swift-dependencies" */;
 			productName = DependenciesMacros;
 		};
-		75D70CCD2BF1072900640621 /* CommonNetworking */ = {
+		75847F0F2CAECEF200770BCE /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 75D70CCC2BF1072900640621 /* XCRemoteSwiftPackageReference "common-networking-swift" */;
-			productName = CommonNetworking;
+			package = 75847F0E2CAECEF200770BCE /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
-		75D70CD02BF107A900640621 /* CommonLogging */ = {
+		75847F142CAED45C00770BCE /* CommonLogging */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 75D70CCF2BF107A900640621 /* XCRemoteSwiftPackageReference "common-logging-swift" */;
+			package = 75847F132CAED45C00770BCE /* XCRemoteSwiftPackageReference "common-logging-swift" */;
 			productName = CommonLogging;
 		};
 /* End XCSwiftPackageProductDependency section */
