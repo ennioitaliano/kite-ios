@@ -9,9 +9,7 @@
 /* Begin PBXBuildFile section */
 		75036FE92BF66DFE007D6A68 /* GeocodingRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75036FE82BF66DFE007D6A68 /* GeocodingRemoteRepository.swift */; };
 		75036FEB2BF67142007D6A68 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75036FEA2BF67142007D6A68 /* Extensions.swift */; };
-		755685622BF10E6D00F5218F /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 755685612BF10E6D00F5218F /* RealmSwift */; };
 		755CE2072BF10AA9007B47BC /* AirPollutionRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755CE2062BF10AA9007B47BC /* AirPollutionRemoteRepository.swift */; };
-		755CE20A2BF10B2C007B47BC /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 755CE2092BF10B2C007B47BC /* ComposableArchitecture */; };
 		755CE2132BF10BA5007B47BC /* LogsCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755CE2122BF10BA5007B47BC /* LogsCategories.swift */; };
 		755CE2152BF10BF2007B47BC /* LogsDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755CE2142BF10BF2007B47BC /* LogsDependency.swift */; };
 		755CE2182BF10C97007B47BC /* Dependencies in Frameworks */ = {isa = PBXBuildFile; productRef = 755CE2172BF10C97007B47BC /* Dependencies */; };
@@ -34,6 +32,7 @@
 		75C6860A2BF1109100092C6C /* AQCEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C686092BF1109100092C6C /* AQCEnvironment.swift */; };
 		75C6860C2BF1119200092C6C /* EnvironmentDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C6860B2BF1119200092C6C /* EnvironmentDependency.swift */; };
 		75C6860E2BF1127000092C6C /* NetworkErrorDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C6860D2BF1127000092C6C /* NetworkErrorDataModel.swift */; };
+		75D0F4392CB126AC002F4068 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D0F4382CB126A6002F4068 /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +58,7 @@
 		75C686092BF1109100092C6C /* AQCEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AQCEnvironment.swift; sourceTree = "<group>"; };
 		75C6860B2BF1119200092C6C /* EnvironmentDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentDependency.swift; sourceTree = "<group>"; };
 		75C6860D2BF1127000092C6C /* NetworkErrorDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorDataModel.swift; sourceTree = "<group>"; };
+		75D0F4382CB126A6002F4068 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,12 +66,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				755685622BF10E6D00F5218F /* RealmSwift in Frameworks */,
 				75847F152CAED45C00770BCE /* CommonLogging in Frameworks */,
 				75847F102CAECEF200770BCE /* Alamofire in Frameworks */,
 				755CE2182BF10C97007B47BC /* Dependencies in Frameworks */,
 				755CE21A2BF10C97007B47BC /* DependenciesMacros in Frameworks */,
-				755CE20A2BF10B2C007B47BC /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,6 +151,7 @@
 		759F883C2BED256800DEC3FB /* Air Quality Charts */ = {
 			isa = PBXGroup;
 			children = (
+				75D0F4372CB125E1002F4068 /* Location */,
 				757C8E352C382AD4005C5121 /* Screens */,
 				75C686082BF1108400092C6C /* Environment */,
 				755CE2102BF10B90007B47BC /* Utils */,
@@ -202,6 +201,14 @@
 			path = Environment;
 			sourceTree = "<group>";
 		};
+		75D0F4372CB125E1002F4068 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				75D0F4382CB126A6002F4068 /* LocationManager.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -220,10 +227,8 @@
 			);
 			name = "Air Quality Charts";
 			packageProductDependencies = (
-				755CE2092BF10B2C007B47BC /* ComposableArchitecture */,
 				755CE2172BF10C97007B47BC /* Dependencies */,
 				755CE2192BF10C97007B47BC /* DependenciesMacros */,
-				755685612BF10E6D00F5218F /* RealmSwift */,
 				75847F0F2CAECEF200770BCE /* Alamofire */,
 				75847F142CAED45C00770BCE /* CommonLogging */,
 			);
@@ -256,8 +261,6 @@
 			);
 			mainGroup = 759F88312BED256800DEC3FB;
 			packageReferences = (
-				755CE2082BF10B2C007B47BC /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
-				755CE20B2BF10B49007B47BC /* XCRemoteSwiftPackageReference "realm-swift" */,
 				755CE2162BF10C97007B47BC /* XCRemoteSwiftPackageReference "swift-dependencies" */,
 				75847F0E2CAECEF200770BCE /* XCRemoteSwiftPackageReference "Alamofire" */,
 				75847F132CAED45C00770BCE /* XCRemoteSwiftPackageReference "common-logging-swift" */,
@@ -321,6 +324,7 @@
 				75C6860C2BF1119200092C6C /* EnvironmentDependency.swift in Sources */,
 				759F884D2BED266E00DEC3FB /* AirPollutionDataModel.swift in Sources */,
 				75C6860A2BF1109100092C6C /* AQCEnvironment.swift in Sources */,
+				75D0F4392CB126AC002F4068 /* LocationManager.swift in Sources */,
 				75847F1D2CAED6FF00770BCE /* TestView.swift in Sources */,
 				75036FEB2BF67142007D6A68 /* Extensions.swift in Sources */,
 				75C6860E2BF1127000092C6C /* NetworkErrorDataModel.swift in Sources */,
@@ -466,6 +470,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.weather";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -478,7 +483,11 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "ennioitaliano.Air-Quality-Charts";
+				OTHER_LDFLAGS = (
+					"-Xlinker",
+					"-interposable",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ennio.kite;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -497,6 +506,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.weather";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -509,7 +519,11 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "ennioitaliano.Air-Quality-Charts";
+				OTHER_LDFLAGS = (
+					"-Xlinker",
+					"-interposable",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ennio.kite;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -541,22 +555,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		755CE2082BF10B2C007B47BC /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.10.4;
-			};
-		};
-		755CE20B2BF10B49007B47BC /* XCRemoteSwiftPackageReference "realm-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/realm-swift";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 		755CE2162BF10C97007B47BC /* XCRemoteSwiftPackageReference "swift-dependencies" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-dependencies";
@@ -584,16 +582,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		755685612BF10E6D00F5218F /* RealmSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 755CE20B2BF10B49007B47BC /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = RealmSwift;
-		};
-		755CE2092BF10B2C007B47BC /* ComposableArchitecture */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 755CE2082BF10B2C007B47BC /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
-			productName = ComposableArchitecture;
-		};
 		755CE2172BF10C97007B47BC /* Dependencies */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 755CE2162BF10C97007B47BC /* XCRemoteSwiftPackageReference "swift-dependencies" */;

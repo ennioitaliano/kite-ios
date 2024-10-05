@@ -23,7 +23,7 @@ extension CLPlacemark {
     }
 
     var APIStringZip: String? {
-        var components: [String?] = [
+        let components: [String?] = [
             self.postalCode,
             self.isoCountryCode
         ]

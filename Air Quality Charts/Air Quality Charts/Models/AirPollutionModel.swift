@@ -16,19 +16,13 @@ struct AirPollutionModel {
 struct TimePollutionModel {
     let dateTime: Date
     let AQI: Double
-    let components: PollutantsModel
+    let components: [String:Double]
 }
 
-// swiftlint: disable identifier_name
-struct PollutantsModel {
-    let co: Double
-    let no: Double
-    let no2: Double
-    let o3: Double
-    let so2: Double
-    let pm25: Double
-    let pm10: Double
-    let nh3: Double
+extension TimePollutionModel {
+    var primaryPollutant: (name: String, value: Double) {
+        let maxValue = components.values.max()
+        let primaryPollutantName = components.first(where: { $1 == maxValue })?.key
+        return (name: primaryPollutantName ?? "", value: maxValue ?? 0)
+    }
 }
-
-// swiftlint: enable identifier_name

@@ -5,6 +5,7 @@
 //  Created by Ennio Italiano on 05/07/24.
 //
 
+import Inject
 import SwiftUI
 
 struct HubView: View {

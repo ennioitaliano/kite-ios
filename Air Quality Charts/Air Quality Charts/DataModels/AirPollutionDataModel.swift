@@ -47,7 +47,7 @@ extension CLLocationCoordinate2D {
 struct TimePollutionDataModel: Codable {
     let dateTime: Double
     let AQI: AQIDataModel
-    let components: PollutantsDataModel
+    let components: [String: Double]
 
     enum CodingKeys: String, CodingKey {
         case dateTime = "dt"
@@ -59,7 +59,7 @@ struct TimePollutionDataModel: Codable {
         .init(
             dateTime: Date(timeIntervalSince1970: dateTime),
             AQI: AQI.AQI,
-            components: components.toModel()
+            components: components
         )
     }
 }
@@ -71,41 +71,3 @@ struct AQIDataModel: Codable {
         case AQI = "aqi"
     }
 }
-
-// swiftlint: disable identifier_name
-struct PollutantsDataModel: Codable {
-    let co: Double
-    let no: Double
-    let no2: Double
-    let o3: Double
-    let so2: Double
-    let pm25: Double
-    let pm10: Double
-    let nh3: Double
-
-    enum CodingKeys: String, CodingKey {
-        case co
-        case no
-        case no2
-        case o3
-        case so2
-        case pm25 = "pm2_5"
-        case pm10
-        case nh3
-    }
-
-    func toModel() -> PollutantsModel {
-        .init(
-            co: co,
-            no: no,
-            no2: no2,
-            o3: o3,
-            so2: so2,
-            pm25: pm25,
-            pm10: pm10,
-            nh3: nh3
-        )
-    }
-}
-
-// swiftlint: enable identifier_name

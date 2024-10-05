@@ -17,11 +17,11 @@ class HomeViewModel {
 
     var airPollution: AirPollutionModel?
 
-    func getCurrentAirPollution() async {
+    func getCurrentAirPollution(for location: CLLocation) async {
         do {
             airPollution = try await airPollutionRemoteRepository.getCurrent(for: CLLocationCoordinate2D(
-                latitude: 50,
-                longitude: 50
+                latitude: location.coordinate.latitude,
+                longitude: location.coordinate.longitude
             ))
         } catch {
             logger.logError(.general, "Error: \(error.localizedDescription)")
