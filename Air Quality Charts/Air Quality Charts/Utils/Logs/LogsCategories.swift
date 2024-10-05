@@ -13,4 +13,5 @@ enum LogsCategories: String {
     case localRepository
     case realm
     case useCase
+    case location
 }
