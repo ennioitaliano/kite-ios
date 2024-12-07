@@ -1,6 +1,6 @@
 //
 //  GeocodingDataModel.swift
-//  Air Quality Charts
+//  Kite
 //
 //  Created by Ennio Italiano on 09/05/24.
 //
