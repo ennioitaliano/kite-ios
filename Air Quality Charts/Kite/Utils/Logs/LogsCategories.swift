@@ -1,6 +1,6 @@
 //
 //  LogsCategories.swift
-//  Air Quality Charts
+//  Kite
 //
 //  Created by Ennio Italiano on 12/05/24.
 //

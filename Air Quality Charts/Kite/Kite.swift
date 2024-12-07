@@ -1,6 +1,6 @@
 //
-//  Air_Quality_ChartsApp.swift
-//  Air Quality Charts
+//  KiteApp.swift
+//  Kite
 //
 //  Created by Ennio Italiano on 09/05/24.
 //
@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct AirQualityChartsApp: App {
+struct KiteApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

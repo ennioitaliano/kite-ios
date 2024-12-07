@@ -1,6 +1,6 @@
 //
 //  LocationManager.swift
-//  Air Quality Charts
+//  Kite
 //
 //  Created by Ennio on 2024-10-05.
 //

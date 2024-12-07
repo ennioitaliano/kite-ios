@@ -1,6 +1,6 @@
 //
-//  Environment.swift
-//  Air Quality Charts
+//  KiteEnvironment.swift
+//  Kite
 //
 //  Created by Ennio Italiano on 12/05/24.
 //
@@ -12,7 +12,7 @@ protocol EnvironmentAPI {
     var APIKey: String { get }
 }
 
-struct AQCEnvironment: EnvironmentAPI {
+struct KiteEnvironment: EnvironmentAPI {
     let baseURLPath: String = "https://api.openweathermap.org"
     var baseURL: URL {
         URL(string: baseURLPath)!

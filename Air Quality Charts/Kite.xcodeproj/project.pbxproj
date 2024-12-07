@@ -19,7 +19,7 @@
 		75847F1B2CAED6F800770BCE /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75847F1A2CAED6F800770BCE /* HomeView.swift */; };
 		75847F1D2CAED6FF00770BCE /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75847F1C2CAED6FF00770BCE /* TestView.swift */; };
 		75847F1F2CAED77000770BCE /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75847F1E2CAED76C00770BCE /* HomeViewModel.swift */; };
-		759F883E2BED256800DEC3FB /* Air_Quality_ChartsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759F883D2BED256800DEC3FB /* Air_Quality_ChartsApp.swift */; };
+		759F883E2BED256800DEC3FB /* Kite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759F883D2BED256800DEC3FB /* Kite.swift */; };
 		759F88402BED256800DEC3FB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759F883F2BED256800DEC3FB /* ContentView.swift */; };
 		759F88422BED256900DEC3FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 759F88412BED256900DEC3FB /* Assets.xcassets */; };
 		759F88452BED256900DEC3FB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 759F88442BED256900DEC3FB /* Preview Assets.xcassets */; };
@@ -28,7 +28,7 @@
 		759F88522BED2E5B00DEC3FB /* GeocodingDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759F88512BED2E5B00DEC3FB /* GeocodingDataModel.swift */; };
 		759F88542BED30BB00DEC3FB /* GeocodingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759F88532BED30BB00DEC3FB /* GeocodingModel.swift */; };
 		75C686072BF10EFC00092C6C /* RemoteRepositoriesDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C686062BF10EFC00092C6C /* RemoteRepositoriesDependencies.swift */; };
-		75C6860A2BF1109100092C6C /* AQCEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C686092BF1109100092C6C /* AQCEnvironment.swift */; };
+		75C6860A2BF1109100092C6C /* KiteEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C686092BF1109100092C6C /* KiteEnvironment.swift */; };
 		75C6860C2BF1119200092C6C /* EnvironmentDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C6860B2BF1119200092C6C /* EnvironmentDependency.swift */; };
 		75C6860E2BF1127000092C6C /* NetworkErrorDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C6860D2BF1127000092C6C /* NetworkErrorDataModel.swift */; };
 		75D0F4392CB126AC002F4068 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D0F4382CB126A6002F4068 /* LocationManager.swift */; };
@@ -44,7 +44,7 @@
 		75847F1C2CAED6FF00770BCE /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		75847F1E2CAED76C00770BCE /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		759F883A2BED256800DEC3FB /* Air Quality Charts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Air Quality Charts.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		759F883D2BED256800DEC3FB /* Air_Quality_ChartsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Air_Quality_ChartsApp.swift; sourceTree = "<group>"; };
+		759F883D2BED256800DEC3FB /* Kite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kite.swift; sourceTree = "<group>"; };
 		759F883F2BED256800DEC3FB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		759F88412BED256900DEC3FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		759F88442BED256900DEC3FB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -53,7 +53,7 @@
 		759F88512BED2E5B00DEC3FB /* GeocodingDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodingDataModel.swift; sourceTree = "<group>"; };
 		759F88532BED30BB00DEC3FB /* GeocodingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodingModel.swift; sourceTree = "<group>"; };
 		75C686062BF10EFC00092C6C /* RemoteRepositoriesDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteRepositoriesDependencies.swift; sourceTree = "<group>"; };
-		75C686092BF1109100092C6C /* AQCEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AQCEnvironment.swift; sourceTree = "<group>"; };
+		75C686092BF1109100092C6C /* KiteEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KiteEnvironment.swift; sourceTree = "<group>"; };
 		75C6860B2BF1119200092C6C /* EnvironmentDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentDependency.swift; sourceTree = "<group>"; };
 		75C6860D2BF1127000092C6C /* NetworkErrorDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorDataModel.swift; sourceTree = "<group>"; };
 		75D0F4382CB126A6002F4068 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
@@ -155,7 +155,7 @@
 				755CE2042BF10A8D007B47BC /* Repositories */,
 				759F884E2BED291D00DEC3FB /* Models */,
 				759F884B2BED264B00DEC3FB /* DataModels */,
-				759F883D2BED256800DEC3FB /* Air_Quality_ChartsApp.swift */,
+				759F883D2BED256800DEC3FB /* Kite.swift */,
 				759F88412BED256900DEC3FB /* Assets.xcassets */,
 				759F88432BED256900DEC3FB /* Preview Content */,
 			);
@@ -192,7 +192,7 @@
 		75C686082BF1108400092C6C /* Environment */ = {
 			isa = PBXGroup;
 			children = (
-				75C686092BF1109100092C6C /* AQCEnvironment.swift */,
+				75C686092BF1109100092C6C /* KiteEnvironment.swift */,
 				75C6860B2BF1119200092C6C /* EnvironmentDependency.swift */,
 			);
 			path = Environment;
@@ -319,12 +319,12 @@
 				755CE2072BF10AA9007B47BC /* AirPollutionRemoteRepository.swift in Sources */,
 				75C6860C2BF1119200092C6C /* EnvironmentDependency.swift in Sources */,
 				759F884D2BED266E00DEC3FB /* AirPollutionDataModel.swift in Sources */,
-				75C6860A2BF1109100092C6C /* AQCEnvironment.swift in Sources */,
+				75C6860A2BF1109100092C6C /* KiteEnvironment.swift in Sources */,
 				75D0F4392CB126AC002F4068 /* LocationManager.swift in Sources */,
 				75847F1D2CAED6FF00770BCE /* TestView.swift in Sources */,
 				75036FEB2BF67142007D6A68 /* Extensions.swift in Sources */,
 				75C6860E2BF1127000092C6C /* NetworkErrorDataModel.swift in Sources */,
-				759F883E2BED256800DEC3FB /* Air_Quality_ChartsApp.swift in Sources */,
+				759F883E2BED256800DEC3FB /* Kite.swift in Sources */,
 				75C686072BF10EFC00092C6C /* RemoteRepositoriesDependencies.swift in Sources */,
 				759F88542BED30BB00DEC3FB /* GeocodingModel.swift in Sources */,
 				75847F1B2CAED6F800770BCE /* HomeView.swift in Sources */,
@@ -462,7 +462,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Air Quality Charts/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Kite/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -498,7 +498,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Air Quality Charts/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Kite/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
