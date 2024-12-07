@@ -43,7 +43,7 @@
 		75847F1A2CAED6F800770BCE /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		75847F1C2CAED6FF00770BCE /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		75847F1E2CAED76C00770BCE /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		759F883A2BED256800DEC3FB /* Air Quality Charts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Air Quality Charts.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		759F883A2BED256800DEC3FB /* Kite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		759F883D2BED256800DEC3FB /* Kite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kite.swift; sourceTree = "<group>"; };
 		759F883F2BED256800DEC3FB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		759F88412BED256900DEC3FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -140,7 +140,7 @@
 		759F883B2BED256800DEC3FB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				759F883A2BED256800DEC3FB /* Air Quality Charts.app */,
+				759F883A2BED256800DEC3FB /* Kite.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -209,9 +209,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		759F88392BED256800DEC3FB /* Air Quality Charts */ = {
+		759F88392BED256800DEC3FB /* Kite */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 759F88482BED256900DEC3FB /* Build configuration list for PBXNativeTarget "Air Quality Charts" */;
+			buildConfigurationList = 759F88482BED256900DEC3FB /* Build configuration list for PBXNativeTarget "Kite" */;
 			buildPhases = (
 				759F88362BED256800DEC3FB /* Sources */,
 				759F88372BED256800DEC3FB /* Frameworks */,
@@ -222,7 +222,7 @@
 			);
 			dependencies = (
 			);
-			name = "Air Quality Charts";
+			name = Kite;
 			packageProductDependencies = (
 				755CE2172BF10C97007B47BC /* Dependencies */,
 				755CE2192BF10C97007B47BC /* DependenciesMacros */,
@@ -230,7 +230,7 @@
 				75847F142CAED45C00770BCE /* CommonLogging */,
 			);
 			productName = "Air Quality Charts";
-			productReference = 759F883A2BED256800DEC3FB /* Air Quality Charts.app */;
+			productReference = 759F883A2BED256800DEC3FB /* Kite.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -266,7 +266,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				759F88392BED256800DEC3FB /* Air Quality Charts */,
+				759F88392BED256800DEC3FB /* Kite */,
 			);
 		};
 /* End PBXProject section */
@@ -473,7 +473,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -509,7 +509,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -539,7 +539,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		759F88482BED256900DEC3FB /* Build configuration list for PBXNativeTarget "Air Quality Charts" */ = {
+		759F88482BED256900DEC3FB /* Build configuration list for PBXNativeTarget "Kite" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				759F88492BED256900DEC3FB /* Debug */,
