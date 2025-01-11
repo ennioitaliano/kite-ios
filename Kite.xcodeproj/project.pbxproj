@@ -3,61 +3,23 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		75036FE92BF66DFE007D6A68 /* GeocodingRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75036FE82BF66DFE007D6A68 /* GeocodingRemoteRepository.swift */; };
-		75036FEB2BF67142007D6A68 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75036FEA2BF67142007D6A68 /* Extensions.swift */; };
-		755CE2072BF10AA9007B47BC /* AirPollutionRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755CE2062BF10AA9007B47BC /* AirPollutionRemoteRepository.swift */; };
-		755CE2132BF10BA5007B47BC /* LogsCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755CE2122BF10BA5007B47BC /* LogsCategories.swift */; };
-		755CE2152BF10BF2007B47BC /* LogsDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755CE2142BF10BF2007B47BC /* LogsDependency.swift */; };
 		755CE2182BF10C97007B47BC /* Dependencies in Frameworks */ = {isa = PBXBuildFile; productRef = 755CE2172BF10C97007B47BC /* Dependencies */; };
 		755CE21A2BF10C97007B47BC /* DependenciesMacros in Frameworks */ = {isa = PBXBuildFile; productRef = 755CE2192BF10C97007B47BC /* DependenciesMacros */; };
 		75847F102CAECEF200770BCE /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 75847F0F2CAECEF200770BCE /* Alamofire */; };
 		75847F152CAED45C00770BCE /* CommonLogging in Frameworks */ = {isa = PBXBuildFile; productRef = 75847F142CAED45C00770BCE /* CommonLogging */; };
-		75847F1B2CAED6F800770BCE /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75847F1A2CAED6F800770BCE /* HomeView.swift */; };
-		75847F1D2CAED6FF00770BCE /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75847F1C2CAED6FF00770BCE /* TestView.swift */; };
-		75847F1F2CAED77000770BCE /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75847F1E2CAED76C00770BCE /* HomeViewModel.swift */; };
-		759F883E2BED256800DEC3FB /* Kite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759F883D2BED256800DEC3FB /* Kite.swift */; };
-		759F88402BED256800DEC3FB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759F883F2BED256800DEC3FB /* ContentView.swift */; };
-		759F88422BED256900DEC3FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 759F88412BED256900DEC3FB /* Assets.xcassets */; };
-		759F88452BED256900DEC3FB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 759F88442BED256900DEC3FB /* Preview Assets.xcassets */; };
-		759F884D2BED266E00DEC3FB /* AirPollutionDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759F884C2BED266E00DEC3FB /* AirPollutionDataModel.swift */; };
-		759F88502BED292E00DEC3FB /* AirPollutionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759F884F2BED292E00DEC3FB /* AirPollutionModel.swift */; };
-		759F88522BED2E5B00DEC3FB /* GeocodingDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759F88512BED2E5B00DEC3FB /* GeocodingDataModel.swift */; };
-		759F88542BED30BB00DEC3FB /* GeocodingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759F88532BED30BB00DEC3FB /* GeocodingModel.swift */; };
-		75C686072BF10EFC00092C6C /* RemoteRepositoriesDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C686062BF10EFC00092C6C /* RemoteRepositoriesDependencies.swift */; };
-		75C6860A2BF1109100092C6C /* KiteEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C686092BF1109100092C6C /* KiteEnvironment.swift */; };
-		75C6860C2BF1119200092C6C /* EnvironmentDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C6860B2BF1119200092C6C /* EnvironmentDependency.swift */; };
-		75C6860E2BF1127000092C6C /* NetworkErrorDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C6860D2BF1127000092C6C /* NetworkErrorDataModel.swift */; };
-		75D0F4392CB126AC002F4068 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D0F4382CB126A6002F4068 /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		75036FE82BF66DFE007D6A68 /* GeocodingRemoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodingRemoteRepository.swift; sourceTree = "<group>"; };
-		75036FEA2BF67142007D6A68 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		755CE2062BF10AA9007B47BC /* AirPollutionRemoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPollutionRemoteRepository.swift; sourceTree = "<group>"; };
-		755CE2122BF10BA5007B47BC /* LogsCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsCategories.swift; sourceTree = "<group>"; };
-		755CE2142BF10BF2007B47BC /* LogsDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsDependency.swift; sourceTree = "<group>"; };
-		75847F1A2CAED6F800770BCE /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		75847F1C2CAED6FF00770BCE /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
-		75847F1E2CAED76C00770BCE /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		759F883A2BED256800DEC3FB /* Kite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kite.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		759F883D2BED256800DEC3FB /* Kite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kite.swift; sourceTree = "<group>"; };
-		759F883F2BED256800DEC3FB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		759F88412BED256900DEC3FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		759F88442BED256900DEC3FB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		759F884C2BED266E00DEC3FB /* AirPollutionDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPollutionDataModel.swift; sourceTree = "<group>"; };
-		759F884F2BED292E00DEC3FB /* AirPollutionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPollutionModel.swift; sourceTree = "<group>"; };
-		759F88512BED2E5B00DEC3FB /* GeocodingDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodingDataModel.swift; sourceTree = "<group>"; };
-		759F88532BED30BB00DEC3FB /* GeocodingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodingModel.swift; sourceTree = "<group>"; };
-		75C686062BF10EFC00092C6C /* RemoteRepositoriesDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteRepositoriesDependencies.swift; sourceTree = "<group>"; };
-		75C686092BF1109100092C6C /* KiteEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KiteEnvironment.swift; sourceTree = "<group>"; };
-		75C6860B2BF1119200092C6C /* EnvironmentDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentDependency.swift; sourceTree = "<group>"; };
-		75C6860D2BF1127000092C6C /* NetworkErrorDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorDataModel.swift; sourceTree = "<group>"; };
-		75D0F4382CB126A6002F4068 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		75C726D32D19DCDF00D82B1D /* Kite */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Kite; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		759F88372BED256800DEC3FB /* Frameworks */ = {
@@ -74,65 +36,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		755CE2042BF10A8D007B47BC /* Repositories */ = {
-			isa = PBXGroup;
-			children = (
-				755CE2052BF10A98007B47BC /* Remote */,
-			);
-			path = Repositories;
-			sourceTree = "<group>";
-		};
-		755CE2052BF10A98007B47BC /* Remote */ = {
-			isa = PBXGroup;
-			children = (
-				755CE2062BF10AA9007B47BC /* AirPollutionRemoteRepository.swift */,
-				75C686062BF10EFC00092C6C /* RemoteRepositoriesDependencies.swift */,
-				75036FE82BF66DFE007D6A68 /* GeocodingRemoteRepository.swift */,
-			);
-			path = Remote;
-			sourceTree = "<group>";
-		};
-		755CE2102BF10B90007B47BC /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				755CE2112BF10B9B007B47BC /* Logs */,
-				75036FEA2BF67142007D6A68 /* Extensions.swift */,
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
-		755CE2112BF10B9B007B47BC /* Logs */ = {
-			isa = PBXGroup;
-			children = (
-				755CE2122BF10BA5007B47BC /* LogsCategories.swift */,
-				755CE2142BF10BF2007B47BC /* LogsDependency.swift */,
-			);
-			path = Logs;
-			sourceTree = "<group>";
-		};
-		757C8E352C382AD4005C5121 /* Screens */ = {
-			isa = PBXGroup;
-			children = (
-				75847F1C2CAED6FF00770BCE /* TestView.swift */,
-				757C8E382C382C90005C5121 /* Home */,
-				759F883F2BED256800DEC3FB /* ContentView.swift */,
-			);
-			path = Screens;
-			sourceTree = "<group>";
-		};
-		757C8E382C382C90005C5121 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				75847F1E2CAED76C00770BCE /* HomeViewModel.swift */,
-				75847F1A2CAED6F800770BCE /* HomeView.swift */,
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
 		759F88312BED256800DEC3FB = {
 			isa = PBXGroup;
 			children = (
-				759F883C2BED256800DEC3FB /* Kite */,
+				75C726D32D19DCDF00D82B1D /* Kite */,
 				759F883B2BED256800DEC3FB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -143,67 +50,6 @@
 				759F883A2BED256800DEC3FB /* Kite.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		759F883C2BED256800DEC3FB /* Kite */ = {
-			isa = PBXGroup;
-			children = (
-				75D0F4372CB125E1002F4068 /* Location */,
-				757C8E352C382AD4005C5121 /* Screens */,
-				75C686082BF1108400092C6C /* Environment */,
-				755CE2102BF10B90007B47BC /* Utils */,
-				755CE2042BF10A8D007B47BC /* Repositories */,
-				759F884E2BED291D00DEC3FB /* Models */,
-				759F884B2BED264B00DEC3FB /* DataModels */,
-				759F883D2BED256800DEC3FB /* Kite.swift */,
-				759F88412BED256900DEC3FB /* Assets.xcassets */,
-				759F88432BED256900DEC3FB /* Preview Content */,
-			);
-			path = Kite;
-			sourceTree = "<group>";
-		};
-		759F88432BED256900DEC3FB /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				759F88442BED256900DEC3FB /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		759F884B2BED264B00DEC3FB /* DataModels */ = {
-			isa = PBXGroup;
-			children = (
-				759F884C2BED266E00DEC3FB /* AirPollutionDataModel.swift */,
-				759F88512BED2E5B00DEC3FB /* GeocodingDataModel.swift */,
-				75C6860D2BF1127000092C6C /* NetworkErrorDataModel.swift */,
-			);
-			path = DataModels;
-			sourceTree = "<group>";
-		};
-		759F884E2BED291D00DEC3FB /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				759F884F2BED292E00DEC3FB /* AirPollutionModel.swift */,
-				759F88532BED30BB00DEC3FB /* GeocodingModel.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		75C686082BF1108400092C6C /* Environment */ = {
-			isa = PBXGroup;
-			children = (
-				75C686092BF1109100092C6C /* KiteEnvironment.swift */,
-				75C6860B2BF1119200092C6C /* EnvironmentDependency.swift */,
-			);
-			path = Environment;
-			sourceTree = "<group>";
-		};
-		75D0F4372CB125E1002F4068 /* Location */ = {
-			isa = PBXGroup;
-			children = (
-				75D0F4382CB126A6002F4068 /* LocationManager.swift */,
-			);
-			path = Location;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,6 +67,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				75C726D32D19DCDF00D82B1D /* Kite */,
 			);
 			name = Kite;
 			packageProductDependencies = (
@@ -276,8 +125,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				759F88452BED256900DEC3FB /* Preview Assets.xcassets in Resources */,
-				759F88422BED256900DEC3FB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,25 +156,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75847F1F2CAED77000770BCE /* HomeViewModel.swift in Sources */,
-				759F88402BED256800DEC3FB /* ContentView.swift in Sources */,
-				759F88502BED292E00DEC3FB /* AirPollutionModel.swift in Sources */,
-				755CE2152BF10BF2007B47BC /* LogsDependency.swift in Sources */,
-				75036FE92BF66DFE007D6A68 /* GeocodingRemoteRepository.swift in Sources */,
-				755CE2132BF10BA5007B47BC /* LogsCategories.swift in Sources */,
-				759F88522BED2E5B00DEC3FB /* GeocodingDataModel.swift in Sources */,
-				755CE2072BF10AA9007B47BC /* AirPollutionRemoteRepository.swift in Sources */,
-				75C6860C2BF1119200092C6C /* EnvironmentDependency.swift in Sources */,
-				759F884D2BED266E00DEC3FB /* AirPollutionDataModel.swift in Sources */,
-				75C6860A2BF1109100092C6C /* KiteEnvironment.swift in Sources */,
-				75D0F4392CB126AC002F4068 /* LocationManager.swift in Sources */,
-				75847F1D2CAED6FF00770BCE /* TestView.swift in Sources */,
-				75036FEB2BF67142007D6A68 /* Extensions.swift in Sources */,
-				75C6860E2BF1127000092C6C /* NetworkErrorDataModel.swift in Sources */,
-				759F883E2BED256800DEC3FB /* Kite.swift in Sources */,
-				75C686072BF10EFC00092C6C /* RemoteRepositoriesDependencies.swift in Sources */,
-				759F88542BED30BB00DEC3FB /* GeocodingModel.swift in Sources */,
-				75847F1B2CAED6F800770BCE /* HomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,6 +291,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Kite/Preview Content\"";
+				DEVELOPMENT_TEAM = MR926NTU55;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -499,6 +328,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Kite/Preview Content\"";
+				DEVELOPMENT_TEAM = MR926NTU55;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;

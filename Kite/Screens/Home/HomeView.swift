@@ -12,80 +12,40 @@ import SwiftUI
 
 struct HomeView: View {
     @State private var viewModel = HomeViewModel()
-    @State private var locationManager = LocationManager()
-
+    
     var body: some View {
-        VStack {
-            CurrentDataView()
-                .environment(viewModel)
-                .environment(locationManager)
-            Spacer()
-            Button("Get data") {
-                Task {
-                    guard let location = locationManager.locationPlacemark?.location else { return }
-                    await viewModel.getCurrentAirPollution(for: location)
-                }
+        NavigationStack {
+            ScrollView {
+                PollutantsGridView(pollutants: viewModel.airPollution?.list.first?.components ?? [:])
+                    .padding(.horizontal)
+                    .navigationTitle("Kite")
+                    .navigationBarTitleDisplayMode(.inline)
+                    .toolbar {
+                        ToolbarItem(placement: .topBarTrailing) {
+                            Button("Refresh", systemImage: "arrow.trianglehead.clockwise") {
+                                Task {
+                                    await viewModel.getCurrentAirPollution(
+                                        for: .init(
+                                            latitude: .init(45.4642),
+                                            longitude: .init(9.1900)
+                                        )
+                                    )
+                                }
+                            }
+                            .tint(.white)
+                        }
+                    }
             }
+            .background(Color.black.brightness(0.25).ignoresSafeArea())
         }
-        .padding()
-        .frame(maxHeight: .infinity, alignment: .top)
-    }
-}
-
-struct CurrentDataView: View {
-    @Environment(HomeViewModel.self) private var viewModel
-    @Environment(LocationManager.self) private var locationManager
-
-    var body: some View {
-        @Bindable var locationManager = locationManager
-
-        VStack(spacing: 16) {
-            currentAQIView
-            HStack(spacing: 16) {
-                Group {
-                    primaryPollutantView
-                    comparisonView
-                }
-                .frame(maxWidth: .infinity)
-            }
+        .task {
+            await viewModel.getCurrentAirPollution(
+                for: .init(
+                    latitude: .init(45.4642),
+                    longitude: .init(9.1900)
+                )
+            )
         }
-        .alert(
-            "Location permission not granted",
-            isPresented: $locationManager.locationErrorAlertPresenting
-        ) { }
-    }
-
-    private var currentAQIView: some View {
-        VStack {
-            if let location = locationManager.locationPlacemark?.locality {
-                Text("\(location)")
-            } else {
-                LocationButton(.currentLocation) {
-                    locationManager.requestLocation()
-                }
-                .symbolVariant(.circle)
-            }
-            if let AQI = viewModel.airPollution?.list.first?.AQI {
-                Text(String(AQI))
-                    .fontDesign(.rounded)
-                    .font(.largeTitle)
-                    .fontWeight(.medium)
-                Text("Poor")
-            }
-        }
-    }
-
-    private var primaryPollutantView: some View {
-        VStack {
-            if let primaryPollutant = viewModel.airPollution?.list.first?.primaryPollutant {
-                Text(primaryPollutant.name)
-                Text("is the primary pollutant")
-            }
-        }
-    }
-
-    private var comparisonView: some View {
-        Text("Air Quality is better than yesterday at this time")
     }
 }
 
