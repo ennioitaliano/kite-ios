@@ -59,7 +59,7 @@ struct TimePollutionDataModel: Codable {
         .init(
             dateTime: Date(timeIntervalSince1970: dateTime),
             AQI: AQI.AQI,
-            components: components
+            components: components.toModel()
         )
     }
 }
@@ -69,5 +69,14 @@ struct AQIDataModel: Codable {
 
     enum CodingKeys: String, CodingKey {
         case AQI = "aqi"
+    }
+}
+
+extension [String: Double] {
+    func toModel() -> [Pollutant: Double] {
+        reduce(into: [:]) { result, element in
+            guard let pollutant = Pollutant(rawValue: element.key.uppercased()) else { return }
+            result[pollutant] = element.value
+        }
     }
 }
