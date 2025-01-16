@@ -19,6 +19,6 @@ struct PollutantsGridView: View {
     }
 }
 
-//#Preview {
-//    PollutantsGridView()
-//}
+#Preview {
+    PollutantsGridView(pollutants: [.co: 0.1, .no2: 0.2, .o3: 0.3, .pm10: 0.4, .pm2_5: 0.5, .so2: 0.6])
+}

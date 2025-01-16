@@ -27,7 +27,7 @@ struct HomeView: View {
                                     await viewModel.getCurrentAirPollution(
                                         for: .init(
                                             latitude: .init(45.4642),
-                                            longitude: .init(9.1900)
+                                            longitude: .init(11.1900)
                                         )
                                     )
                                 }
@@ -42,7 +42,7 @@ struct HomeView: View {
             await viewModel.getCurrentAirPollution(
                 for: .init(
                     latitude: .init(45.4642),
-                    longitude: .init(9.1900)
+                    longitude: .init(11.1900)
                 )
             )
         }

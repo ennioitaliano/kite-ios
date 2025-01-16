@@ -75,7 +75,7 @@ struct AQIDataModel: Codable {
 extension [String: Double] {
     func toModel() -> [Pollutant: Double] {
         reduce(into: [:]) { result, element in
-            guard let pollutant = Pollutant(rawValue: element.key.uppercased()) else { return }
+            guard let pollutant = Pollutant(rawValue: element.key) else { return }
             result[pollutant] = element.value
         }
     }
