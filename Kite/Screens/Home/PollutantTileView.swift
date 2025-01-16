@@ -46,17 +46,17 @@ struct PollutantTileView: View {
     }
     
     private var pollutantTitle: some View {
-        Text(pollutant.rawValue)
-            .font(.system(size: 45, design: .monospaced))
+        Text(pollutant.unicodeName)
+            .font(.system(size: 45))
     }
     
     private var pollutantDescription: some View {
-        Text("is present with a value of \(quantity.formatted())g/m")
+        Text("is present with a value of \(quantity.formatted())")
             .font(.system(size: 16))
             .multilineTextAlignment(.center)
     }
 }
 
 #Preview {
-    PollutantTileView(pollutant: .co, quantity: 3)
+    PollutantTileView(pollutant: .no2, quantity: 3)
 }
