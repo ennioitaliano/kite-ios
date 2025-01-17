@@ -17,9 +17,9 @@ struct PollutantTileView: View {
             blackLayer
             pollutantText
         }
-        .frame(width: 175, height: 175)
+        .frame(height: 175)
         .background(Color.black.gradient.opacity(0.85))
-        .clipShape(.rect(cornerRadius: 25))
+        .clipShape(.rect(cornerRadius: 20))
     }
     
     private var pollutantImage: some View {
