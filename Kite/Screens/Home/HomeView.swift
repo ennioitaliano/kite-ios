@@ -12,13 +12,11 @@ import SwiftUI
 
 struct HomeView: View {
     @State private var viewModel = HomeViewModel()
-    @State private var isItalicOn = false
     
     var body: some View {
         NavigationStack {
             ScrollView(showsIndicators: false) {
                 VStack {
-                    AirQualityTileView(isItalicOn: isItalicOn)
                     if let AQI = viewModel.airPollution?.list.first?.AQI {
                         AirQualityTileView(AQI: AQI)
                             .environment(viewModel)
@@ -32,26 +30,14 @@ struct HomeView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button("Refresh", systemImage: "arrow.trianglehead.clockwise") {
-                        Task {
-                            await viewModel.getCurrentAirPollution(
-                                for: .init(
-                                    latitude: .init(45.4642),
-                                    longitude: .init(11.1900)
-                                )
-                            )
-                        }
-                    }
-                    .tint(.white)
+                    refreshButton
                 }
-                ToolbarItem(placement: .topBarLeading) {
-                    Button("Experiments", systemImage: "flask") {
-                        withAnimation {
-                            isItalicOn.toggle()
-                        }
-                    }
-                    .tint(.white)
-                }
+                //                ToolbarItem(placement: .topBarLeading) {
+                //                    Button("Experiments", systemImage: "flask") {
+                //
+                //                    }
+                //                    .tint(.white)
+                //                }
             }
         }
         .task {
@@ -61,6 +47,25 @@ struct HomeView: View {
                     longitude: .init(11.1900)
                 )
             )
+        }
+    }
+    
+    @ViewBuilder
+    private var refreshButton: some View {
+        if viewModel.isDataLoading {
+            ProgressView()
+        } else {
+            Button("Refresh", systemImage: "arrow.trianglehead.clockwise") {
+                Task {
+                    await viewModel.getAirPollution(
+                        for: .init(
+                            latitude: .init(45.4642),
+                            longitude: .init(11.1900)
+                        )
+                    )
+                }
+            }
+            .tint(.white)
         }
     }
 }

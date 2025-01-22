@@ -47,11 +47,13 @@ struct PollutantTileView: View {
     
     private var pollutantTitle: some View {
         Text(pollutant.unicodeName)
+//            .fontDesign(.monospaced)
             .font(.system(size: 45))
     }
     
     private var pollutantDescription: some View {
-        Text("is present with a value of \(quantity.formatted())")
+        Text("\(quantity.formatted()) μg/m3")
+            .monospaced()
             .font(.system(size: 16))
             .multilineTextAlignment(.center)
     }
