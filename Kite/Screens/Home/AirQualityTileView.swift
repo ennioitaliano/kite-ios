@@ -8,7 +8,12 @@
 import SwiftUI
 
 struct AirQualityTileView: View {
-    let isItalicOn: Bool
+    @Environment(HomeViewModel.self) private var viewModel
+    @State var airQualityIndex: AirQualityIndex
+    
+    init(AQI: AirQualityIndex) {
+        self.airQualityIndex = AQI
+    }
     
     var body: some View {
         ZStack {
@@ -17,15 +22,16 @@ struct AirQualityTileView: View {
                 Text("Air Quality is currently".uppercased())
                     .font(.system(size: 10))
                     .foregroundStyle(Color.gray)
-                Text("Good".uppercased())
+                Text(airQualityIndex.string.uppercased())
                     .fontDesign(.monospaced)
                     .font(.system(size: 45))
                     .padding(.bottom)
-                    .italic(isItalicOn)
-                Text("Better than yesterday at this time.")
-                    .font(.system(size: 16))
-                    .multilineTextAlignment(.center)
-                    .lineLimit(2)
+                if let comparisonSentence = viewModel.comparisonSentence {
+                    Text(comparisonSentence)
+                        .font(.system(size: 16))
+                        .multilineTextAlignment(.center)
+                        .lineLimit(2)
+                }
             }
             .foregroundStyle(.white)
             .padding(.vertical, 32)
@@ -38,5 +44,6 @@ struct AirQualityTileView: View {
 }
 
 #Preview {
-    AirQualityTileView(isItalicOn: false)
+    @Previewable @State var airQualityIndex: AirQualityIndex = .good
+    AirQualityTileView(AQI: airQualityIndex)
 }

@@ -19,6 +19,10 @@ struct HomeView: View {
             ScrollView(showsIndicators: false) {
                 VStack {
                     AirQualityTileView(isItalicOn: isItalicOn)
+                    if let AQI = viewModel.airPollution?.list.first?.AQI {
+                        AirQualityTileView(AQI: AQI)
+                            .environment(viewModel)
+                    }
                     PollutantsGridView(pollutants: viewModel.airPollution?.list.first?.components ?? [:])
                 }
                 .padding(.horizontal)
@@ -51,7 +55,7 @@ struct HomeView: View {
             }
         }
         .task {
-            await viewModel.getCurrentAirPollution(
+            await viewModel.getAirPollution(
                 for: .init(
                     latitude: .init(45.4642),
                     longitude: .init(11.1900)
