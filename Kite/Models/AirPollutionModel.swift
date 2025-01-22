@@ -16,7 +16,7 @@ struct AirPollutionModel {
 
 struct TimePollutionModel {
     let dateTime: Date
-    let AQI: Double
+    let AQI: AirQualityIndex?
     let components: [Pollutant:Double]
 }
 
