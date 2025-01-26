@@ -12,7 +12,7 @@ enum AQIComparison: String {
     case sameAsYesterday = "Same as yesterday at this time"
     
     init(yesterdayValue: AirQualityIndex, todayValue: AirQualityIndex) {
-        if todayValue > yesterdayValue {
+        if todayValue < yesterdayValue {
             self = .betterThanYesterday
         } else if todayValue == yesterdayValue {
             self = .sameAsYesterday
