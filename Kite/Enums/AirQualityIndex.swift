@@ -5,6 +5,8 @@
 //  Created by Ennio Italiano on 22/01/25.
 //
 
+import SwiftUI
+
 enum AirQualityIndex: Int, Comparable {
     case good = 1
     case fair = 2
@@ -19,6 +21,21 @@ enum AirQualityIndex: Int, Comparable {
         case .moderate: "Moderate"
         case .poor: "Poor"
         case .veryPoor: "Very Poor"
+        }
+    }
+    
+    var color: Color {
+        switch self {
+        case .good:
+            .blue
+        case .fair:
+            .green
+        case .moderate:
+            .yellow
+        case .poor:
+            .red
+        case .veryPoor:
+            .purple
         }
     }
     

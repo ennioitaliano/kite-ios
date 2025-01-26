@@ -16,7 +16,7 @@ struct HomeView: View {
     var body: some View {
         NavigationStack {
             ScrollView(showsIndicators: false) {
-                VStack {
+                VStack(spacing: 16) {
                     if let AQI = viewModel.airPollution?.list.first?.AQI {
                         AirQualityTileView(AQI: AQI)
                             .environment(viewModel)
