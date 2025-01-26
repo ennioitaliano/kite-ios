@@ -18,14 +18,16 @@ struct AirQualityTileView: View {
     var body: some View {
         VStack(spacing: 0) {
             Text("Air Quality is currently".uppercased())
+                .fontDesign(.rounded)
                 .font(.system(size: 10))
                 .foregroundStyle(Color.gray)
             Text(airQualityIndex.string.uppercased())
-                .fontDesign(.monospaced)
+                .fontDesign(.rounded)
                 .font(.system(size: 45))
                 .padding(.bottom)
             if let comparisonSentence = viewModel.comparisonSentence {
                 Text(comparisonSentence)
+                    .fontDesign(.rounded)
                     .font(.system(size: 16))
                     .multilineTextAlignment(.center)
                     .lineLimit(2)

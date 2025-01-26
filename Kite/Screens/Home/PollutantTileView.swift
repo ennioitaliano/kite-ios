@@ -47,7 +47,7 @@ struct PollutantTileView: View {
     
     private var pollutantTitle: some View {
         Text(pollutant.unicodeName)
-//            .fontDesign(.monospaced)
+            .fontDesign(.rounded)
             .font(.system(size: 45))
     }
     
