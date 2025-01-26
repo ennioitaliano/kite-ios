@@ -16,30 +16,28 @@ struct AirQualityTileView: View {
     }
     
     var body: some View {
-        ZStack {
-            Color.black.opacity(0.45)
-            VStack(spacing: 0) {
-                Text("Air Quality is currently".uppercased())
-                    .font(.system(size: 10))
-                    .foregroundStyle(Color.gray)
-                Text(airQualityIndex.string.uppercased())
-                    .fontDesign(.monospaced)
-                    .font(.system(size: 45))
-                    .padding(.bottom)
-                if let comparisonSentence = viewModel.comparisonSentence {
-                    Text(comparisonSentence)
-                        .font(.system(size: 16))
-                        .multilineTextAlignment(.center)
-                        .lineLimit(2)
-                }
+        VStack(spacing: 0) {
+            Text("Air Quality is currently".uppercased())
+                .font(.system(size: 10))
+                .foregroundStyle(Color.gray)
+            Text(airQualityIndex.string.uppercased())
+                .fontDesign(.monospaced)
+                .font(.system(size: 45))
+                .padding(.bottom)
+            if let comparisonSentence = viewModel.comparisonSentence {
+                Text(comparisonSentence)
+                    .font(.system(size: 16))
+                    .multilineTextAlignment(.center)
+                    .lineLimit(2)
             }
-            .foregroundStyle(.white)
-            .padding(.vertical, 32)
-            .padding(.horizontal, 40)
-            .frame(maxWidth: .infinity)
         }
-        .background(.black.gradient.opacity(0.85))
+        .foregroundStyle(.white)
+        .padding(.vertical, 32)
+        .padding(.horizontal, 40)
+        .frame(maxWidth: .infinity)
+        .background(.black.gradient)
         .clipShape(.rect(cornerRadius: 20))
+        .shadow(color: airQualityIndex.color, radius: 3)
     }
 }
 
