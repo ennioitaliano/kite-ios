@@ -16,28 +16,21 @@ struct HomeView: View {
     var body: some View {
         NavigationStack {
             ScrollView(showsIndicators: false) {
-                VStack(spacing: 16) {
+                VStack(spacing: 40) {
                     if let AQI = viewModel.airPollution?.list.first?.AQI {
                         AirQualityTileView(AQI: AQI)
                             .environment(viewModel)
                     }
-                    PollutantsGridView(pollutants: viewModel.airPollution?.list.first?.components ?? [:])
+                    PollutantsStackView(pollutants: viewModel.airPollution?.list.first?.components ?? [:])
                 }
                 .padding(.horizontal)
             }
             .background(Color.black.brightness(0.25).ignoresSafeArea())
-            .navigationTitle("Kite")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     refreshButton
                 }
-                //                ToolbarItem(placement: .topBarLeading) {
-                //                    Button("Experiments", systemImage: "flask") {
-                //
-                //                    }
-                //                    .tint(.white)
-                //                }
             }
         }
         .task {
@@ -55,7 +48,7 @@ struct HomeView: View {
         if viewModel.isDataLoading {
             ProgressView()
         } else {
-            Button("Refresh", systemImage: "arrow.trianglehead.clockwise") {
+            Button("Refresh", systemImage: "arrow.clockwise") {
                 Task {
                     await viewModel.getAirPollution(
                         for: .init(
