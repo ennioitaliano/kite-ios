@@ -39,6 +39,17 @@ enum AirQualityIndex: Int, Comparable {
         }
     }
     
+    var icon: String {
+        switch self {
+        case .good:
+            "aqi.low"
+        case .fair, .moderate:
+            "aqi.medium"
+        case .poor, .veryPoor:
+            "aqi.high"
+        }
+    }
+    
     static func < (lhs: AirQualityIndex, rhs: AirQualityIndex) -> Bool {
         lhs.rawValue < rhs.rawValue
     }

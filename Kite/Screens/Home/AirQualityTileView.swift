@@ -16,15 +16,19 @@ struct AirQualityTileView: View {
     }
     
     var body: some View {
-        VStack(spacing: 0) {
-            Text("Air Quality is currently".uppercased())
-                .fontDesign(.rounded)
-                .font(.system(size: 10))
-                .foregroundStyle(Color.gray)
-            Text(airQualityIndex.string.uppercased())
-                .fontDesign(.rounded)
-                .font(.system(size: 45))
-                .padding(.bottom)
+        VStack(spacing: 10) {
+            Image(systemName: airQualityIndex.icon)
+                .font(.system(size: 30))
+                .foregroundStyle(airQualityIndex.color.gradient, .white)
+            VStack(spacing: 0) {
+                Text("Air Quality is currently".uppercased())
+                    .fontDesign(.rounded)
+                    .font(.system(size: 10))
+                    .foregroundStyle(Color.gray)
+                Text(airQualityIndex.string.uppercased())
+                    .fontDesign(.rounded)
+                    .font(.system(size: 36))
+            }
             if let comparisonSentence = viewModel.comparisonSentence {
                 Text(comparisonSentence)
                     .fontDesign(.rounded)
@@ -34,12 +38,9 @@ struct AirQualityTileView: View {
             }
         }
         .foregroundStyle(.white)
-        .padding(.vertical, 32)
         .padding(.horizontal, 40)
         .frame(maxWidth: .infinity)
-        .background(.black.gradient)
-        .clipShape(.rect(cornerRadius: 20))
-        .shadow(color: airQualityIndex.color, radius: 3)
+        .clipShape(.rect(cornerRadius: 10))
     }
 }
 
