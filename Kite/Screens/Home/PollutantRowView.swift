@@ -38,7 +38,7 @@ struct PollutantRowView: View {
     }
     
     private var pollutantTitle: some View {
-        Text(pollutant.unicodeName)
+        Text(pollutant.formattedName(baseFontSize: 20))
             .fontDesign(.rounded)
             .font(.system(size: 20))
             .bold()

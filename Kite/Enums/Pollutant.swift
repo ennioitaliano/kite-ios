@@ -17,25 +17,44 @@ enum Pollutant: String {
     case nh3
     case no
     
-    var unicodeName: String {
+    private var moleculesNames: String {
         switch self {
         case .co:
             "CO"
-        case .no2:
-            "NO\(kUnicodeSubscriptTwo)"
-        case .o3:
-            "O\(kUnicodeSubscriptThree)"
-        case .so2:
-            "SO\(kUnicodeSubscriptTwo)"
-        case .pm2_5:
-            "PM\(kUnicodeSubscriptTwo).\(kUnicodeSubscriptFive)"
-        case .pm10:
-            "PM\(kUnicodeSubscriptOne)\(kUnicodeSubscriptZero)"
-        case .nh3:
-            "NH\(kUnicodeSubscriptThree)"
-        case .no:
+        case .no, .no2:
             "NO"
+        case .o3:
+            "O"
+        case .so2:
+            "SO"
+        case .pm2_5, .pm10:
+            "PM"
+        case .nh3:
+            "NH"
         }
+    }
+    
+    private var subscriptItems: String? {
+        switch self {
+        case .co, .no:
+            nil
+        case .no2:
+            "2"
+        case .o3:
+            "3"
+        case .so2:
+            "2"
+        case .pm2_5:
+            "2.5"
+        case .pm10:
+            "10"
+        case .nh3:
+            "3"
+        }
+    }
+    
+    func formattedName(baseFontSize: CGFloat) -> AttributedString {
+        moleculesNames.withSubscript(subscriptItems, baseFontSize: baseFontSize)
     }
     
     var image: ImageResource {
