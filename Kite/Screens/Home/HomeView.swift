@@ -21,7 +21,7 @@ struct HomeView: View {
                         AirQualityTileView(AQI: AQI)
                             .environment(viewModel)
                     }
-                    PollutantsStackView(pollutants: viewModel.airPollution?.list.first?.components ?? [:])
+                    PollutantsStackView(pollutants: viewModel.airPollution?.list.first?.components.filter { $0.value > 0 } ?? [:])
                 }
                 .padding(.horizontal)
             }
