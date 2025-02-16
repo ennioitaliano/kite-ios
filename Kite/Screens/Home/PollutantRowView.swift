@@ -51,7 +51,7 @@ struct PollutantRowView: View {
                 .font(.system(size: 20))
                 .multilineTextAlignment(.center)
                 .fontWeight(.light)
-            Text("μg/m3")
+            Text("μg/m".withSuperscript("3", baseFontSize: 16))
                 .monospaced()
                 .font(.system(size: 16))
                 .foregroundStyle(.gray)
