@@ -19,52 +19,53 @@ enum Pollutant: String {
     
     private var moleculesNames: String {
         switch self {
-        case .co:
-            "CO"
-        case .no, .no2:
-            "NO"
-        case .o3:
-            "O"
-        case .so2:
-            "SO"
-        case .pm2_5, .pm10:
-            "PM"
-        case .nh3:
-            "NH"
+        case .co: "CO"
+        case .no, .no2: "NO"
+        case .o3: "O"
+        case .so2: "SO"
+        case .pm2_5, .pm10: "PM"
+        case .nh3: "NH"
         }
     }
     
     private var subscriptItems: String? {
         switch self {
-        case .co, .no:
-            nil
-        case .no2:
-            "2"
-        case .o3:
-            "3"
-        case .so2:
-            "2"
-        case .pm2_5:
-            "2.5"
-        case .pm10:
-            "10"
-        case .nh3:
-            "3"
+        case .co, .no: nil
+        case .no2: "2"
+        case .o3: "3"
+        case .so2: "2"
+        case .pm2_5: "2.5"
+        case .pm10: "10"
+        case .nh3: "3"
         }
     }
     
-    func formattedName(baseFontSize: CGFloat) -> AttributedString {
+    var completeName: String {
+        switch self {
+        case .co: "Carbon Monoxide"
+        case .no2: "Nitrogen Dioxide"
+        case .o3: "Ozone"
+        case .so2: "Sulfur Dioxide"
+        case .pm2_5: "Particulates < 2,5μm"
+        case .pm10: "Particulates < 10μm"
+        case .nh3: "Ammonia"
+        case .no: "Nitric Oxide"
+        }
+    }
+    
+    func formattedFormula(baseFontSize: CGFloat) -> AttributedString {
         moleculesNames.withSubscript(subscriptItems, baseFontSize: baseFontSize)
     }
     
-    var image: ImageResource {
+    var image: ImageResource? {
         switch self {
         case .co: .coMol
         case .no2: .no2Mol
         case .o3: .o3Mol
         case .so2: .so2Mol
         case .nh3: .nh3Mol
-        default: .coMol
+        case .no: .noMol
+        default: nil
         }
     }
 }
