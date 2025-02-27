@@ -38,8 +38,8 @@ extension String {
         mainText.font = .system(size: baseFontSize)
         guard let subscriptText else { return mainText }
         var subText = AttributedString(subscriptText)
-        subText.font = .system(size: baseFontSize * 0.7)
-        subText.baselineOffset = -baseFontSize * 0.2
+        subText.font = .system(size: baseFontSize * 0.6)
+        subText.baselineOffset = -baseFontSize * 0.1
         mainText.append(subText)
         return mainText
     }
@@ -49,7 +49,7 @@ extension String {
         mainText.font = .system(size: baseFontSize)
         guard let superscriptText else { return mainText }
         var superText = AttributedString(superscriptText)
-        superText.font = .system(size: baseFontSize * 0.7)
+        superText.font = .system(size: baseFontSize * 0.6)
         superText.baselineOffset = -baseFontSize * -0.3
         mainText.append(superText)
         return mainText
