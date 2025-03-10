@@ -11,7 +11,8 @@ import SwiftUI
 struct KiteApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
+                .preferredColorScheme(.dark)
         }
     }
 }
