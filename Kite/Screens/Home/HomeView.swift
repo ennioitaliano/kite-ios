@@ -14,23 +14,19 @@ struct HomeView: View {
     @State private var viewModel = HomeViewModel()
     
     var body: some View {
-        NavigationStack {
-            KiteList {
-                aqiInfo
-                pollutantList
-            }
-            .background(Color.black.brightness(0.25).ignoresSafeArea())
-            .toolbar(.hidden)
-            .refreshable {
-                await viewModel.getAirPollution(
-                    for: .init(
-                        latitude: .init(45.4642),
-                        longitude: .init(11.1900)
-                    )
-                )
-            }
+        KiteList {
+            aqiInfo
+            pollutantsList
         }
-        .preferredColorScheme(.dark)
+        .background(Color.black.brightness(0.25).ignoresSafeArea())
+        .refreshable {
+            await viewModel.getAirPollution(
+                for: .init(
+                    latitude: .init(45.4642),
+                    longitude: .init(11.1900)
+                )
+            )
+        }
         .task {
             await viewModel.getAirPollution(
                 for: .init(
@@ -46,44 +42,19 @@ struct HomeView: View {
         if let AQI = viewModel.airPollution?.list.first?.AQI {
             AirQualityTileView(AQI: AQI)
                 .environment(viewModel)
-                .padding(.bottom, 22)
+                .padding(.bottom, 32)
         }
     }
     
     @ViewBuilder
-    private var pollutantList: some View {
+    private var pollutantsList: some View {
         if let pollutants = viewModel.airPollution?.list.first?.components.filter({ $0.value > 0 }).sorted(by: { $0.value > $1.value }) {
             ForEach(pollutants, id: \.key) { pollutant in
                 PollutantRowView(pollutant: pollutant.key, quantity: pollutant.value)
-                    .padding(.top, 12)
+                    .padding(.bottom, 12)
             }
             .padding(.horizontal)
         }
-    }
-}
-
-struct KiteList<Content: View>: View {
-    
-    let content: Content
-    
-    init(@ViewBuilder _ content: () -> Content) {
-        self.content = content()
-    }
-    
-    var body: some View {
-        List {
-            content
-                .listRowInsets(EdgeInsets())
-                .listRowBackground(Color.clear)
-                .listRowSeparator(.hidden)
-                .listSectionSeparator(.hidden)
-        }
-        .listStyle(.plain)
-        .contentMargins(.top, 16)
-        .contentMargins(.horizontal, 0)
-        .contentMargins(.bottom, 0)
-        .scrollIndicators(.hidden)
-        .scrollContentBackground(.hidden)
     }
 }
 
