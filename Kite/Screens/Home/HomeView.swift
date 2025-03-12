@@ -45,18 +45,8 @@ struct HomeView: View {
             }
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                if let displayedLocation {
-                    ToolbarItem(placement: .principal) {
-                        Button {
-                            showSearchAlert = true
-                            locationText = displayedLocation
-                        } label: {
-                            Label(displayedLocation, systemImage: "magnifyingglass")
-                                .font(.system(size: 14))
-                                .foregroundStyle(.white)
-                                .labelStyle(.titleAndIcon)
-                        }
-                    }
+                ToolbarItem(placement: .principal) {
+                    searchLocationButton
                 }
             }
         }
@@ -67,6 +57,7 @@ struct HomeView: View {
                     await getAirPollution()
                 }
             }
+            Button("Cancel", role: .cancel) {}
         }
         .task {
             await getAirPollution()
@@ -74,12 +65,25 @@ struct HomeView: View {
     }
     
     @ViewBuilder
+    private var searchLocationButton: some View {
+        if let displayedLocation {
+            Button {
+                showSearchAlert = true
+                locationText = displayedLocation
+            } label: {
+                Label(displayedLocation, systemImage: "magnifyingglass")
+                    .font(.system(size: 14))
+                    .foregroundStyle(.white)
+                    .labelStyle(.titleAndIcon)
+            }
+        }
+    }
+    
+    @ViewBuilder
     private var aqiInfo: some View {
-        if let AQI = viewModel.airPollution?.list.first?.AQI {
-            AirQualityTileView(AQI: AQI)
+            AirQualityTileView()
                 .environment(viewModel)
                 .padding(.bottom, 32)
-        }
     }
     
     @ViewBuilder
