@@ -11,47 +11,44 @@ import Foundation
 
 @Observable
 class HomeViewModel {
-    @ObservationIgnored @Dependency(\.airPollutionRemoteRepository) private var airPollutionRemoteRepository
-    @ObservationIgnored @Dependency(\.geocodingRemoteRepository) private var geoCodingRemoteRepository
+    @ObservationIgnored @Dependency(\.airPollutionUseCase) private var airPollutionUseCase
     @ObservationIgnored @Dependency(\.logger) private var logger
     
     var airPollution: AirPollutionModel?
     var comparisonSentence: String?
     var isDataLoading: Bool = false
     
-    func getAirPollution(for location: CLLocation) async {
+    func getAirPollution(for placemark: CLPlacemark) async {
         isDataLoading = true
         defer { isDataLoading = false }
         
-        await getCurrentAirPollution(for: location)
-        await getYesterdayAirPollution(for: location)
+        await getCurrentAirPollution(for: placemark)
+        await getYesterdayAirPollution(for: placemark)
     }
     
-    private func getCurrentAirPollution(for location: CLLocation) async {
+    private func getCurrentAirPollution(for placemark: CLPlacemark) async {
         do {
-            airPollution = try await airPollutionRemoteRepository.getCurrent(for: CLLocationCoordinate2D(
-                latitude: location.coordinate.latitude,
-                longitude: location.coordinate.longitude
-            ))
+            guard let location = placemark.location else { throw LocationError.unavailableLocation }
+            airPollution = try await airPollutionUseCase.getCurrent(for: location)
         } catch {
             logger.logError(.general, "Error: \(error.localizedDescription)")
         }
     }
     
-    private func getYesterdayAirPollution(for location: CLLocation) async {
+    private func getYesterdayAirPollution(for placemark: CLPlacemark) async {
         let yesterday: Date = .now.advanced(by: -86400)
         do {
-            let yesterdayAirPollutionData = try await airPollutionRemoteRepository.getHistorical(
-                for: CLLocationCoordinate2D(
-                    latitude: location.coordinate.latitude,
-                    longitude: location.coordinate.longitude
-                ),
-                start: yesterday,
-                end: yesterday.advanced(by: 3600)
+            guard let location = placemark.location else { throw LocationError.unavailableLocation }
+            let yesterdayAirPollutionData = try await airPollutionUseCase.getHistorical(
+                for: location,
+                interval: .init(start: yesterday, duration: 3600)
             )
             if let yesterdayAQI = yesterdayAirPollutionData.list.first?.AQI,
                let todayAQI = airPollution?.list.first?.AQI {
-                comparisonSentence = AQIComparison(yesterdayValue: yesterdayAQI, todayValue: todayAQI).rawValue
+                comparisonSentence = AQIComparison(
+                    between: yesterdayAQI,
+                    and: todayAQI
+                ).rawValue
             }
         } catch {
             logger.logError(.general, "Error: \(error.localizedDescription)")

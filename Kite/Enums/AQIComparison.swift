@@ -11,13 +11,16 @@ enum AQIComparison: String {
     case worseThanYesterday = "Worse than yesterday at this time."
     case sameAsYesterday = "Similar to yesterday at this time."
     
-    init(yesterdayValue: AirQualityIndex, todayValue: AirQualityIndex) {
-        if todayValue < yesterdayValue {
-            self = .betterThanYesterday
+    init(
+        between yesterdayValue: AirQualityIndex,
+        and todayValue: AirQualityIndex
+    ) {
+        self = if todayValue < yesterdayValue {
+            .betterThanYesterday
         } else if todayValue == yesterdayValue {
-            self = .sameAsYesterday
+            .sameAsYesterday
         } else {
-            self = .worseThanYesterday
+            .worseThanYesterday
         }
     }
 }

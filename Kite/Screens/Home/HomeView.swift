@@ -13,6 +13,19 @@ import SwiftUI
 struct HomeView: View {
     @State private var viewModel = HomeViewModel()
     
+    private func getAirPollutionForLocation() async {
+        do {
+            let geocoder = CLGeocoder()
+            let placemark = try await geocoder.geocodeAddressString("Teolo").first
+            if let placemark {
+                print(placemark)
+                await viewModel.getAirPollution(for: placemark)
+            }
+        } catch {
+            print("No placemark found")
+        }
+    }
+    
     var body: some View {
         KiteList {
             aqiInfo
@@ -20,20 +33,10 @@ struct HomeView: View {
         }
         .background(Color.black.brightness(0.25).ignoresSafeArea())
         .refreshable {
-            await viewModel.getAirPollution(
-                for: .init(
-                    latitude: .init(45.4642),
-                    longitude: .init(11.1900)
-                )
-            )
+            await getAirPollutionForLocation()
         }
         .task {
-            await viewModel.getAirPollution(
-                for: .init(
-                    latitude: .init(45.4642),
-                    longitude: .init(11.1900)
-                )
-            )
+            await getAirPollutionForLocation()
         }
     }
     
