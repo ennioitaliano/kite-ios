@@ -11,14 +11,21 @@ import Dependencies
 import SwiftUI
 
 struct HomeView: View {
-    @State private var viewModel = HomeViewModel()
+    @State private var viewModel: HomeViewModel = .init()
+    @State private var showSearchAlert: Bool = false
+    @State private var locationText: String = "Teolo"
+    @State private var displayedLocation: String?
     
-    private func getAirPollutionForLocation() async {
+    private func getAirPollution() async {
         do {
             let geocoder = CLGeocoder()
-            let placemark = try await geocoder.geocodeAddressString("Teolo").first
+            let placemark = try await geocoder.geocodeAddressString(locationText).first
             if let placemark {
-                print(placemark)
+                displayedLocation = if let locality = placemark.locality, let country = placemark.country {
+                    "\(locality), \(country)"
+                } else {
+                    locationText
+                }
                 await viewModel.getAirPollution(for: placemark)
             }
         } catch {
@@ -27,16 +34,42 @@ struct HomeView: View {
     }
     
     var body: some View {
-        KiteList {
-            aqiInfo
-            pollutantsList
+        NavigationStack {
+            KiteList {
+                aqiInfo
+                pollutantsList
+            }
+            .background(Color.black.brightness(0.25).ignoresSafeArea())
+            .refreshable {
+                await getAirPollution()
+            }
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                if let displayedLocation {
+                    ToolbarItem(placement: .principal) {
+                        Button {
+                            showSearchAlert = true
+                            locationText = displayedLocation
+                        } label: {
+                            Label(displayedLocation, systemImage: "magnifyingglass")
+                                .font(.system(size: 14))
+                                .foregroundStyle(.white)
+                                .labelStyle(.titleAndIcon)
+                        }
+                    }
+                }
+            }
         }
-        .background(Color.black.brightness(0.25).ignoresSafeArea())
-        .refreshable {
-            await getAirPollutionForLocation()
+        .alert("Change location", isPresented: $showSearchAlert) {
+            TextField(text: $locationText) {}
+            Button("Submit") {
+                Task {
+                    await getAirPollution()
+                }
+            }
         }
         .task {
-            await getAirPollutionForLocation()
+            await getAirPollution()
         }
     }
     

@@ -24,7 +24,7 @@ struct KiteList<Content: View>: View {
                 .listSectionSeparator(.hidden)
         }
         .listStyle(.plain)
-        .contentMargins(.top, 16)
+        .contentMargins(.top, 8)
         .contentMargins(.horizontal, 0)
         .contentMargins(.bottom, 0)
         .scrollIndicators(.hidden)

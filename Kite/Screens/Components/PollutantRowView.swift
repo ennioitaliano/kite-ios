@@ -54,9 +54,10 @@ struct PollutantRowView: View {
         .frame(maxWidth: .infinity, alignment: .leading)
     }
     
+    // TODO: Improve formatting
     private var pollutantDescription: some View {
         HStack(spacing: 3) {
-            Text("\(quantity.formatted())")
+            Text("\(quantity.formatted(.number.precision(.significantDigits(2))))")
                 .monospaced()
                 .font(.system(size: 20))
                 .fontWeight(.light)
