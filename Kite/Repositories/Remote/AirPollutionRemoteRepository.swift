@@ -11,22 +11,38 @@ import Dependencies
 import Foundation
 
 protocol AirPollutionRemoteRepository {
-    func getCurrent(for location: CLLocationCoordinate2D) async throws -> AirPollutionModel
-    func getForecast(for location: CLLocationCoordinate2D) async throws -> AirPollutionModel
-    func getHistorical(for location: CLLocationCoordinate2D, start: Date, end: Date) async throws -> AirPollutionModel
+    func getCurrent(
+        lat latitude: CLLocationDegrees,
+        lon longitude: CLLocationDegrees
+    ) async throws -> AirPollutionModel
+    
+    func getForecast(
+        lat latitude: CLLocationDegrees,
+        lon longitude: CLLocationDegrees
+    ) async throws -> AirPollutionModel
+    
+    func getHistorical(
+        lat latitude: CLLocationDegrees,
+        lon longitude: CLLocationDegrees,
+        start: Int,
+        end: Int
+    ) async throws -> AirPollutionModel
 }
 
 struct AirPollutionLiveRemoteRepository: AirPollutionRemoteRepository {
     @Dependency(\.environment) private var environment
     @Dependency(\.logger) private var logger
 
-    func getCurrent(for location: CLLocationCoordinate2D) async throws -> AirPollutionModel {
+    func getCurrent(
+        lat latitude: CLLocationDegrees,
+        lon longitude: CLLocationDegrees
+    ) async throws -> AirPollutionModel {
         let request = AF.request(
             "\(environment.baseURL)/data/2.5/air_pollution",
             method: .get,
             parameters: [
-                "lat": "\(location.latitude)",
-                "lon": "\(location.longitude)",
+                "lat": "\(latitude)",
+                "lon": "\(longitude)",
                 "appid": "\(environment.APIKey)"
             ]
         )
@@ -40,13 +56,16 @@ struct AirPollutionLiveRemoteRepository: AirPollutionRemoteRepository {
         }
     }
 
-    func getForecast(for location: CLLocationCoordinate2D) async throws -> AirPollutionModel {
+    func getForecast(
+        lat latitude: CLLocationDegrees,
+        lon longitude: CLLocationDegrees
+    ) async throws -> AirPollutionModel {
         let request = AF.request(
             "\(environment.baseURL)/data/2.5/air_pollution/forecast",
             method: .get,
             parameters: [
-                "lat": "\(location.latitude)",
-                "lon": "\(location.longitude)",
+                "lat": "\(latitude)",
+                "lon": "\(longitude)",
                 "appid": "\(environment.APIKey)"
             ]
         )
@@ -60,15 +79,20 @@ struct AirPollutionLiveRemoteRepository: AirPollutionRemoteRepository {
         }
     }
 
-    func getHistorical(for location: CLLocationCoordinate2D, start: Date, end: Date) async throws -> AirPollutionModel {
+    func getHistorical(
+        lat latitude: CLLocationDegrees,
+        lon longitude: CLLocationDegrees,
+        start: Int,
+        end: Int
+    ) async throws -> AirPollutionModel {
         let request = AF.request(
             "\(environment.baseURL)/data/2.5/air_pollution/history",
             method: .get,
             parameters: [
-                "lat": "\(location.latitude)",
-                "lon": "\(location.longitude)",
-                "start": "\(Int(start.timeIntervalSince1970))",
-                "end": "\(Int(end.timeIntervalSince1970))",
+                "lat": "\(latitude)",
+                "lon": "\(longitude)",
+                "start": "\(start)",
+                "end": "\(end)",
                 "appid": "\(environment.APIKey)"
             ]
         )
