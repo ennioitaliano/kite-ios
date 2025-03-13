@@ -60,7 +60,7 @@ struct PollutantRowView: View {
                 .monospaced()
                 .font(.system(size: 20))
                 .fontWeight(.light)
-            Text(pollutant.measureUnit.formattedString)
+            Text(pollutant.measureUnit.formattedString(baseFontSize: 16))
                 .monospaced()
                 .font(.system(size: 16))
                 .foregroundStyle(.gray)

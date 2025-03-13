@@ -20,42 +20,44 @@ enum Pollutant: String {
 
     private var moleculesNames: String {
         switch self {
-        case .co: "CO"
-        case .no, .no2: "NO"
-        case .o3: "O"
-        case .so2: "SO"
-        case .pm2_5, .pm10: "PM"
-        case .nh3: "NH"
+        case .co: kMoleculeNameCO
+        case .no, .no2: kMoleculeNameNO
+        case .o3: kMoleculeNameO
+        case .so2: kMoleculeNameSO
+        case .pm2_5, .pm10: kMoleculeNamePM
+        case .nh3: kMoleculeNameNH
         }
     }
 
-    private var subscriptItems: String? {
+    private var moleculesQuantities: String? {
         switch self {
         case .co, .no: nil
-        case .no2: "2"
-        case .o3: "3"
-        case .so2: "2"
-        case .pm2_5: "2.5"
-        case .pm10: "10"
-        case .nh3: "3"
+        case .no2, .so2: kMoleculeQuantity2
+        case .o3, .nh3: kMoleculeQuantity3
+        case .pm2_5: kMoleculeQuantity25
+        case .pm10: kMoleculeQuantity10
         }
     }
 
     var completeName: String {
         switch self {
-        case .co: "Carbon Monoxide"
-        case .no2: "Nitrogen Dioxide"
-        case .o3: "Ozone"
-        case .so2: "Sulfur Dioxide"
-        case .pm2_5: "Particulates < 2,5μm"
-        case .pm10: "Particulates < 10μm"
-        case .nh3: "Ammonia"
-        case .no: "Nitric Oxide"
+        case .co: kPollutantCompleteNameCO
+        case .no2: kPollutantCompleteNameNO2
+        case .o3: kPollutantCompleteNameO3
+        case .so2: kPollutantCompleteNameSO2
+        case .pm2_5: kPollutantCompleteNamePM25
+        case .pm10: kPollutantCompleteNamePM10
+        case .nh3: kPollutantCompleteNameNH3
+        case .no: kPollutantCompleteNameNO
         }
     }
 
     func formattedFormula(baseFontSize: CGFloat) -> AttributedString {
-        moleculesNames.withSubscript(subscriptItems, baseFontSize: baseFontSize)
+        moleculesNames.baselineOffset(
+            type: .subscriptOffset,
+            text: moleculesQuantities,
+            baseFontSize: baseFontSize
+        )
     }
 
     var image: ImageResource? {
@@ -79,10 +81,10 @@ enum Pollutant: String {
 
     var molecularWeight: Double? {
         switch self {
-        case .co: 28.01
-        case .no2: 46.01
-        case .o3: 48
-        case .so2: 64.07
+        case .co: kMoleculeWeigthCO
+        case .no2: kMoleculeWeigthNO2
+        case .o3: kMoleculeWeigthO3
+        case .so2: kMoleculeWeigthSO2
         default: nil
         }
     }
@@ -92,12 +94,14 @@ enum MeasureUnit: AttributedString {
     case ugm3
     case ppb
 
-    var formattedString: AttributedString {
+    func formattedString(baseFontSize: CGFloat) -> AttributedString {
         switch self {
-        case .ugm3:
-            "μg/m".withSuperscript("3", baseFontSize: 16)
-        default:
-            rawValue
+        case .ugm3: kMicrogramsCubicMeter.baselineOffset(
+            type: .superscriptOffset,
+            text: kCubicPower,
+            baseFontSize: baseFontSize
+        )
+        default: rawValue
         }
     }
 }

@@ -12,7 +12,6 @@ struct KiteApp: App {
     var body: some Scene {
         WindowGroup {
             HomeView()
-                .preferredColorScheme(.dark)
         }
     }
 }

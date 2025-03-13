@@ -5,10 +5,10 @@
 //  Created by Ennio Italiano on 22/01/25.
 //
 
-enum AQIComparison: String {
-    case betterThanYesterday = "Better than yesterday at this time."
-    case worseThanYesterday = "Worse than yesterday at this time."
-    case sameAsYesterday = "Similar to yesterday at this time."
+enum AQIComparison {
+    case betterThanYesterday
+    case worseThanYesterday
+    case sameAsYesterday
 
     init(
         between yesterdayValue: AirQualityIndex,
@@ -16,10 +16,18 @@ enum AQIComparison: String {
     ) {
         self = if todayValue < yesterdayValue {
             .betterThanYesterday
-        } else if todayValue == yesterdayValue {
-            .sameAsYesterday
-        } else {
+        } else if todayValue > yesterdayValue {
             .worseThanYesterday
+        } else {
+            .sameAsYesterday
+        }
+    }
+
+    var sentence: String {
+        switch self {
+        case .betterThanYesterday: kComparisonBetter
+        case .worseThanYesterday: kComparisonWorse
+        case .sameAsYesterday: kComparisonSimilar
         }
     }
 }

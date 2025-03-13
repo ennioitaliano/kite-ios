@@ -17,19 +17,15 @@ struct HomeView: View {
     @State private var displayedLocation: String?
 
     private func getAirPollution() async {
-        do {
-            let geocoder = CLGeocoder()
-            let placemark = try await geocoder.geocodeAddressString(locationText).first
-            if let placemark {
-                displayedLocation = if let locality = placemark.locality, let country = placemark.country {
-                    "\(locality), \(country)"
-                } else {
-                    locationText
-                }
-                await viewModel.getAirPollution(for: placemark)
+        let geocoder = CLGeocoder()
+        let placemark = try? await geocoder.geocodeAddressString(locationText).first
+        if let placemark {
+            displayedLocation = if let locality = placemark.locality, let country = placemark.country {
+                "\(locality), \(country)"
+            } else {
+                locationText
             }
-        } catch {
-            print("No placemark found")
+            await viewModel.getAirPollution(for: placemark)
         }
     }
 
@@ -50,6 +46,7 @@ struct HomeView: View {
                 }
             }
         }
+        .preferredColorScheme(.dark)
         .alert("Change location", isPresented: $showSearchAlert) {
             TextField(text: $locationText) {}
             Button("Submit") {

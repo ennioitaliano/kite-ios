@@ -12,17 +12,17 @@ struct AirQualityTileView: View {
 
     @ViewBuilder
     var body: some View {
-        if let AQI = viewModel.airPollution?.list.first?.AQI {
+        if let aqi = viewModel.airQualityIndex {
             VStack(spacing: 10) {
-                Image(systemName: AQI.icon)
+                Image(systemName: aqi.icon)
                     .font(.system(size: 30))
-                    .foregroundStyle(AQI.color.gradient, .white)
+                    .foregroundStyle(aqi.color.gradient, .white)
                 VStack(spacing: 0) {
                     Text("Air Quality is currently".uppercased())
                         .fontDesign(.rounded)
                         .font(.system(size: 10))
                         .foregroundStyle(Color.gray)
-                    Text(AQI.string.uppercased())
+                    Text(aqi.string.uppercased())
                         .fontDesign(.rounded)
                         .font(.system(size: 36))
                 }
