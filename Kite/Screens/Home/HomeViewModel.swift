@@ -13,20 +13,20 @@ import Foundation
 class HomeViewModel {
     @ObservationIgnored @Dependency(\.airPollutionUseCase) private var airPollutionUseCase
     @ObservationIgnored @Dependency(\.logger) private var logger
-    
+
     var airPollution: AirPollutionModel?
-    var pollutantsList: [Pollutant : Double]?
+    var pollutantsList: [Pollutant: Double]?
     var comparisonSentence: String?
     var isDataLoading: Bool = false
-    
+
     func getAirPollution(for placemark: CLPlacemark) async {
         isDataLoading = true
         defer { isDataLoading = false }
-        
+
         await getCurrentAirPollution(for: placemark)
         await getYesterdayAirPollution(for: placemark)
     }
-    
+
     private func getCurrentAirPollution(for placemark: CLPlacemark) async {
         do {
             guard let location = placemark.location else { throw LocationError.unavailableLocation }
@@ -36,7 +36,7 @@ class HomeViewModel {
             logger.logError(.general, "Error: \(error.localizedDescription)")
         }
     }
-    
+
     private func getYesterdayAirPollution(for placemark: CLPlacemark) async {
         let yesterday: Date = .now.advanced(by: -86400)
         do {

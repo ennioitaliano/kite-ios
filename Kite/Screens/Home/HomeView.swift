@@ -15,7 +15,7 @@ struct HomeView: View {
     @State private var showSearchAlert: Bool = false
     @State private var locationText: String = "Teolo"
     @State private var displayedLocation: String?
-    
+
     private func getAirPollution() async {
         do {
             let geocoder = CLGeocoder()
@@ -32,7 +32,7 @@ struct HomeView: View {
             print("No placemark found")
         }
     }
-    
+
     var body: some View {
         NavigationStack {
             KiteList {
@@ -63,7 +63,7 @@ struct HomeView: View {
             await getAirPollution()
         }
     }
-    
+
     @ViewBuilder
     private var searchLocationButton: some View {
         if let displayedLocation {
@@ -78,14 +78,14 @@ struct HomeView: View {
             }
         }
     }
-    
+
     @ViewBuilder
     private var aqiInfo: some View {
             AirQualityTileView()
                 .environment(viewModel)
                 .padding(.bottom, 32)
     }
-    
+
     @ViewBuilder
     private var pollutantsList: some View {
         if let pollutants = viewModel.pollutantsList?.sorted(by: { $0.value > $1.value }) {

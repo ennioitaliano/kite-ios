@@ -13,7 +13,7 @@ enum AirQualityIndex: Int, Comparable {
     case moderate = 3
     case poor = 4
     case veryPoor = 5
-    
+
     var string: String {
         switch self {
         case .good: "Good"
@@ -23,7 +23,7 @@ enum AirQualityIndex: Int, Comparable {
         case .veryPoor: "Very Poor"
         }
     }
-    
+
     var color: Color {
         switch self {
         case .good:
@@ -38,7 +38,7 @@ enum AirQualityIndex: Int, Comparable {
             .purple
         }
     }
-    
+
     var icon: String {
         switch self {
         case .good:
@@ -49,7 +49,7 @@ enum AirQualityIndex: Int, Comparable {
             "aqi.high"
         }
     }
-    
+
     static func < (lhs: AirQualityIndex, rhs: AirQualityIndex) -> Bool {
         lhs.rawValue < rhs.rawValue
     }
