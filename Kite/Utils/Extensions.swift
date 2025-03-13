@@ -8,52 +8,26 @@
 import CoreLocation
 import Foundation
 
-extension CLPlacemark {
-    var APIString: String? {
-        var components: [String?] = [
-            self.locality,
-            self.isoCountryCode
-        ]
-
-        if self.isoCountryCode == "US" {
-            components[1] = self.administrativeArea
-        }
-
-        return components.compactMap { $0 }.joined(separator: ",")
-    }
-
-    var APIStringZip: String? {
-        let components: [String?] = [
-            self.postalCode,
-            self.isoCountryCode
-        ]
-
-        return components.compactMap { $0 }.joined(separator: ",")
+extension String {
+    func baselineOffset(
+        type: BaselineOffsetType,
+        text: String?,
+        baseFontSize: CGFloat
+    ) -> AttributedString {
+        var mainText = AttributedString(self)
+        mainText.font = .system(size: baseFontSize)
+        guard let text else { return mainText }
+        var offsetText = AttributedString(text)
+        offsetText.font = .system(size: baseFontSize * 0.6)
+        offsetText.baselineOffset = -baseFontSize * (type == .subscriptOffset ? 0.1 : -0.3)
+        mainText.append(offsetText)
+        return mainText
     }
 }
 
-extension String {
-    func withSubscript(_ subscriptText: String?, baseFontSize: CGFloat = 17) -> AttributedString {
-        var mainText = AttributedString(self)
-        mainText.font = .system(size: baseFontSize)
-        guard let subscriptText else { return mainText }
-        var subText = AttributedString(subscriptText)
-        subText.font = .system(size: baseFontSize * 0.6)
-        subText.baselineOffset = -baseFontSize * 0.1
-        mainText.append(subText)
-        return mainText
-    }
-
-    func withSuperscript(_ superscriptText: String?, baseFontSize: CGFloat = 17) -> AttributedString {
-        var mainText = AttributedString(self)
-        mainText.font = .system(size: baseFontSize)
-        guard let superscriptText else { return mainText }
-        var superText = AttributedString(superscriptText)
-        superText.font = .system(size: baseFontSize * 0.6)
-        superText.baselineOffset = -baseFontSize * -0.3
-        mainText.append(superText)
-        return mainText
-    }
+enum BaselineOffsetType {
+    case subscriptOffset
+    case superscriptOffset
 }
 
 extension Double {
@@ -61,8 +35,20 @@ extension Double {
         switch measureUnit {
         case .ppb:
             guard let molecularWeight else { return self }
-            return (self * (273.15+12)) / (12.187 * molecularWeight)
+            let absoluteZeroK: Double = 273.15
+            let temperature: Double = 25
+            let inverseUniversalGasLaw: Double = 12.187
+            return (self * (absoluteZeroK + temperature)) / (inverseUniversalGasLaw * molecularWeight)
         default: return self
+        }
+    }
+}
+
+extension [String: Double] {
+    func toModel() -> [Pollutant: Double] {
+        reduce(into: [:]) { result, element in
+            guard let pollutant = Pollutant(rawValue: element.key) else { return }
+            result[pollutant] = element.value
         }
     }
 }

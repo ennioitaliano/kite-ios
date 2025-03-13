@@ -19,8 +19,12 @@ struct AirPollutionDataModel: Codable {
 
     func toModel() -> AirPollutionModel {
         .init(
-            location: CLLocationCoordinate2D(coordinates: coordinates),
-            list: list.map { $0.toModel() }
+            location: CLLocation(
+                latitude: coordinates.latitude,
+                longitude: coordinates.longitude
+            ),
+            list: list.map { $0.toModel()
+            }
         )
     }
 }
@@ -46,41 +50,32 @@ extension CLLocationCoordinate2D {
 
 struct TimePollutionDataModel: Codable {
     let dateTime: Double
-    let AQI: AQIDataModel
+    let airQualityIndex: AQIDataModel
     let components: [String: Double]
 
     enum CodingKeys: String, CodingKey {
         case dateTime = "dt"
-        case AQI = "main"
+        case airQualityIndex = "main"
         case components
     }
 
     func toModel() -> TimePollutionModel {
         .init(
             dateTime: Date(timeIntervalSince1970: dateTime),
-            AQI: AQI.toModel(),
+            airQualityIndex: airQualityIndex.toModel(),
             components: components.toModel()
         )
     }
 }
 
 struct AQIDataModel: Codable {
-    let AQI: Double
+    let airQualityIndex: Double
 
     enum CodingKeys: String, CodingKey {
-        case AQI = "aqi"
+        case airQualityIndex = "aqi"
     }
 
     func toModel() -> AirQualityIndex? {
-        AirQualityIndex(rawValue: Int(AQI))
-    }
-}
-
-extension [String: Double] {
-    func toModel() -> [Pollutant: Double] {
-        reduce(into: [:]) { result, element in
-            guard let pollutant = Pollutant(rawValue: element.key) else { return }
-            result[pollutant] = element.value
-        }
+        AirQualityIndex(rawValue: Int(airQualityIndex))
     }
 }

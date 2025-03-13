@@ -14,7 +14,8 @@ class HomeViewModel {
     @ObservationIgnored @Dependency(\.airPollutionUseCase) private var airPollutionUseCase
     @ObservationIgnored @Dependency(\.logger) private var logger
 
-    var airPollution: AirPollutionModel?
+    private var airPollutionData: TimePollutionModel?
+    var airQualityIndex: AirQualityIndex?
     var pollutantsList: [Pollutant: Double]?
     var comparisonSentence: String?
     var isDataLoading: Bool = false
@@ -30,8 +31,9 @@ class HomeViewModel {
     private func getCurrentAirPollution(for placemark: CLPlacemark) async {
         do {
             guard let location = placemark.location else { throw LocationError.unavailableLocation }
-            airPollution = try await airPollutionUseCase.getCurrent(for: location)
-            pollutantsList = airPollution?.list.first?.components.filter({ $0.value.rounded() > 0 })
+            airPollutionData = try await airPollutionUseCase.getCurrent(for: location).list.first
+            pollutantsList = airPollutionData?.components.filter({ $0.value.rounded() > 0 })
+            airQualityIndex = airPollutionData?.airQualityIndex
         } catch {
             logger.logError(.general, "Error: \(error.localizedDescription)")
         }
@@ -44,13 +46,13 @@ class HomeViewModel {
             let yesterdayAirPollutionData = try await airPollutionUseCase.getHistorical(
                 for: location,
                 interval: .init(start: yesterday, duration: 3600)
-            )
-            if let yesterdayAQI = yesterdayAirPollutionData.list.first?.AQI,
-               let todayAQI = airPollution?.list.first?.AQI {
+            ).list.first
+            if let yesterdayAQI = yesterdayAirPollutionData?.airQualityIndex,
+               let todayAQI = airPollutionData?.airQualityIndex {
                 comparisonSentence = AQIComparison(
                     between: yesterdayAQI,
                     and: todayAQI
-                ).rawValue
+                ).sentence
             }
         } catch {
             logger.logError(.general, "Error: \(error.localizedDescription)")
