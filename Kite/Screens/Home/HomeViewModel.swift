@@ -15,6 +15,7 @@ class HomeViewModel {
     @ObservationIgnored @Dependency(\.logger) private var logger
     
     var airPollution: AirPollutionModel?
+    var pollutantsList: [Pollutant : Double]?
     var comparisonSentence: String?
     var isDataLoading: Bool = false
     
@@ -30,6 +31,7 @@ class HomeViewModel {
         do {
             guard let location = placemark.location else { throw LocationError.unavailableLocation }
             airPollution = try await airPollutionUseCase.getCurrent(for: location)
+            pollutantsList = airPollution?.list.first?.components.filter({ $0.value.rounded() > 0 })
         } catch {
             logger.logError(.general, "Error: \(error.localizedDescription)")
         }

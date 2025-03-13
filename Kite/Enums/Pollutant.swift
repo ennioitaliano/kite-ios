@@ -68,4 +68,35 @@ enum Pollutant: String {
         default: nil
         }
     }
+    
+    var measureUnit: MeasureUnit {
+        switch self {
+        case .co, .no2, .o3, .so2: .ppb
+        case .pm2_5, .pm10, .nh3, .no: .ugm3
+        }
+    }
+    
+    var molecularWeight: Double? {
+        switch self {
+        case .co: 28.01
+        case .no2: 46.01
+        case .o3: 48
+        case .so2: 64.07
+        default: nil
+        }
+    }
+}
+
+enum MeasureUnit: AttributedString {
+    case ugm3
+    case ppb
+    
+    var formattedString: AttributedString {
+        switch self {
+        case .ugm3:
+            "μg/m".withSuperscript("3", baseFontSize: 16)
+        default:
+            rawValue
+        }
+    }
 }

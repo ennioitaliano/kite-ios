@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-// TODO: Scales to be changed according to different areas of the world
 enum AirQualityIndex: Int, Comparable {
     case good = 1
     case fair = 2

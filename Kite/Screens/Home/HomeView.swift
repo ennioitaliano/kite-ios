@@ -88,10 +88,16 @@ struct HomeView: View {
     
     @ViewBuilder
     private var pollutantsList: some View {
-        if let pollutants = viewModel.airPollution?.list.first?.components.filter({ $0.value > 0 }).sorted(by: { $0.value > $1.value }) {
+        if let pollutants = viewModel.pollutantsList?.sorted(by: { $0.value > $1.value }) {
             ForEach(pollutants, id: \.key) { pollutant in
-                PollutantRowView(pollutant: pollutant.key, quantity: pollutant.value)
-                    .padding(.bottom, 12)
+                PollutantRowView(
+                    pollutant: pollutant.key,
+                    quantity: pollutant.value.convert(
+                        to: pollutant.key.measureUnit,
+                        with: pollutant.key.molecularWeight
+                    )
+                )
+                .padding(.bottom, 12)
             }
             .padding(.horizontal)
         }

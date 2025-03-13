@@ -12,7 +12,7 @@ struct PollutantRowView: View {
     let quantity: Double
     
     var body: some View {
-        HStack(spacing: 16) {
+        HStack(spacing: 12) {
             pollutantImageView
             pollutantTitle
             pollutantDescription
@@ -54,14 +54,13 @@ struct PollutantRowView: View {
         .frame(maxWidth: .infinity, alignment: .leading)
     }
     
-    // TODO: Improve formatting
     private var pollutantDescription: some View {
         HStack(spacing: 3) {
-            Text("\(quantity.formatted(.number.precision(.significantDigits(2))))")
+            Text("\(quantity.formatted(.number.precision(.fractionLength(1))))")
                 .monospaced()
                 .font(.system(size: 20))
                 .fontWeight(.light)
-            Text("μg/m".withSuperscript("3", baseFontSize: 16))
+            Text(pollutant.measureUnit.formattedString)
                 .monospaced()
                 .font(.system(size: 16))
                 .foregroundStyle(.gray)

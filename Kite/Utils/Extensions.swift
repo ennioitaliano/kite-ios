@@ -56,3 +56,13 @@ extension String {
     }
 }
 
+extension Double {
+    func convert(to measureUnit: MeasureUnit, with molecularWeight: Double?) -> Double {
+        switch measureUnit {
+        case .ppb:
+            guard let molecularWeight else { return self }
+            return (self * (273.15+12)) / (12.187 * molecularWeight)
+        default: return self
+        }
+    }
+}
