@@ -11,7 +11,7 @@ import Foundation
 
 protocol AirPollutionUseCase {
     func getCurrent(for location: CLLocation) async throws -> AirPollutionModel
-    
+
     func getHistorical(
         for location: CLLocation,
         interval: DateInterval
@@ -19,16 +19,16 @@ protocol AirPollutionUseCase {
 }
 
 struct AirPollutionLiveUseCase: AirPollutionUseCase {
-    
+
     @Dependency(\.airPollutionRemoteRepository) private var airPollutionRepository
-    
+
     func getCurrent(for location: CLLocation) async throws -> AirPollutionModel {
         try await airPollutionRepository.getCurrent(
             lat: location.coordinate.latitude,
             lon: location.coordinate.longitude
         )
     }
-    
+
     func getHistorical(
         for location: CLLocation,
         interval: DateInterval

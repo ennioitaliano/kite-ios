@@ -15,12 +15,12 @@ protocol AirPollutionRemoteRepository {
         lat latitude: CLLocationDegrees,
         lon longitude: CLLocationDegrees
     ) async throws -> AirPollutionModel
-    
+
     func getForecast(
         lat latitude: CLLocationDegrees,
         lon longitude: CLLocationDegrees
     ) async throws -> AirPollutionModel
-    
+
     func getHistorical(
         lat latitude: CLLocationDegrees,
         lon longitude: CLLocationDegrees,

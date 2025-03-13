@@ -10,7 +10,7 @@ import SwiftUI
 struct PollutantRowView: View {
     let pollutant: Pollutant
     let quantity: Double
-    
+
     var body: some View {
         HStack(spacing: 12) {
             pollutantImageView
@@ -24,7 +24,7 @@ struct PollutantRowView: View {
         .clipShape(.rect(cornerRadius: 15))
         .shadow(radius: 1)
     }
-    
+
     @ViewBuilder
     private var pollutantImageView: some View {
         if let pollutantImage = pollutant.image {
@@ -40,7 +40,7 @@ struct PollutantRowView: View {
                 .frame(width: 50)
         }
     }
-    
+
     private var pollutantTitle: some View {
         VStack(alignment: .leading, spacing: 3) {
             Text(pollutant.formattedFormula(baseFontSize: 20))
@@ -53,7 +53,7 @@ struct PollutantRowView: View {
         }
         .frame(maxWidth: .infinity, alignment: .leading)
     }
-    
+
     private var pollutantDescription: some View {
         HStack(spacing: 3) {
             Text("\(quantity.formatted(.number.precision(.fractionLength(1))))")

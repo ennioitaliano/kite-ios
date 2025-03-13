@@ -18,7 +18,7 @@ extension CLPlacemark {
         if self.isoCountryCode == "US" {
             components[1] = self.administrativeArea
         }
-        
+
         return components.compactMap { $0 }.joined(separator: ",")
     }
 
@@ -27,7 +27,7 @@ extension CLPlacemark {
             self.postalCode,
             self.isoCountryCode
         ]
-        
+
         return components.compactMap { $0 }.joined(separator: ",")
     }
 }
@@ -43,7 +43,7 @@ extension String {
         mainText.append(subText)
         return mainText
     }
-    
+
     func withSuperscript(_ superscriptText: String?, baseFontSize: CGFloat = 17) -> AttributedString {
         var mainText = AttributedString(self)
         mainText.font = .system(size: baseFontSize)

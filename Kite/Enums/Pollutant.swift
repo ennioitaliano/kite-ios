@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// swiftlint: disable identifier_name
 enum Pollutant: String {
     case co
     case no2
@@ -16,7 +17,7 @@ enum Pollutant: String {
     case pm10
     case nh3
     case no
-    
+
     private var moleculesNames: String {
         switch self {
         case .co: "CO"
@@ -27,7 +28,7 @@ enum Pollutant: String {
         case .nh3: "NH"
         }
     }
-    
+
     private var subscriptItems: String? {
         switch self {
         case .co, .no: nil
@@ -39,7 +40,7 @@ enum Pollutant: String {
         case .nh3: "3"
         }
     }
-    
+
     var completeName: String {
         switch self {
         case .co: "Carbon Monoxide"
@@ -52,11 +53,11 @@ enum Pollutant: String {
         case .no: "Nitric Oxide"
         }
     }
-    
+
     func formattedFormula(baseFontSize: CGFloat) -> AttributedString {
         moleculesNames.withSubscript(subscriptItems, baseFontSize: baseFontSize)
     }
-    
+
     var image: ImageResource? {
         switch self {
         case .co: .coMol
@@ -68,14 +69,14 @@ enum Pollutant: String {
         default: nil
         }
     }
-    
+
     var measureUnit: MeasureUnit {
         switch self {
         case .co, .no2, .o3, .so2: .ppb
         case .pm2_5, .pm10, .nh3, .no: .ugm3
         }
     }
-    
+
     var molecularWeight: Double? {
         switch self {
         case .co: 28.01
@@ -90,7 +91,7 @@ enum Pollutant: String {
 enum MeasureUnit: AttributedString {
     case ugm3
     case ppb
-    
+
     var formattedString: AttributedString {
         switch self {
         case .ugm3:
@@ -100,3 +101,4 @@ enum MeasureUnit: AttributedString {
         }
     }
 }
+// swiftlint: enable identifier_name

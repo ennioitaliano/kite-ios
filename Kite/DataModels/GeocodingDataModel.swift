@@ -36,7 +36,7 @@ struct GeocodingDataModel: Codable {
                 longitude: longitude
             ),
             country: country,
-            state: state, 
+            state: state,
             zip: zip
         )
     }

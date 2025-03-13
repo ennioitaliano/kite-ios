@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AirQualityTileView: View {
     @Environment(HomeViewModel.self) private var viewModel
-    
+
     @ViewBuilder
     var body: some View {
         if let AQI = viewModel.airPollution?.list.first?.AQI {
