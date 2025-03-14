@@ -19,6 +19,12 @@ class HomeViewModel {
     var pollutantsList: [Pollutant: Double]?
     var comparisonSentence: String?
     var isDataLoading: Bool = false
+    var placemark: CLPlacemark?
+
+    func getPlacemark(for locationSearchText: String) async {
+        let geocoder = CLGeocoder()
+        placemark = try? await geocoder.geocodeAddressString(locationSearchText).first
+    }
 
     func getAirPollution(for placemark: CLPlacemark) async {
         isDataLoading = true

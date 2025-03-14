@@ -6,25 +6,16 @@
 //
 
 import CoreLocation
-import CoreLocationUI
 import Dependencies
 import SwiftUI
 
 struct HomeView: View {
     @State private var viewModel: HomeViewModel = .init()
-    @State private var showSearchAlert: Bool = false
-    @State private var locationText: String = "Teolo"
-    @State private var displayedLocation: String?
+    @State private var showSearchSheet: Bool = false
+    @State private var locationText: String = "Teolo, Italy"
 
     private func getAirPollution() async {
-        let geocoder = CLGeocoder()
-        let placemark = try? await geocoder.geocodeAddressString(locationText).first
-        if let placemark {
-            displayedLocation = if let locality = placemark.locality, let country = placemark.country {
-                "\(locality), \(country)"
-            } else {
-                locationText
-            }
+        if let placemark = viewModel.placemark {
             await viewModel.getAirPollution(for: placemark)
         }
     }
@@ -47,40 +38,37 @@ struct HomeView: View {
             }
         }
         .preferredColorScheme(.dark)
-        .alert("Change location", isPresented: $showSearchAlert) {
-            TextField(text: $locationText) {}
-            Button("Submit") {
-                Task {
-                    await getAirPollution()
-                }
-            }
-            Button("Cancel", role: .cancel) {}
-        }
         .task {
+            await viewModel.getPlacemark(for: locationText)
             await getAirPollution()
+        }
+        .sheet(isPresented: $showSearchSheet) {
+            Task {
+                await getAirPollution()
+            }
+        } content: {
+            LocationChoiceView(locationSearchText: $locationText)
+                .environment(viewModel)
         }
     }
 
     @ViewBuilder
     private var searchLocationButton: some View {
-        if let displayedLocation {
-            Button {
-                showSearchAlert = true
-                locationText = displayedLocation
-            } label: {
-                Label(displayedLocation, systemImage: "magnifyingglass")
-                    .font(.system(size: 14))
-                    .foregroundStyle(.white)
-                    .labelStyle(.titleAndIcon)
-            }
+        Button {
+            showSearchSheet = true
+        } label: {
+            Label(locationText, systemImage: locationText == "Teolo, Italy" ? "location.fill" : "magnifyingglass")
+                .font(.system(size: 14))
+                .foregroundStyle(.white)
+                .labelStyle(.titleAndIcon)
         }
     }
 
     @ViewBuilder
     private var aqiInfo: some View {
-            AirQualityTileView()
-                .environment(viewModel)
-                .padding(.bottom, 32)
+        AirQualityTileView()
+            .environment(viewModel)
+            .padding(.bottom, 32)
     }
 
     @ViewBuilder
