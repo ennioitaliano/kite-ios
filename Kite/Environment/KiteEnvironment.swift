@@ -17,8 +17,4 @@ struct KiteEnvironment: EnvironmentAPI {
     var baseURL: URL {
         URL(string: baseURLPath)!
     }
-
-    var APIKey: String {
-        "YOUR_OPENWEATHER_API_KEY"
-    }
 }
