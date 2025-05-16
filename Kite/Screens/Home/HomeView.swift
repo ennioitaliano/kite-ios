@@ -16,6 +16,8 @@ struct HomeView: View {
     @State private var locationText: String = "Teolo"
     @State private var displayedLocation: String?
 
+    @State private var selectedPollutant: Pollutant?
+
     private func getAirPollution() async {
         let geocoder = CLGeocoder()
         let placemark = try? await geocoder.geocodeAddressString(locationText).first
@@ -44,6 +46,16 @@ struct HomeView: View {
                 ToolbarItem(placement: .principal) {
                     searchLocationButton
                 }
+            }
+            .sheet(item: $selectedPollutant) { pollutant in
+                PollutantDetailView(
+                    pollutant,
+                    quantity: viewModel.pollutantsList?[pollutant]?.convert(
+                        to: pollutant.measureUnit,
+                        with: pollutant.molecularWeight
+                    ) ?? 0
+                )
+                    .presentationDetents([.medium])
             }
         }
         .preferredColorScheme(.dark)
@@ -87,13 +99,17 @@ struct HomeView: View {
     private var pollutantsList: some View {
         if let pollutants = viewModel.pollutantsList?.sorted(by: { $0.value > $1.value }) {
             ForEach(pollutants, id: \.key) { pollutant in
-                PollutantRowView(
-                    pollutant: pollutant.key,
-                    quantity: pollutant.value.convert(
-                        to: pollutant.key.measureUnit,
-                        with: pollutant.key.molecularWeight
+                Button {
+                    selectedPollutant = pollutant.key
+                } label: {
+                    PollutantRowView(
+                        pollutant: pollutant.key,
+                        quantity: pollutant.value.convert(
+                            to: pollutant.key.measureUnit,
+                            with: pollutant.key.molecularWeight
+                        )
                     )
-                )
+                }
                 .padding(.bottom, 12)
             }
             .padding(.horizontal)
