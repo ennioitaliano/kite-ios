@@ -15,6 +15,7 @@ struct HomeView: View {
     @State private var showSearchAlert: Bool = false
     @State private var locationText: String = "Teolo"
     @State private var displayedLocation: String?
+    @Namespace private var namespace
 
     @State private var selectedPollutant: Pollutant?
 
@@ -33,9 +34,11 @@ struct HomeView: View {
 
     var body: some View {
         NavigationStack {
-            KiteList {
-                aqiInfo
-                pollutantsList
+            ScrollView {
+                VStack(spacing: 32) {
+                    aqiInfo
+                    pollutantsList
+                }
             }
             .background(Color.black.brightness(0.25).ignoresSafeArea())
             .refreshable {
@@ -55,7 +58,8 @@ struct HomeView: View {
                         with: pollutant.molecularWeight
                     ) ?? 0
                 )
-                    .presentationDetents([.medium])
+                .presentationDetents([.medium])
+                .navigationTransition(.zoom(sourceID: pollutant, in: namespace))
             }
         }
         .preferredColorScheme(.dark)
@@ -76,41 +80,40 @@ struct HomeView: View {
     @ViewBuilder
     private var searchLocationButton: some View {
         if let displayedLocation {
-            Button {
+            Button(displayedLocation, systemImage: "magnifyingglass") {
                 showSearchAlert = true
                 locationText = displayedLocation
-            } label: {
-                Label(displayedLocation, systemImage: "magnifyingglass")
-                    .font(.system(size: 14))
-                    .foregroundStyle(.white)
-                    .labelStyle(.titleAndIcon)
             }
+            .labelStyle(.titleAndIcon)
+            .font(.system(size: 14))
+            .buttonStyle(.glass)
         }
     }
 
     @ViewBuilder
     private var aqiInfo: some View {
-            AirQualityTileView()
-                .environment(viewModel)
-                .padding(.bottom, 32)
+        AirQualityTileView()
+            .environment(viewModel)
     }
 
     @ViewBuilder
     private var pollutantsList: some View {
         if let pollutants = viewModel.pollutantsList?.sorted(by: { $0.value > $1.value }) {
-            ForEach(pollutants, id: \.key) { pollutant in
-                Button {
-                    selectedPollutant = pollutant.key
-                } label: {
-                    PollutantRowView(
-                        pollutant: pollutant.key,
-                        quantity: pollutant.value.convert(
-                            to: pollutant.key.measureUnit,
-                            with: pollutant.key.molecularWeight
+            VStack(spacing: 12) {
+                ForEach(pollutants, id: \.key) { pollutant in
+                    Button {
+                        selectedPollutant = pollutant.key
+                    } label: {
+                        PollutantRowView(
+                            pollutant: pollutant.key,
+                            quantity: pollutant.value.convert(
+                                to: pollutant.key.measureUnit,
+                                with: pollutant.key.molecularWeight
+                            )
                         )
-                    )
+                    }
+                    .matchedTransitionSource(id: pollutant.key, in: namespace)
                 }
-                .padding(.bottom, 12)
             }
             .padding(.horizontal)
         }

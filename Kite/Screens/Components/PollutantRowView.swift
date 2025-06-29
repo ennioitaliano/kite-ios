@@ -20,9 +20,7 @@ struct PollutantRowView: View {
         .frame(maxWidth: .infinity)
         .padding()
         .foregroundStyle(Color.white)
-        .background(Color.black.brightness(0.1))
-        .clipShape(.rect(cornerRadius: 15))
-        .shadow(radius: 1)
+        .glassEffect(.regular.interactive()/*, in: .rect(cornerRadius: 25)*/)
     }
 
     @ViewBuilder

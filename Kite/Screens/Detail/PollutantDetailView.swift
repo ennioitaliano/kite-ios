@@ -28,7 +28,7 @@ struct PollutantDetailView: View {
         .padding(.horizontal)
         .padding(.vertical, 32)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.black.brightness(0.1))
+//        .background(Color.black.brightness(0.1))
         .preferredColorScheme(.dark)
     }
     
