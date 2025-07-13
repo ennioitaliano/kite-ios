@@ -10,7 +10,7 @@ import CoreLocation
 import Dependencies
 import Foundation
 
-protocol AirPollutionRemoteRepository {
+protocol AirPollutionRemoteRepository: Sendable {
     func getCurrent(
         lat latitude: CLLocationDegrees,
         lon longitude: CLLocationDegrees

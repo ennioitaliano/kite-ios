@@ -9,7 +9,7 @@ import CoreLocation
 import Dependencies
 import Foundation
 
-protocol AirPollutionUseCase {
+protocol AirPollutionUseCase: Sendable {
     func getCurrent(for location: CLLocation) async throws -> AirPollutionModel
 
     func getHistorical(
