@@ -15,8 +15,6 @@ struct HomeView: View {
     @State private var showSearchAlert: Bool = false
     @State private var locationText: String = "Teolo"
     @State private var displayedLocation: String?
-    @Namespace private var namespace
-
     @State private var selectedPollutant: Pollutant?
 
     private func getAirPollution() async {
