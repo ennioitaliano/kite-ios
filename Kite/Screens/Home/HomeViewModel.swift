@@ -9,6 +9,7 @@ import CoreLocation
 import Dependencies
 import Foundation
 
+@MainActor
 @Observable
 class HomeViewModel {
     @ObservationIgnored @Dependency(\.airPollutionUseCase) private var airPollutionUseCase

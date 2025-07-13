@@ -7,6 +7,7 @@
 
 import CoreLocation
 import Foundation
+import SwiftUI
 
 extension String {
     func baselineOffset(
@@ -49,6 +50,20 @@ extension [String: Double] {
         reduce(into: [:]) { result, element in
             guard let pollutant = Pollutant(rawValue: element.key) else { return }
             result[pollutant] = element.value
+        }
+    }
+}
+
+extension View {
+    func conditionalModifier<V: View>(@ViewBuilder _ block: (Self) -> V) -> V { block(self) }
+}
+
+extension Bool {
+    static var iOS26: Bool {
+        if #available(iOS 26, *) {
+            true
+        } else {
+            false
         }
     }
 }

@@ -90,6 +90,12 @@ enum Pollutant: String {
     }
 }
 
+extension Pollutant: Identifiable {
+    var id: String {
+        rawValue
+    }
+}
+
 enum MeasureUnit: AttributedString {
     case ugm3
     case ppb

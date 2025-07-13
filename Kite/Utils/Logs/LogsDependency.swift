@@ -5,7 +5,7 @@
 //  Created by Ennio Italiano on 12/05/24.
 //
 
-import CommonLogging
+@preconcurrency import CommonLogging
 import Dependencies
 import Foundation
 
