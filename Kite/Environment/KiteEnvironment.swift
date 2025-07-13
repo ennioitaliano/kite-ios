@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol EnvironmentAPI {
+protocol EnvironmentAPI: Sendable {
     var baseURL: URL { get }
     var APIKey: String { get }
 }

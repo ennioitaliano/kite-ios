@@ -21,7 +21,13 @@ struct PollutantRowView: View {
         .padding()
         .foregroundStyle(Color.white)
         .background(Color.black.brightness(0.1))
-        .clipShape(.rect(cornerRadius: 15))
+        .conditionalModifier { view in
+            if .iOS26 {
+                view.clipShape(.capsule)
+            } else {
+                view.clipShape(.rect(cornerRadius: 15))
+            }
+        }
         .shadow(radius: 1)
     }
 
