@@ -85,7 +85,11 @@ struct HomeView: View {
             }
             .labelStyle(.titleAndIcon)
             .font(.system(size: 14))
-            .buttonStyle(.glass)
+            .conditionalModifier { view in
+                if #available(iOS 26, *) {
+                    view.buttonStyle(.glass)
+                }
+            }
         }
     }
 
