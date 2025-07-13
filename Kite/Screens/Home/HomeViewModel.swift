@@ -9,6 +9,7 @@ import CoreLocation
 import Dependencies
 import Foundation
 
+@MainActor
 @Observable
 class HomeViewModel {
     @ObservationIgnored @Dependency(\.airPollutionUseCase) private var airPollutionUseCase
@@ -20,7 +21,6 @@ class HomeViewModel {
     var comparisonSentence: String?
     var isDataLoading: Bool = false
 
-    @MainActor
     func getAirPollution(for placemark: CLPlacemark) async {
         isDataLoading = true
         defer { isDataLoading = false }
@@ -29,7 +29,6 @@ class HomeViewModel {
         await getYesterdayAirPollution(for: placemark)
     }
 
-    @MainActor
     private func getCurrentAirPollution(for placemark: CLPlacemark) async {
         do {
             guard let location = placemark.location else { throw LocationError.unavailableLocation }
@@ -41,7 +40,6 @@ class HomeViewModel {
         }
     }
 
-    @MainActor
     private func getYesterdayAirPollution(for placemark: CLPlacemark) async {
         let yesterday: Date = .now.advanced(by: -86400)
         do {
