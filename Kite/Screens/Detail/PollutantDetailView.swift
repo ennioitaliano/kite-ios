@@ -31,7 +31,7 @@ struct PollutantDetailView: View {
 //        .background(Color.black.brightness(0.1))
         .preferredColorScheme(.dark)
     }
-    
+
     private var pollutantTitle: some View {
         VStack(spacing: 3) {
             Text(pollutant.formattedFormula(baseFontSize: 50))
@@ -56,7 +56,7 @@ struct PollutantDetailView: View {
                 .foregroundStyle(.gray)
         }
     }
-    
+
     @ViewBuilder
     private var pollutantImageView: some View {
         Group {
