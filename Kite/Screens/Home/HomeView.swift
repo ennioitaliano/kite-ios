@@ -59,7 +59,6 @@ struct HomeView: View {
                     ) ?? 0
                 )
                 .presentationDetents([.medium])
-                .navigationTransition(.zoom(sourceID: pollutant, in: namespace))
             }
         }
         .preferredColorScheme(.dark)
@@ -99,7 +98,7 @@ struct HomeView: View {
     @ViewBuilder
     private var pollutantsList: some View {
         if let pollutants = viewModel.pollutantsList?.sorted(by: { $0.value > $1.value }) {
-            VStack(spacing: 12) {
+            LazyVStack(spacing: 12) {
                 ForEach(pollutants, id: \.key) { pollutant in
                     Button {
                         selectedPollutant = pollutant.key
@@ -112,7 +111,6 @@ struct HomeView: View {
                             )
                         )
                     }
-                    .matchedTransitionSource(id: pollutant.key, in: namespace)
                 }
             }
             .padding(.horizontal)
