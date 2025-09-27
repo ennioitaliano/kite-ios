@@ -13,7 +13,7 @@ import SwiftUI
 struct HomeView: View {
     @State private var viewModel: HomeViewModel = .init()
     @State private var showSearchAlert: Bool = false
-    @State private var locationText: String = "Teolo"
+    @State private var locationText: String = "Venice"
     @State private var displayedLocation: String?
     @State private var selectedPollutant: Pollutant?
 
@@ -86,6 +86,10 @@ struct HomeView: View {
             .conditionalModifier { view in
                 if #available(iOS 26, *) {
                     view.buttonStyle(.glass)
+                } else {
+                    view
+                        .buttonStyle(.bordered)
+                        .foregroundStyle(.white)
                 }
             }
         }
