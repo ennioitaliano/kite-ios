@@ -3,51 +3,55 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 70;
+	objectVersion = 77;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		755CE2182BF10C97007B47BC /* Dependencies in Frameworks */ = {isa = PBXBuildFile; productRef = 755CE2172BF10C97007B47BC /* Dependencies */; };
-		755CE21A2BF10C97007B47BC /* DependenciesMacros in Frameworks */ = {isa = PBXBuildFile; productRef = 755CE2192BF10C97007B47BC /* DependenciesMacros */; };
-		75847F102CAECEF200770BCE /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 75847F0F2CAECEF200770BCE /* Alamofire */; };
-		75847F152CAED45C00770BCE /* CommonLogging in Frameworks */ = {isa = PBXBuildFile; productRef = 75847F142CAED45C00770BCE /* CommonLogging */; };
+		754A20532E888F2400E18DE2 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 754A20522E888F2400E18DE2 /* Alamofire */; };
+		754A20562E888F3500E18DE2 /* CommonLogging in Frameworks */ = {isa = PBXBuildFile; productRef = 754A20552E888F3500E18DE2 /* CommonLogging */; };
+		754A20592E888F4A00E18DE2 /* Dependencies in Frameworks */ = {isa = PBXBuildFile; productRef = 754A20582E888F4A00E18DE2 /* Dependencies */; };
+		754A205B2E888F4A00E18DE2 /* DependenciesMacros in Frameworks */ = {isa = PBXBuildFile; productRef = 754A205A2E888F4A00E18DE2 /* DependenciesMacros */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		759F883A2BED256800DEC3FB /* Kite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kite.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		754A1FB32E888E5B00E18DE2 /* Kite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		75C726D32D19DCDF00D82B1D /* Kite */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Kite; sourceTree = "<group>"; };
+		754A1FB52E888E5B00E18DE2 /* Kite */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Kite;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		759F88372BED256800DEC3FB /* Frameworks */ = {
+		754A1FB02E888E5B00E18DE2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75847F152CAED45C00770BCE /* CommonLogging in Frameworks */,
-				75847F102CAECEF200770BCE /* Alamofire in Frameworks */,
-				755CE2182BF10C97007B47BC /* Dependencies in Frameworks */,
-				755CE21A2BF10C97007B47BC /* DependenciesMacros in Frameworks */,
+				754A20592E888F4A00E18DE2 /* Dependencies in Frameworks */,
+				754A20532E888F2400E18DE2 /* Alamofire in Frameworks */,
+				754A205B2E888F4A00E18DE2 /* DependenciesMacros in Frameworks */,
+				754A20562E888F3500E18DE2 /* CommonLogging in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		759F88312BED256800DEC3FB = {
+		754A1FAA2E888E5B00E18DE2 = {
 			isa = PBXGroup;
 			children = (
-				75C726D32D19DCDF00D82B1D /* Kite */,
-				759F883B2BED256800DEC3FB /* Products */,
+				754A1FB52E888E5B00E18DE2 /* Kite */,
+				754A1FB42E888E5B00E18DE2 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		759F883B2BED256800DEC3FB /* Products */ = {
+		754A1FB42E888E5B00E18DE2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				759F883A2BED256800DEC3FB /* Kite.app */,
+				754A1FB32E888E5B00E18DE2 /* Kite.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -55,73 +59,73 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		759F88392BED256800DEC3FB /* Kite */ = {
+		754A1FB22E888E5B00E18DE2 /* Kite */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 759F88482BED256900DEC3FB /* Build configuration list for PBXNativeTarget "Kite" */;
+			buildConfigurationList = 754A1FBE2E888E5C00E18DE2 /* Build configuration list for PBXNativeTarget "Kite" */;
 			buildPhases = (
-				759F88362BED256800DEC3FB /* Sources */,
-				759F88372BED256800DEC3FB /* Frameworks */,
-				759F88382BED256800DEC3FB /* Resources */,
-				75D70CD22BF107B600640621 /* ShellScript */,
+				754A1FAF2E888E5B00E18DE2 /* Sources */,
+				754A1FB02E888E5B00E18DE2 /* Frameworks */,
+				754A1FB12E888E5B00E18DE2 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				75C726D32D19DCDF00D82B1D /* Kite */,
+				754A1FB52E888E5B00E18DE2 /* Kite */,
 			);
 			name = Kite;
 			packageProductDependencies = (
-				755CE2172BF10C97007B47BC /* Dependencies */,
-				755CE2192BF10C97007B47BC /* DependenciesMacros */,
-				75847F0F2CAECEF200770BCE /* Alamofire */,
-				75847F142CAED45C00770BCE /* CommonLogging */,
+				754A20522E888F2400E18DE2 /* Alamofire */,
+				754A20552E888F3500E18DE2 /* CommonLogging */,
+				754A20582E888F4A00E18DE2 /* Dependencies */,
+				754A205A2E888F4A00E18DE2 /* DependenciesMacros */,
 			);
-			productName = "Air Quality Charts";
-			productReference = 759F883A2BED256800DEC3FB /* Kite.app */;
+			productName = kite;
+			productReference = 754A1FB32E888E5B00E18DE2 /* Kite.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		759F88322BED256800DEC3FB /* Project object */ = {
+		754A1FAB2E888E5B00E18DE2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1530;
+				LastSwiftUpdateCheck = 2600;
 				LastUpgradeCheck = 2600;
 				TargetAttributes = {
-					759F88392BED256800DEC3FB = {
-						CreatedOnToolsVersion = 15.3;
+					754A1FB22E888E5B00E18DE2 = {
+						CreatedOnToolsVersion = 26.0;
 					};
 				};
 			};
-			buildConfigurationList = 759F88352BED256800DEC3FB /* Build configuration list for PBXProject "Kite" */;
-			compatibilityVersion = "Xcode 14.0";
+			buildConfigurationList = 754A1FAE2E888E5B00E18DE2 /* Build configuration list for PBXProject "Kite" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 759F88312BED256800DEC3FB;
+			mainGroup = 754A1FAA2E888E5B00E18DE2;
+			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				755CE2162BF10C97007B47BC /* XCRemoteSwiftPackageReference "swift-dependencies" */,
-				75847F0E2CAECEF200770BCE /* XCRemoteSwiftPackageReference "Alamofire" */,
-				75847F132CAED45C00770BCE /* XCRemoteSwiftPackageReference "common-logging-swift" */,
+				754A20512E888F2400E18DE2 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				754A20542E888F3500E18DE2 /* XCRemoteSwiftPackageReference "common-logging-swift" */,
+				754A20572E888F4A00E18DE2 /* XCRemoteSwiftPackageReference "swift-dependencies" */,
 			);
-			productRefGroup = 759F883B2BED256800DEC3FB /* Products */;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 754A1FB42E888E5B00E18DE2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				759F88392BED256800DEC3FB /* Kite */,
+				754A1FB22E888E5B00E18DE2 /* Kite */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		759F88382BED256800DEC3FB /* Resources */ = {
+		754A1FB12E888E5B00E18DE2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -130,29 +134,8 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		75D70CD22BF107B600640621 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		759F88362BED256800DEC3FB /* Sources */ = {
+		754A1FAF2E888E5B00E18DE2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -162,7 +145,7 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		759F88462BED256900DEC3FB /* Debug */ = {
+		754A1FBC2E888E5C00E18DE2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -215,20 +198,18 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 6.0;
 			};
 			name = Debug;
 		};
-		759F88472BED256900DEC3FB /* Release */ = {
+		754A1FBD2E888E5C00E18DE2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -275,90 +256,84 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
-				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_VERSION = 6.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		759F88492BED256900DEC3FB /* Debug */ = {
+		754A1FBF2E888E5C00E18DE2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Kite/Preview Content\"";
+				DEVELOPMENT_TEAM = MR926NTU55;
 				ENABLE_PREVIEWS = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Kite;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.weather";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.0.1;
-				OTHER_LDFLAGS = (
-					"-Xlinker",
-					"-interposable",
-				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ennio.kite;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 6.0;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
-		759F884A2BED256900DEC3FB /* Release */ = {
+		754A1FC02E888E5C00E18DE2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Kite/Preview Content\"";
+				DEVELOPMENT_TEAM = MR926NTU55;
 				ENABLE_PREVIEWS = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Kite;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.weather";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.0.1;
-				OTHER_LDFLAGS = (
-					"-Xlinker",
-					"-interposable",
-				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ennio.kite;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 6.0;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -366,20 +341,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		759F88352BED256800DEC3FB /* Build configuration list for PBXProject "Kite" */ = {
+		754A1FAE2E888E5B00E18DE2 /* Build configuration list for PBXProject "Kite" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				759F88462BED256900DEC3FB /* Debug */,
-				759F88472BED256900DEC3FB /* Release */,
+				754A1FBC2E888E5C00E18DE2 /* Debug */,
+				754A1FBD2E888E5C00E18DE2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		759F88482BED256900DEC3FB /* Build configuration list for PBXNativeTarget "Kite" */ = {
+		754A1FBE2E888E5C00E18DE2 /* Build configuration list for PBXNativeTarget "Kite" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				759F88492BED256900DEC3FB /* Debug */,
-				759F884A2BED256900DEC3FB /* Release */,
+				754A1FBF2E888E5C00E18DE2 /* Debug */,
+				754A1FC02E888E5C00E18DE2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -387,23 +362,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		755CE2162BF10C97007B47BC /* XCRemoteSwiftPackageReference "swift-dependencies" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/pointfreeco/swift-dependencies";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.3.0;
-			};
-		};
-		75847F0E2CAECEF200770BCE /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		754A20512E888F2400E18DE2 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 5.9.1;
+				minimumVersion = 5.10.2;
 			};
 		};
-		75847F132CAED45C00770BCE /* XCRemoteSwiftPackageReference "common-logging-swift" */ = {
+		754A20542E888F3500E18DE2 /* XCRemoteSwiftPackageReference "common-logging-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/7Circle/common-logging-swift";
 			requirement = {
@@ -411,30 +378,38 @@
 				minimumVersion = 1.0.4;
 			};
 		};
+		754A20572E888F4A00E18DE2 /* XCRemoteSwiftPackageReference "swift-dependencies" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-dependencies";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.10.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		755CE2172BF10C97007B47BC /* Dependencies */ = {
+		754A20522E888F2400E18DE2 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 755CE2162BF10C97007B47BC /* XCRemoteSwiftPackageReference "swift-dependencies" */;
-			productName = Dependencies;
-		};
-		755CE2192BF10C97007B47BC /* DependenciesMacros */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 755CE2162BF10C97007B47BC /* XCRemoteSwiftPackageReference "swift-dependencies" */;
-			productName = DependenciesMacros;
-		};
-		75847F0F2CAECEF200770BCE /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 75847F0E2CAECEF200770BCE /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = 754A20512E888F2400E18DE2 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
-		75847F142CAED45C00770BCE /* CommonLogging */ = {
+		754A20552E888F3500E18DE2 /* CommonLogging */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 75847F132CAED45C00770BCE /* XCRemoteSwiftPackageReference "common-logging-swift" */;
+			package = 754A20542E888F3500E18DE2 /* XCRemoteSwiftPackageReference "common-logging-swift" */;
 			productName = CommonLogging;
+		};
+		754A20582E888F4A00E18DE2 /* Dependencies */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 754A20572E888F4A00E18DE2 /* XCRemoteSwiftPackageReference "swift-dependencies" */;
+			productName = Dependencies;
+		};
+		754A205A2E888F4A00E18DE2 /* DependenciesMacros */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 754A20572E888F4A00E18DE2 /* XCRemoteSwiftPackageReference "swift-dependencies" */;
+			productName = DependenciesMacros;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = 759F88322BED256800DEC3FB /* Project object */;
+	rootObject = 754A1FAB2E888E5B00E18DE2 /* Project object */;
 }

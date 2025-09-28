@@ -8,6 +8,7 @@
 import CoreLocation
 import Dependencies
 import Foundation
+import CommonLogging
 
 @MainActor
 @Observable
