@@ -9,6 +9,7 @@ import Alamofire
 import CoreLocation
 import Dependencies
 import Foundation
+import CommonLogging
 
 protocol AirPollutionRemoteRepository: Sendable {
     func getCurrent(

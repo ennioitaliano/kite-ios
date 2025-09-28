@@ -8,7 +8,7 @@
 import CoreLocation
 import Foundation
 
-struct AirPollutionDataModel: Codable {
+nonisolated struct AirPollutionDataModel: Codable {
     let coordinates: CoordinatesDataModel
     let list: [TimePollutionDataModel]
 
