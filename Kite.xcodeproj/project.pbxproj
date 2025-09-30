@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		754A20532E888F2400E18DE2 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 754A20522E888F2400E18DE2 /* Alamofire */; };
 		754A20562E888F3500E18DE2 /* CommonLogging in Frameworks */ = {isa = PBXBuildFile; productRef = 754A20552E888F3500E18DE2 /* CommonLogging */; };
 		754A20592E888F4A00E18DE2 /* Dependencies in Frameworks */ = {isa = PBXBuildFile; productRef = 754A20582E888F4A00E18DE2 /* Dependencies */; };
 		754A205B2E888F4A00E18DE2 /* DependenciesMacros in Frameworks */ = {isa = PBXBuildFile; productRef = 754A205A2E888F4A00E18DE2 /* DependenciesMacros */; };
+		75E4CFB82E8BB273002FDFAE /* OWAirPollution in Frameworks */ = {isa = PBXBuildFile; productRef = 75E4CFB72E8BB273002FDFAE /* OWAirPollution */; };
+		75E4D0612E8BBD87002FDFAE /* OWAirPollution in Frameworks */ = {isa = PBXBuildFile; productRef = 75E4D0602E8BBD87002FDFAE /* OWAirPollution */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +32,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				754A20592E888F4A00E18DE2 /* Dependencies in Frameworks */,
-				754A20532E888F2400E18DE2 /* Alamofire in Frameworks */,
+				75E4D0612E8BBD87002FDFAE /* OWAirPollution in Frameworks */,
+				75E4CFB82E8BB273002FDFAE /* OWAirPollution in Frameworks */,
 				754A205B2E888F4A00E18DE2 /* DependenciesMacros in Frameworks */,
 				754A20562E888F3500E18DE2 /* CommonLogging in Frameworks */,
 			);
@@ -44,6 +46,7 @@
 			isa = PBXGroup;
 			children = (
 				754A1FB52E888E5B00E18DE2 /* Kite */,
+				75E4CFB62E8BB273002FDFAE /* Frameworks */,
 				754A1FB42E888E5B00E18DE2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,6 +57,13 @@
 				754A1FB32E888E5B00E18DE2 /* Kite.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		75E4CFB62E8BB273002FDFAE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -76,10 +86,11 @@
 			);
 			name = Kite;
 			packageProductDependencies = (
-				754A20522E888F2400E18DE2 /* Alamofire */,
 				754A20552E888F3500E18DE2 /* CommonLogging */,
 				754A20582E888F4A00E18DE2 /* Dependencies */,
 				754A205A2E888F4A00E18DE2 /* DependenciesMacros */,
+				75E4CFB72E8BB273002FDFAE /* OWAirPollution */,
+				75E4D0602E8BBD87002FDFAE /* OWAirPollution */,
 			);
 			productName = kite;
 			productReference = 754A1FB32E888E5B00E18DE2 /* Kite.app */;
@@ -110,9 +121,9 @@
 			mainGroup = 754A1FAA2E888E5B00E18DE2;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				754A20512E888F2400E18DE2 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				754A20542E888F3500E18DE2 /* XCRemoteSwiftPackageReference "common-logging-swift" */,
 				754A20572E888F4A00E18DE2 /* XCRemoteSwiftPackageReference "swift-dependencies" */,
+				75E4D05F2E8BBD87002FDFAE /* XCLocalSwiftPackageReference "../../OWAirPollution" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 754A1FB42E888E5B00E18DE2 /* Products */;
@@ -282,7 +293,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -318,7 +329,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -361,15 +372,14 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		754A20512E888F2400E18DE2 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.10.2;
-			};
+/* Begin XCLocalSwiftPackageReference section */
+		75E4D05F2E8BBD87002FDFAE /* XCLocalSwiftPackageReference "../../OWAirPollution" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../../OWAirPollution;
 		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCRemoteSwiftPackageReference section */
 		754A20542E888F3500E18DE2 /* XCRemoteSwiftPackageReference "common-logging-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/7Circle/common-logging-swift";
@@ -389,11 +399,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		754A20522E888F2400E18DE2 /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 754A20512E888F2400E18DE2 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
-		};
 		754A20552E888F3500E18DE2 /* CommonLogging */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 754A20542E888F3500E18DE2 /* XCRemoteSwiftPackageReference "common-logging-swift" */;
@@ -408,6 +413,14 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 754A20572E888F4A00E18DE2 /* XCRemoteSwiftPackageReference "swift-dependencies" */;
 			productName = DependenciesMacros;
+		};
+		75E4CFB72E8BB273002FDFAE /* OWAirPollution */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = OWAirPollution;
+		};
+		75E4D0602E8BBD87002FDFAE /* OWAirPollution */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = OWAirPollution;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

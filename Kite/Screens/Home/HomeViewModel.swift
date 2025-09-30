@@ -5,15 +5,16 @@
 //  Created by Ennio Italiano on 03/10/24.
 //
 
+import CommonLogging
 import CoreLocation
 import Dependencies
 import Foundation
-import CommonLogging
+import OWAirPollution
 
 @MainActor
 @Observable
 class HomeViewModel {
-    @ObservationIgnored @Dependency(\.airPollutionUseCase) private var airPollutionUseCase
+    @ObservationIgnored @Dependency(\.owAirPollutionClient) private var airPollutionClient
     @ObservationIgnored @Dependency(\.logger) private var logger
 
     private var airPollutionData: TimePollutionModel?
@@ -33,7 +34,7 @@ class HomeViewModel {
     private func getCurrentAirPollution(for placemark: CLPlacemark) async {
         do {
             guard let location = placemark.location else { throw LocationError.unavailableLocation }
-            airPollutionData = try await airPollutionUseCase.getCurrent(for: location).list.first
+            airPollutionData = try await airPollutionClient.getCurrent(for: location).list.first
             pollutantsList = airPollutionData?.components.filter({ $0.value.rounded() > 0 })
             airQualityIndex = airPollutionData?.airQualityIndex
         } catch {
@@ -45,7 +46,7 @@ class HomeViewModel {
         let yesterday: Date = .now.advanced(by: -86400)
         do {
             guard let location = placemark.location else { throw LocationError.unavailableLocation }
-            let yesterdayAirPollutionData = try await airPollutionUseCase.getHistorical(
+            let yesterdayAirPollutionData = try await airPollutionClient.getHistorical(
                 for: location,
                 interval: .init(start: yesterday, duration: 3600)
             ).list.first
