@@ -15,7 +15,7 @@ struct PollutantRowView: View {
         HStack(spacing: 12) {
             pollutantImageView
             pollutantTitle
-            pollutantDescription
+            pollutantQuantity
         }
         .frame(maxWidth: .infinity)
         .padding()
@@ -31,20 +31,11 @@ struct PollutantRowView: View {
         .shadow(radius: 1)
     }
 
-    @ViewBuilder
     private var pollutantImageView: some View {
-        if let pollutantImage = pollutant.image {
-            Image(pollutantImage)
-                .resizable()
-                .scaledToFit()
-                .frame(maxWidth: 50, maxHeight: 50)
-        } else {
-            Image(systemName: pollutant == .pm10 ? "aqi.medium" : "aqi.low")
-                .foregroundStyle(.gray)
-                .font(.system(size: 25))
-                .fontWeight(.black)
-                .frame(width: 50)
-        }
+        PollutantImageView(
+            pollutant,
+            fontSize: 25
+        )
     }
 
     private var pollutantTitle: some View {
@@ -60,12 +51,10 @@ struct PollutantRowView: View {
         .frame(maxWidth: .infinity, alignment: .leading)
     }
 
-    private var pollutantDescription: some View {
+    private var pollutantQuantity: some View {
         HStack(spacing: 3) {
             Text("\(quantity.formatted(.number.precision(.fractionLength(1))))")
-                .monospaced()
-                .font(.system(size: 20))
-                .fontWeight(.light)
+                .font(.system(size: 20, weight: .light, design: .monospaced))
             Text(pollutant.measureUnit.formattedString(baseFontSize: 16))
                 .monospaced()
                 .font(.system(size: 16))
