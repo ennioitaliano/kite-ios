@@ -41,5 +41,6 @@ let kMoleculeWeigthNO2: Double = 46.01
 let kMoleculeWeigthO3: Double = 48
 let kMoleculeWeigthSO2: Double = 64.07
 
+let kPartsPerBillion: String = "ppb"
 let kMicrogramsCubicMeter: String = "μg/m"
 let kCubicPower: String = "3"

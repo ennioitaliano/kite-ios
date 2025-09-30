@@ -97,8 +97,13 @@ struct HomeView: View {
 
     @ViewBuilder
     private var aqiInfo: some View {
-        AirQualityTileView()
-            .environment(viewModel)
+        if let aqi = viewModel.airQualityIndex,
+           let comparisonSentence = viewModel.comparisonSentence {
+            AirQualityTileView(
+                airQualityIndex: aqi,
+                comparisonSentence: comparisonSentence
+            )
+        }
     }
 
     @ViewBuilder

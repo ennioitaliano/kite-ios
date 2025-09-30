@@ -17,7 +17,9 @@ enum Pollutant: String {
     case pm10
     case nh3
     case no
+}
 
+extension Pollutant {
     private var moleculesNames: String {
         switch self {
         case .co: kMoleculeNameCO
@@ -60,7 +62,7 @@ enum Pollutant: String {
         )
     }
 
-    var image: ImageResource? {
+    var imageResource: ImageResource? {
         switch self {
         case .co: .coMol
         case .no2: .no2Mol
@@ -93,22 +95,6 @@ enum Pollutant: String {
 extension Pollutant: Identifiable {
     var id: String {
         rawValue
-    }
-}
-
-enum MeasureUnit: AttributedString {
-    case ugm3
-    case ppb
-
-    func formattedString(baseFontSize: CGFloat) -> AttributedString {
-        switch self {
-        case .ugm3: kMicrogramsCubicMeter.baselineOffset(
-            type: .superscriptOffset,
-            text: kCubicPower,
-            baseFontSize: baseFontSize
-        )
-        default: rawValue
-        }
     }
 }
 // swiftlint: enable identifier_name

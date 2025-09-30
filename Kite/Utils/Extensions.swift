@@ -9,6 +9,15 @@ import CoreLocation
 import Foundation
 import SwiftUI
 
+extension CLLocationCoordinate2D {
+    init(coordinates: CoordinatesDataModel) {
+        self = CLLocationCoordinate2D(
+            latitude: coordinates.latitude,
+            longitude: coordinates.longitude
+        )
+    }
+}
+
 extension String {
     func baselineOffset(
         type: BaselineOffsetType,

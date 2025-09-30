@@ -9,7 +9,9 @@ enum AQIComparison {
     case betterThanYesterday
     case worseThanYesterday
     case sameAsYesterday
+}
 
+extension AQIComparison {
     init(
         between yesterdayValue: AirQualityIndex,
         and todayValue: AirQualityIndex
