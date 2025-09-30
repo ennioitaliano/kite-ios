@@ -9,7 +9,7 @@ import SwiftUI
 
 struct KiteList<Content: View>: View {
 
-    let content: Content
+    private let content: Content
 
     init(@ViewBuilder _ content: () -> Content) {
         self.content = content()

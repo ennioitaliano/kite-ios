@@ -56,22 +56,11 @@ struct PollutantDetailView: View {
         }
     }
 
-    @ViewBuilder
     private var pollutantImageView: some View {
-        Group {
-            if let pollutantImage = pollutant.image {
-                Image(pollutantImage)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(maxWidth: 200)
-            } else {
-                Image(systemName: pollutant == .pm10 ? "aqi.medium" : "aqi.low")
-                    .foregroundStyle(.gray)
-                    .font(.system(size: 100))
-                    .fontWeight(.black)
-                    .frame(width: 200)
-            }
-        }
+        PollutantImageView(
+            pollutant,
+            fontSize: 100
+        )
         .frame(maxHeight: .infinity)
     }
 }

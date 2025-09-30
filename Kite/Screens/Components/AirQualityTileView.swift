@@ -8,39 +8,56 @@
 import SwiftUI
 
 struct AirQualityTileView: View {
-    @Environment(HomeViewModel.self) private var viewModel
+
+    let airQualityIndex: AirQualityIndex
+    let comparisonSentence: String
 
     @ViewBuilder
     var body: some View {
-        if let aqi = viewModel.airQualityIndex {
-            VStack(spacing: 10) {
-                Image(systemName: aqi.icon)
-                    .font(.system(size: 30))
-                    .foregroundStyle(aqi.color.gradient, .white)
-                VStack(spacing: 0) {
-                    Text("Air Quality is currently".uppercased())
-                        .fontDesign(.rounded)
-                        .font(.system(size: 10))
-                        .foregroundStyle(Color.gray)
-                    Text(aqi.string.uppercased())
-                        .fontDesign(.rounded)
-                        .font(.system(size: 36))
-                }
-                if let comparisonSentence = viewModel.comparisonSentence {
-                    Text(comparisonSentence)
-                        .fontDesign(.rounded)
-                        .font(.system(size: 16))
-                        .multilineTextAlignment(.center)
-                        .lineLimit(2)
-                }
+        VStack(spacing: 10) {
+            aqiIcon
+            VStack(spacing: 0) {
+                aqiSubtitle
+                aqiValue
             }
-            .foregroundStyle(.white)
-            .padding(.horizontal, 40)
-            .frame(maxWidth: .infinity)
+            aqiComparison
         }
+        .foregroundStyle(.white)
+        .padding(.horizontal, 40)
+        .frame(maxWidth: .infinity)
+    }
+
+    private var aqiIcon: some View {
+        Image(systemName: airQualityIndex.icon)
+            .font(.system(size: 30))
+            .foregroundStyle(airQualityIndex.color.gradient, .white)
+    }
+
+    private var aqiSubtitle: some View {
+        Text("Air Quality is currently".uppercased())
+            .fontDesign(.rounded)
+            .font(.system(size: 10))
+            .foregroundStyle(Color.gray)
+    }
+
+    private var aqiValue: some View {
+        Text(airQualityIndex.string.uppercased())
+            .fontDesign(.rounded)
+            .font(.system(size: 36))
+    }
+
+    private var aqiComparison: some View {
+        Text(comparisonSentence)
+            .fontDesign(.rounded)
+            .font(.system(size: 16))
+            .multilineTextAlignment(.center)
+            .lineLimit(2)
     }
 }
 
 #Preview {
-    AirQualityTileView()
+    AirQualityTileView(
+        airQualityIndex: .moderate,
+        comparisonSentence: AQIComparison.worseThanYesterday.sentence
+    )
 }
