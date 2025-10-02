@@ -5,6 +5,7 @@
 //  Created by Ennio Italiano on 13/02/25.
 //
 
+import OWAirPollution
 import SwiftUI
 
 struct PollutantRowView: View {

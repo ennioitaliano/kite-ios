@@ -7,16 +7,8 @@
 
 import CoreLocation
 import Foundation
+import OWAirPollution
 import SwiftUI
-
-extension CLLocationCoordinate2D {
-    init(coordinates: CoordinatesDataModel) {
-        self = CLLocationCoordinate2D(
-            latitude: coordinates.latitude,
-            longitude: coordinates.longitude
-        )
-    }
-}
 
 extension String {
     func baselineOffset(
@@ -50,15 +42,6 @@ extension Double {
             let inverseUniversalGasLaw: Double = 12.187
             return (self * (absoluteZeroK + temperature)) / (inverseUniversalGasLaw * molecularWeight)
         default: return self
-        }
-    }
-}
-
-extension [String: Double] {
-    func toModel() -> [Pollutant: Double] {
-        reduce(into: [:]) { result, element in
-            guard let pollutant = Pollutant(rawValue: element.key) else { return }
-            result[pollutant] = element.value
         }
     }
 }

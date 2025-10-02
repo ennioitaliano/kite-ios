@@ -8,10 +8,7 @@
 import Foundation
 
 enum LogsCategories: String {
+    case airPollutionClient
     case general
-    case network
-    case localRepository
-    case realm
-    case useCase
     case location
 }

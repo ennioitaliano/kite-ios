@@ -5,19 +5,10 @@
 //  Created by Ennio Italiano on 22/01/25.
 //
 
+import OWAirPollution
 import SwiftUI
 
 // swiftlint: disable identifier_name
-enum Pollutant: String {
-    case co
-    case no2
-    case o3
-    case so2
-    case pm2_5
-    case pm10
-    case nh3
-    case no
-}
 
 extension Pollutant {
     private var moleculesNames: String {
@@ -89,12 +80,6 @@ extension Pollutant {
         case .so2: kMoleculeWeigthSO2
         default: nil
         }
-    }
-}
-
-extension Pollutant: Identifiable {
-    var id: String {
-        rawValue
     }
 }
 // swiftlint: enable identifier_name

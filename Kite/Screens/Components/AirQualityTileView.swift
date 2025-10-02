@@ -5,6 +5,7 @@
 //  Created by Ennio Italiano on 17/01/25.
 //
 
+import OWAirPollution
 import SwiftUI
 
 struct AirQualityTileView: View {
