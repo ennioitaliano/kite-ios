@@ -10,13 +10,13 @@ import Foundation
 import OWAirPollution
 
 public enum OWAirPollutionDependencyKey: DependencyKey {
-    public static var liveValue: AirPollutionClient {
-        AirPollutionLiveClient()
+    public static var liveValue: AirPollutionService {
+        try! AirPollutionClient.getAirPollutionClient()
     }
 }
 
 public extension DependencyValues {
-    var owAirPollutionClient: AirPollutionClient {
+    var owAirPollutionClient: AirPollutionService {
         get { self[OWAirPollutionDependencyKey.self] }
         set { self[OWAirPollutionDependencyKey.self] = newValue }
     }

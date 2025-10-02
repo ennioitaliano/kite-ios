@@ -35,3 +35,4 @@ Air Quality Charts/Air Quality Charts.xcodeproj/xcuserdata
 Air Quality Charts/Air Quality Charts.xcodeproj/project.xcworkspace/xcuserdata
 .DS_Store
 Kite/Environment/APIKeys.swift
+Kite/Utils/Secrets.swift

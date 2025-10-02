@@ -23,6 +23,18 @@ class HomeViewModel {
     var comparisonSentence: String?
     var isDataLoading: Bool = false
 
+    init() {
+        configureAirPollution()
+    }
+
+    func configureAirPollution() {
+        do {
+            try AirPollutionClient.configure(apiKey: Secrets.APIKey)
+        } catch {
+            logger.logError(.airPollutionClient, error.localizedDescription)
+        }
+    }
+
     func getAirPollution(for placemark: CLPlacemark) async {
         isDataLoading = true
         defer { isDataLoading = false }
