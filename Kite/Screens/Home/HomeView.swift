@@ -12,23 +12,28 @@ import OWAirPollution
 import SwiftUI
 
 struct HomeView: View {
+    @Environment(\.colorScheme) private var colorScheme
     @State private var viewModel: HomeViewModel = .init()
     @State private var showSearchAlert: Bool = false
-    @State private var locationText: String = "Venice"
-    @State private var displayedLocation: String?
+    @State private var locationText: String = ""
+    @AppStorage("lastLocation") private var displayedLocation: String?
     @State private var selectedPollutant: Pollutant?
 
     private func getAirPollution() async {
         let geocoder = CLGeocoder()
-        let placemark = try? await geocoder.geocodeAddressString(locationText).first
-        if let placemark {
-            displayedLocation = if let locality = placemark.locality, let country = placemark.country {
-                "\(locality), \(country)"
-            } else {
-                locationText
-            }
-            await viewModel.getAirPollution(for: placemark)
+        let placemark = try? await geocoder.geocodeAddressString(
+            locationText.isEmpty ? displayedLocation ?? "Venice" : locationText
+        ).first
+
+        guard let placemark else { return }
+
+        displayedLocation = if let locality = placemark.locality, let country = placemark.country {
+            "\(locality), \(country)"
+        } else {
+            locationText
         }
+
+        await viewModel.getAirPollution(for: placemark)
     }
 
     var body: some View {
@@ -39,7 +44,8 @@ struct HomeView: View {
                     pollutantsList
                 }
             }
-            .background(Color.black.brightness(0.25).ignoresSafeArea())
+            .scrollIndicators(.hidden)
+            .background(Color(colorScheme == .light ? UIColor.secondarySystemBackground : UIColor.systemBackground))
             .refreshable {
                 await getAirPollution()
             }
@@ -60,7 +66,6 @@ struct HomeView: View {
                 .presentationDetents([.medium])
             }
         }
-        .preferredColorScheme(.dark)
         .alert("Change location", isPresented: $showSearchAlert) {
             TextField(text: $locationText) {}
             Button("Submit") {
@@ -90,20 +95,36 @@ struct HomeView: View {
                 } else {
                     view
                         .buttonStyle(.bordered)
-                        .foregroundStyle(.white)
+                        .foregroundStyle(Color(UIColor.label))
                 }
             }
         }
     }
 
-    @ViewBuilder
     private var aqiInfo: some View {
-        if let aqi = viewModel.airQualityIndex,
-           let comparisonSentence = viewModel.comparisonSentence {
-            AirQualityTileView(
-                airQualityIndex: aqi,
-                comparisonSentence: comparisonSentence
-            )
+        VStack(spacing: 10) {
+            aqiView
+            aqiComparison
+        }
+        .padding(.horizontal, 40)
+        .frame(maxWidth: .infinity)
+    }
+
+    @ViewBuilder
+    private var aqiView: some View {
+        if let aqi = viewModel.airQualityIndex {
+            AirQualityIndexView(aqi)
+        }
+    }
+
+    @ViewBuilder
+    private var aqiComparison: some View {
+        if let comparisonSentence = viewModel.comparisonSentence {
+            Text(comparisonSentence)
+                .font(.system(size: 16, design: .rounded))
+                .foregroundStyle(Color(UIColor.label))
+                .multilineTextAlignment(.center)
+                .lineLimit(2)
         }
     }
 
