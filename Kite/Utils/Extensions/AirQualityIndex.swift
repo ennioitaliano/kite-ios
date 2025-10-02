@@ -5,15 +5,8 @@
 //  Created by Ennio Italiano on 22/01/25.
 //
 
+import OWAirPollution
 import SwiftUI
-
-enum AirQualityIndex: Int {
-    case good = 1
-    case fair = 2
-    case moderate = 3
-    case poor = 4
-    case veryPoor = 5
-}
 
 extension AirQualityIndex {
     var string: String {
@@ -42,11 +35,5 @@ extension AirQualityIndex {
         case .fair, .moderate: "aqi.medium"
         case .poor, .veryPoor: "aqi.high"
         }
-    }
-}
-
-extension AirQualityIndex: Comparable {
-    static func < (lhs: AirQualityIndex, rhs: AirQualityIndex) -> Bool {
-        lhs.rawValue < rhs.rawValue
     }
 }

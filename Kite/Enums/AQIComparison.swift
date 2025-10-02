@@ -5,6 +5,8 @@
 //  Created by Ennio Italiano on 22/01/25.
 //
 
+import OWAirPollution
+
 enum AQIComparison {
     case betterThanYesterday
     case worseThanYesterday
