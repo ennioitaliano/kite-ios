@@ -9,7 +9,7 @@ import OWAirPollution
 import SwiftUI
 
 struct PollutantImageView: View {
-
+    @Environment(\.colorScheme) private var colorScheme
     private let pollutant: Pollutant
     private let fontSize: CGFloat
     private let maxWidth: CGFloat
@@ -32,9 +32,8 @@ struct PollutantImageView: View {
                 .frame(maxWidth: maxWidth)
         } else {
             Image(systemName: pollutant == .pm10 ? "aqi.medium" : "aqi.low")
-                .foregroundStyle(.gray)
-                .font(.system(size: fontSize))
-                .fontWeight(.black)
+                .foregroundStyle(Color(UIColor.secondaryLabel))
+                .font(.system(size: fontSize, weight: .black))
                 .frame(width: maxWidth)
         }
     }

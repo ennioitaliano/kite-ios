@@ -18,6 +18,7 @@ class HomeViewModel {
     @ObservationIgnored @Dependency(\.logger) private var logger
 
     private var airPollutionData: TimePollutionModel?
+    private var yesterdayAirPollutionData: TimePollutionModel?
     var airQualityIndex: AirQualityIndex?
     var pollutantsList: [Pollutant: Double]?
     var comparisonSentence: String?
@@ -39,8 +40,16 @@ class HomeViewModel {
         isDataLoading = true
         defer { isDataLoading = false }
 
-        await getCurrentAirPollution(for: placemark)
-        await getYesterdayAirPollution(for: placemark)
+        await withTaskGroup { [weak self] group in
+            group.addTask {
+                await self?.getCurrentAirPollution(for: placemark)
+            }
+            group.addTask {
+                await self?.getYesterdayAirPollution(for: placemark)
+            }
+        }
+
+        getComparisonSentence()
     }
 
     private func getCurrentAirPollution(for placemark: CLPlacemark) async {
@@ -58,19 +67,22 @@ class HomeViewModel {
         let yesterday: Date = .now.advanced(by: -86400)
         do {
             guard let location = placemark.location else { throw LocationError.unavailableLocation }
-            let yesterdayAirPollutionData = try await airPollutionClient.getHistorical(
+            yesterdayAirPollutionData = try await airPollutionClient.getHistorical(
                 for: location,
                 interval: .init(start: yesterday, duration: 3600)
             ).list.first
-            if let yesterdayAQI = yesterdayAirPollutionData?.airQualityIndex,
-               let todayAQI = airPollutionData?.airQualityIndex {
-                comparisonSentence = AQIComparison(
-                    between: yesterdayAQI,
-                    and: todayAQI
-                ).sentence
-            }
         } catch {
             logger.logError(.general, "Error: \(error.localizedDescription)")
         }
+    }
+
+    private func getComparisonSentence() {
+        guard let yesterdayAQI = yesterdayAirPollutionData?.airQualityIndex,
+              let todayAQI = airPollutionData?.airQualityIndex
+        else { return }
+        comparisonSentence = AQIComparison(
+            between: yesterdayAQI,
+            and: todayAQI
+        ).sentence
     }
 }

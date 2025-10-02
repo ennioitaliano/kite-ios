@@ -29,7 +29,6 @@ struct PollutantDetailView: View {
         .padding(.horizontal)
         .padding(.vertical, 32)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .preferredColorScheme(.dark)
     }
 
     private var pollutantTitle: some View {
@@ -40,20 +39,17 @@ struct PollutantDetailView: View {
                 .bold()
             Text(pollutant.completeName)
                 .font(.system(size: 25))
-                .foregroundStyle(.gray)
+                .foregroundStyle(Color(UIColor.secondaryLabel))
         }
     }
 
     private var pollutantDescription: some View {
         HStack(spacing: 3) {
             Text("\(quantity.formatted(.number.precision(.fractionLength(1))))")
-                .monospaced()
-                .font(.system(size: 35))
-                .fontWeight(.light)
+                .font(.system(size: 35, weight: .light, design: .monospaced))
             Text(pollutant.measureUnit.formattedString(baseFontSize: 28))
-                .monospaced()
-                .font(.system(size: 28))
-                .foregroundStyle(.gray)
+                .font(.system(size: 28, design: .monospaced))
+                .foregroundStyle(Color(UIColor.secondaryLabel))
         }
     }
 
