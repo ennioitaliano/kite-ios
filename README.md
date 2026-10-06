@@ -28,10 +28,3 @@ Kite is a SwiftUI-powered iOS application designed to provide real-time air qual
 
 - iOS 17.0 or later
 - Xcode 15.0 or later
-
-## Technologies Used
-
-- **Swift**: The core programming language used for the app.
-- **SwiftUI**: The declarative framework for building the user interface.
-- **CoreLocation**: For accessing and managing location data.
-- **Networking**: To fetch real-time air quality data from APIs.
