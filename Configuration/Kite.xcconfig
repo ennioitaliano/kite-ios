@@ -1,0 +1,4 @@
+DEVELOPMENT_TEAM =
+PRODUCT_BUNDLE_IDENTIFIER = com.example.kite
+
+#include? "Local.xcconfig"

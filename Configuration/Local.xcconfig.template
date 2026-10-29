@@ -1,0 +1,5 @@
+// Set your Apple Developer Team ID when running on a physical device.
+DEVELOPMENT_TEAM =
+
+// Use a unique bundle identifier for your account.
+PRODUCT_BUNDLE_IDENTIFIER = com.example.kite

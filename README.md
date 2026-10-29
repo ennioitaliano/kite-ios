@@ -55,6 +55,24 @@ A SwiftUI app for checking a city's air quality, comparing it with the previous 
    open Kite.xcodeproj
    ```
 
-4. Let Xcode resolve package dependencies, select an iPhone simulator, and run the `Kite` scheme. Running on a physical device also requires configuring signing with your own development team.
+4. Let Xcode resolve package dependencies, select an iPhone simulator, and run the shared `Kite` scheme. The simulator does not require a development team or a local signing configuration.
 
 OWAirPollution is included in the checkout; no separate client repository is needed. On first launch, Kite loads Venice. Use the city button to search for another location, tap a pollutant for its details, or pull down to refresh.
+
+### Run on a physical iPhone
+
+Copy the signing configuration template:
+
+```bash
+cp Configuration/Local.xcconfig.template Configuration/Local.xcconfig
+```
+
+In `Configuration/Local.xcconfig`, set `DEVELOPMENT_TEAM` to your Apple Developer Team ID and `PRODUCT_BUNDLE_IDENTIFIER` to a unique identifier for your account, such as `com.yourname.kite`. Sign in to Xcode with your Apple account, select your iPhone, and run the `Kite` scheme. Automatic signing is enabled.
+
+`Configuration/Kite.xcconfig` supplies the shared defaults and optionally loads `Local.xcconfig` for both Debug and Release builds. The local file is ignored by Git, so your team and bundle identifier stay out of project changes. Configure these values in the local file rather than changing the project's signing settings.
+
+## Continuous integration
+
+The [Build workflow](.github/workflows/build.yml) runs on pushes and pull requests and can also be started manually from GitHub Actions. It uses Xcode 27.1 on the `xcode-27` runner, creates `Secrets.swift` with a placeholder key, and compiles the shared `Kite` scheme for iOS Simulator without code signing.
+
+Dependencies must match the committed `Package.resolved`; the workflow does not update their versions. No OpenWeather credentials or signing certificates are required. This check verifies compilation only; it does not run the app or make API requests.
