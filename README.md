@@ -2,7 +2,10 @@
 
 A SwiftUI app for checking a city's air quality, comparing it with the previous day, and exploring individual pollutants. Data comes from the [OpenWeather Air Pollution API](https://openweathermap.org/api/air-pollution).
 
-<img src="https://github.com/user-attachments/assets/77cccf52-7978-4f1c-b5a8-69f0966dfc17" alt="Kite app screenshot" width="300">
+| Air quality overview | Pollutant detail |
+| --- | --- |
+| <img src="docs/screenshots/air-quality.png" alt="Kite showing air quality in Venice, comparison with yesterday, and pollutant concentrations" width="300"> | <img src="docs/screenshots/pollutant-detail.png" alt="Carbon monoxide detail with chemical formula, molecular illustration, and concentration" width="300"> |
+| <img src="docs/screenshots/air-quality-dark.png" alt="Kite air quality overview and pollutant list in dark mode" width="300"> | <img src="docs/screenshots/nh3-detail-dark.png" alt="Ammonia (NH3) detail with molecular illustration and concentration in dark mode" width="300"> |
 
 ## What it does
 
