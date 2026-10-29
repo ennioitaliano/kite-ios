@@ -17,14 +17,25 @@ Kite is a SwiftUI-powered iOS application designed to provide real-time air qual
    ```bash
    git clone https://github.com/ennioitaliano/kite-ios.git
    ```
-2. Open the project in Xcode:
+2. Create `Kite/Utils/Secrets.swift` with your OpenWeather API key:
+   ```swift
+   enum Secrets {
+       static let APIKey = "YOUR_OPENWEATHER_API_KEY"
+   }
+   ```
+   This file is ignored by Git. Do not commit your API key.
+3. Open the project in Xcode:
    ```bash
    cd kite-ios
    open Kite.xcodeproj
    ```
-3. Build and run the app on a simulator or connected device.
+4. Build and run the app on a simulator or connected device.
+
+The OpenWeather client is included as a local Swift package in
+[`Packages/OWAirPollution`](Packages/OWAirPollution). Xcode resolves its external
+dependencies automatically; no separate checkout of the client is needed.
 
 ## Requirements
 
-- iOS 17.0 or later
-- Xcode 15.0 or later
+- iOS 18.0 or later
+- Xcode 27.1 (verified; older versions have not been checked)

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		754A20562E888F3500E18DE2 /* CommonLogging in Frameworks */ = {isa = PBXBuildFile; productRef = 754A20552E888F3500E18DE2 /* CommonLogging */; };
 		754A20592E888F4A00E18DE2 /* Dependencies in Frameworks */ = {isa = PBXBuildFile; productRef = 754A20582E888F4A00E18DE2 /* Dependencies */; };
-		754A205B2E888F4A00E18DE2 /* DependenciesMacros in Frameworks */ = {isa = PBXBuildFile; productRef = 754A205A2E888F4A00E18DE2 /* DependenciesMacros */; };
 		75E4D0632E8BE27C002FDFAE /* OWAirPollution in Frameworks */ = {isa = PBXBuildFile; productRef = 75E4D0622E8BE27C002FDFAE /* OWAirPollution */; };
 /* End PBXBuildFile section */
 
@@ -31,7 +30,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				754A20592E888F4A00E18DE2 /* Dependencies in Frameworks */,
-				754A205B2E888F4A00E18DE2 /* DependenciesMacros in Frameworks */,
 				75E4D0632E8BE27C002FDFAE /* OWAirPollution in Frameworks */,
 				754A20562E888F3500E18DE2 /* CommonLogging in Frameworks */,
 			);
@@ -86,7 +84,6 @@
 			packageProductDependencies = (
 				754A20552E888F3500E18DE2 /* CommonLogging */,
 				754A20582E888F4A00E18DE2 /* Dependencies */,
-				754A205A2E888F4A00E18DE2 /* DependenciesMacros */,
 				75E4D0622E8BE27C002FDFAE /* OWAirPollution */,
 			);
 			productName = kite;
@@ -120,7 +117,7 @@
 			packageReferences = (
 				754A20542E888F3500E18DE2 /* XCRemoteSwiftPackageReference "common-logging-swift" */,
 				754A20572E888F4A00E18DE2 /* XCRemoteSwiftPackageReference "swift-dependencies" */,
-				75E4D05F2E8BBD87002FDFAE /* XCLocalSwiftPackageReference "../../OWAirPollution" */,
+				75E4D05F2E8BBD87002FDFAE /* XCLocalSwiftPackageReference "Packages/OWAirPollution" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 754A1FB42E888E5B00E18DE2 /* Products */;
@@ -370,9 +367,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		75E4D05F2E8BBD87002FDFAE /* XCLocalSwiftPackageReference "../../OWAirPollution" */ = {
+		75E4D05F2E8BBD87002FDFAE /* XCLocalSwiftPackageReference "Packages/OWAirPollution" */ = {
 			isa = XCLocalSwiftPackageReference;
-			relativePath = ../../OWAirPollution;
+			relativePath = Packages/OWAirPollution;
 		};
 /* End XCLocalSwiftPackageReference section */
 
@@ -406,14 +403,9 @@
 			package = 754A20572E888F4A00E18DE2 /* XCRemoteSwiftPackageReference "swift-dependencies" */;
 			productName = Dependencies;
 		};
-		754A205A2E888F4A00E18DE2 /* DependenciesMacros */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 754A20572E888F4A00E18DE2 /* XCRemoteSwiftPackageReference "swift-dependencies" */;
-			productName = DependenciesMacros;
-		};
 		75E4D0622E8BE27C002FDFAE /* OWAirPollution */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 75E4D05F2E8BBD87002FDFAE /* XCLocalSwiftPackageReference "../../OWAirPollution" */;
+			package = 75E4D05F2E8BBD87002FDFAE /* XCLocalSwiftPackageReference "Packages/OWAirPollution" */;
 			productName = OWAirPollution;
 		};
 /* End XCSwiftPackageProductDependency section */
