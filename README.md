@@ -1,5 +1,7 @@
 # Kite
 
+[![Build](https://github.com/ennioitaliano/kite-ios/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/ennioitaliano/kite-ios/actions/workflows/build.yml?query=branch%3Amain)
+
 A SwiftUI app for checking a city's air quality, comparing it with the previous day, and exploring individual pollutants. Data comes from the [OpenWeather Air Pollution API](https://openweathermap.org/api/air-pollution).
 
 | Air quality overview | Pollutant detail |
